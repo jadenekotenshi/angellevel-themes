@@ -23,14 +23,26 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈21 hand-drawn icons plus alias links) covering the most visible
-surfaces — folders, common document/mimetypes, devices, key actions, and app
-icons for the terminal, file managers (incl. Dolphin), editors (incl. Kate),
-and System Settings. The theme **inherits from
-Breeze**, so any name not provided falls back to Breeze automatically. Trade-off:
-until you extend the set, unprovided icons keep their Breeze (colorful, flat)
-look alongside the grayscale ones. Add more SVGs under the matching
-`icons/SquirrelLevel/<context>/scalable/` folder to grow coverage.
+core set** (≈37 hand-drawn icons plus ~65 alias links) covering the most
+visible surfaces:
+
+- **Places/devices:** folders, home, desktop, trash, hard disk, computer.
+- **Actions:** save, copy, delete, up, OK, cancel/close, home.
+- **MimeTypes:** generic text, source code, HTML, shell script, PDF, fonts,
+  images, audio, video, and archives — with family aliases (`image/png`,
+  `audio/mpeg`, `video/mp4`, `application/zip`, `text-x-python`, …).
+- **Apps:** Konsole, Dolphin, Kate, NEdit, Vim, VS Code, Okular, Gwenview,
+  Spectacle, System Settings, Chromium, and Firefox — each with the
+  alternate names KDE looks up (`org.kde.*`, `chromium-browser`, `code`, …).
+
+The theme **inherits from Breeze**, so any name not provided falls back to
+Breeze automatically. Trade-off: until you extend the set, unprovided icons
+keep their Breeze (colorful, flat) look alongside the grayscale ones. Add more
+SVGs under the matching `icons/SquirrelLevel/<context>/scalable/` folder to grow
+coverage.
+
+Note: brand marks (Chromium, Firefox, VS Code, Vim) are **grayscale
+reinterpretations** in the NeXT idiom, not the official colored logos.
 
 ## Install
 
