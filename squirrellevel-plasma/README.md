@@ -12,12 +12,24 @@ text, and square title-bar buttons.
 | Color scheme | `color-schemes/SquirrelLevel.colors` | App colors — NeXT grays, white views, dark selection |
 | Window decoration | `aurorae/SquirrelLevel/` | Aurorae title bars & borders with beveled square buttons |
 | Konsole scheme | `konsole/SquirrelLevel.colorscheme` | Terminal palette (black on white, muted ANSI) |
+| Icon theme | `icons/SquirrelLevel/` | Grayscale, beveled icons; inherits Breeze for the rest |
 
 Not included (out of scope for a from-scratch bundle): a full Plasma desktop
-("look & feel") theme, an application *widget* style, and an icon theme. For
-the most faithful result, pair this with a flat application style — Kvantum
-with a grayscale config, or Breeze tuned to the color scheme above — and a
-Helvetica-like font such as Nimbus Sans or Liberation Sans.
+("look & feel") theme and an application *widget* style. For the most faithful
+result, pair this with a flat application style — Kvantum with a grayscale
+config, or Breeze tuned to the color scheme above — and a Helvetica-like font
+such as Nimbus Sans or Liberation Sans.
+
+### About the icon theme
+
+KDE references thousands of icon names, so this ships a **curated NeXT-style
+core set** (≈18 hand-drawn icons plus alias links) covering the most visible
+surfaces — folders, common document/mimetypes, devices, key actions, and the
+terminal / file-manager / text-editor app icons. The theme **inherits from
+Breeze**, so any name not provided falls back to Breeze automatically. Trade-off:
+until you extend the set, unprovided icons keep their Breeze (colorful, flat)
+look alongside the grayscale ones. Add more SVGs under the matching
+`icons/SquirrelLevel/<context>/scalable/` folder to grow coverage.
 
 ## Install
 
@@ -25,16 +37,18 @@ Helvetica-like font such as Nimbus Sans or Liberation Sans.
 ./install.sh
 ```
 
-This copies the files into `~/.local/share/{color-schemes,aurorae/themes,konsole}`.
-Nothing is installed system-wide and nothing outside `~/.local/share` is touched.
+This copies the files into
+`~/.local/share/{color-schemes,aurorae/themes,konsole,icons}`. Nothing is
+installed system-wide and nothing outside `~/.local/share` is touched.
 
 ### Manual install (equivalent)
 
 ```bash
-mkdir -p ~/.local/share/color-schemes ~/.local/share/aurorae/themes ~/.local/share/konsole
+mkdir -p ~/.local/share/{color-schemes,aurorae/themes,konsole,icons}
 cp color-schemes/SquirrelLevel.colors      ~/.local/share/color-schemes/
 cp -r aurorae/SquirrelLevel                 ~/.local/share/aurorae/themes/
 cp konsole/SquirrelLevel.colorscheme        ~/.local/share/konsole/
+cp -R icons/SquirrelLevel                   ~/.local/share/icons/
 ```
 
 ## Apply
@@ -43,6 +57,8 @@ cp konsole/SquirrelLevel.colorscheme        ~/.local/share/konsole/
   (or `plasma-apply-colorscheme SquirrelLevel`)
 - **Window decoration:** System Settings → Window Decorations → *SquirrelLevel*
 - **Konsole:** Konsole → Settings → Edit Current Profile → Appearance → *SquirrelLevel*
+- **Icons:** System Settings → Icons → *SquirrelLevel*
+  (or `plasma-changeicons SquirrelLevel`)
 
 For the authentic NeXT button arrangement, go to
 **Window Decorations → Titlebar Buttons** and place **Minimize on the left**

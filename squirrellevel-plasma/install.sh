@@ -26,6 +26,16 @@ install -d "$DATA/konsole"
 install -m 644 "$SRC/konsole/SquirrelLevel.colorscheme" "$DATA/konsole/SquirrelLevel.colorscheme"
 echo "  - konsole       -> $DATA/konsole/SquirrelLevel.colorscheme"
 
+# 4. Icon theme (cp -R preserves the alias symlinks inside the tree)
+install -d "$DATA/icons"
+rm -rf "$DATA/icons/SquirrelLevel"
+cp -R "$SRC/icons/SquirrelLevel" "$DATA/icons/SquirrelLevel"
+echo "  - icon theme    -> $DATA/icons/SquirrelLevel/"
+# Refresh the icon cache if the tool is present (not required by KDE).
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+  gtk-update-icon-cache -q -f -t "$DATA/icons/SquirrelLevel" 2>/dev/null || true
+fi
+
 cat <<'EOF'
 
 Done. Now apply it:
@@ -39,6 +49,10 @@ Done. Now apply it:
 
   Konsole:
     Konsole -> Settings -> Edit Profile -> Appearance -> "SquirrelLevel"
+
+  Icon theme:
+    System Settings -> Icons -> "SquirrelLevel"
+    (or:  plasma-changeicons SquirrelLevel)
 
   Recommended for the full NeXT feel:
     - Set the application style (Kvantum/Breeze) and fonts separately;
