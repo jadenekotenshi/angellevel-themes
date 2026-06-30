@@ -23,9 +23,10 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈18 hand-drawn icons plus alias links) covering the most visible
-surfaces — folders, common document/mimetypes, devices, key actions, and the
-terminal / file-manager / text-editor app icons. The theme **inherits from
+core set** (≈21 hand-drawn icons plus alias links) covering the most visible
+surfaces — folders, common document/mimetypes, devices, key actions, and app
+icons for the terminal, file managers (incl. Dolphin), editors (incl. Kate),
+and System Settings. The theme **inherits from
 Breeze**, so any name not provided falls back to Breeze automatically. Trade-off:
 until you extend the set, unprovided icons keep their Breeze (colorful, flat)
 look alongside the grayscale ones. Add more SVGs under the matching
