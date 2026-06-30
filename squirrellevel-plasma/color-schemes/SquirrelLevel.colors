@@ -1,9 +1,9 @@
 [ColorScheme]
-Name=NeXTSTEP
+Name=SquirrelLevel
 
 [General]
-Name=NeXTSTEP
-ColorScheme=NeXTSTEP
+Name=SquirrelLevel
+ColorScheme=SquirrelLevel
 shadeSortColumn=true
 
 [Colors:Window]
