@@ -9,6 +9,10 @@ Rectangle {
     property int sessionIndex: 0
     property string sessionName: "Default"
 
+    // login panel sits at 46% on widescreen; drop it further on
+    // taller 4:3/5:4 panels (validated down to 1280x1024, the floor).
+    property real panelFrac: (root.width / root.height) < 1.5 ? 0.52 : 0.46
+
     function cfg(k, d) {
         return (typeof config !== "undefined" && config[k] && ("" + config[k]).length) ? config[k] : d
     }
@@ -68,7 +72,7 @@ Rectangle {
         width: 404
         height: 58 + body.implicitHeight
         anchors.horizontalCenter: parent.horizontalCenter
-        y: Math.round(root.height * 0.46)
+        y: Math.round(root.height * root.panelFrac)
         base: root.cfg("panelColor", "#a6adb8")
         raised: true
 
