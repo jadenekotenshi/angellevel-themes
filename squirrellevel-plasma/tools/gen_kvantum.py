@@ -126,6 +126,28 @@ for d in ('up', 'down', 'left', 'right'):
     for st, col in ARROW_COL.items():
         indicator('arrow-' + d, st, arrow(d, col), 16)
 
+# combo-box dropdown indicator: a recessed inset well holds the arrow, so a
+# dropdown is clearly distinct from a (uniformly raised) push button.
+def combo_arrow(direction, col):
+    WELL, ITL, IBR, FR = '#9aa1ac', '#5c626b', '#ffffff', '#1a1a1a'
+    def d(ox, oy, s):
+        r = [f'<rect x="{ox}" y="{oy}" width="{s}" height="{s}" fill="{WELL}" stroke="{FR}" stroke-width="1"/>',
+             f'<rect x="{ox+1}" y="{oy+1}" width="{s-2}" height="1" fill="{ITL}"/>',
+             f'<rect x="{ox+1}" y="{oy+1}" width="1" height="{s-2}" fill="{ITL}"/>',
+             f'<rect x="{ox+1}" y="{oy+s-2}" width="{s-2}" height="1" fill="{IBR}"/>',
+             f'<rect x="{ox+s-2}" y="{oy+1}" width="1" height="{s-2}" fill="{IBR}"/>']
+        m = 5
+        pts = ([(ox+m, oy+m+1), (ox+s-m, oy+m+1), (ox+s/2, oy+s-m)] if direction == 'down'
+               else [(ox+s/2, oy+m), (ox+m, oy+s-m-1), (ox+s-m, oy+s-m-1)])
+        r.append('<polygon points="%s" fill="%s"/>' % (' '.join(f'{x:.1f},{y:.1f}' for x, y in pts), col))
+        return ''.join(r)
+    return d
+COMBO_ARROW_COL = {'normal': '#1a1a1a', 'focused': '#1a1a1a', 'pressed': '#1a1a1a',
+                   'disabled': '#8a8a8a', 'normal-inactive': '#4a4a4a'}
+for d in ('down', 'up'):
+    for st, col in COMBO_ARROW_COL.items():
+        indicator('combo-' + d, st, combo_arrow(d, col), 16)
+
 DEFS = ('<defs>'
         '<linearGradient id="prog" x1="0" y1="0" x2="0" y2="1">'
         '<stop offset="0" stop-color="#a79cec"/><stop offset="0.12" stop-color="#d2caf7"/>'

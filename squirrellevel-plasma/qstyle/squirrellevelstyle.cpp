@@ -8,6 +8,7 @@
 #include <QStyleOptionSlider>
 #include <QStyleOptionButton>
 #include <QStyleOptionProgressBar>
+#include <QStyleOptionComboBox>
 
 // --- OPENSTEP-muted palette constants ---------------------------------------
 static const QColor kDark  (0x1a, 0x1a, 0x1a);
@@ -339,6 +340,24 @@ void SquirrelLevelStyle::drawComplexControl(ComplexControl cc, const QStyleOptio
                 p->setPen(kHi); p->drawLine(cx, y1, cx, y2);
             }
             p->restore();
+        }
+        return;
+    }
+
+    if (cc == CC_ComboBox) {
+        const auto *cb = qstyleoption_cast<const QStyleOptionComboBox *>(opt);
+        const bool editable = cb && cb->editable;
+        const bool sunken = opt->state & (State_On | State_Sunken);
+        // body: editable combo -> recessed field; pop-up button -> raised bevel
+        if (editable) paintBevel(p, opt->rect, opt->palette.base(), true);
+        else          paintBevel(p, opt->rect, kButton, false);
+        // NeXT pop-up: a recessed inset well holds the arrow, so it is clearly
+        // distinct from a (uniformly raised) push button.
+        QRect ar = subControlRect(cc, opt, SC_ComboBoxArrow, w);
+        QRect well = ar.adjusted(0, 3, -3, -3);
+        if (well.width() > 4 && well.height() > 4) {
+            paintBevel(p, well, kGroove, true);
+            drawArrow(p, well.translated(0, sunken ? 1 : 0), Qt::DownArrow);
         }
         return;
     }

@@ -117,6 +117,8 @@ inherits=PanelButtonCommand
 
 [ComboBox]
 inherits=PanelButtonCommand
+indicator.element=combo
+indicator.size=20
 
 [IndicatorSpinBox]
 inherits=PanelButtonCommand
