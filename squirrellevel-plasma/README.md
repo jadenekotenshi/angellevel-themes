@@ -13,6 +13,7 @@ text, and square title-bar buttons.
 | Window decoration | `aurorae/SquirrelLevel/` | Aurorae title bars & borders with beveled square buttons |
 | Konsole scheme | `konsole/SquirrelLevel.colorscheme` | Terminal palette (black on white, muted ANSI) |
 | Icon theme | `icons/SquirrelLevel/` | OPENSTEP-inspired **colour** icons with the chiselled bevel; inherits Breeze for the rest |
+| SDDM login theme | `sddm/SquirrelLevel/` | OPENSTEP-style QML greeter — chiselled panel, steel-blue title bar, colour power buttons |
 
 Not included (out of scope for a from-scratch bundle): a full Plasma desktop
 ("look & feel") theme and an application *widget* style. For the most faithful
@@ -123,6 +124,44 @@ cp -R icons/SquirrelLevel                   ~/.local/share/icons/
 For the authentic NeXT button arrangement, go to
 **Window Decorations → Titlebar Buttons** and place **Minimize on the left**
 and **Close on the right**.
+
+## SDDM login theme
+
+The login greeter lives under `sddm/SquirrelLevel/` (a self-contained Qt Quick
+theme, Qt 5). It recreates the OPENSTEP login panel: a chiselled grey panel
+with a steel-blue title bar, the beveled cube emblem, recessed *Name:* /
+*Password:* fields, a session selector, a raised *Log In* button, and colour
+power buttons (blue Sleep, amber Restart, red Shut Down) over the muted
+OPENSTEP-blue gradient. See `sddm/SquirrelLevel/preview.png`.
+
+SDDM themes are system-wide, so installing needs root:
+
+```bash
+sddm/install-sddm.sh            # copies to /usr/share/sddm/themes (uses sudo)
+```
+
+Then activate it in `/etc/sddm.conf.d/squirrellevel.conf`:
+
+```ini
+[Theme]
+Current=SquirrelLevel
+```
+
+Preview it without logging out:
+
+```bash
+sddm-greeter --test-mode --theme /usr/share/sddm/themes/SquirrelLevel
+```
+
+Background and panel/title colours are configurable in
+`sddm/SquirrelLevel/theme.conf` (set `background=` to a wallpaper path, or
+leave it empty for the built-in gradient).
+
+The QML is written to the SDDM greeter API but was authored without a running
+SDDM/Qt to execute it — `preview.png` is a faithful SVG mock of the layout, so
+treat the first `--test-mode` run as the real check. It targets **Qt 5** SDDM
+(the common case); on a Qt 6 greeter the `Connections { onLoginFailed: … }`
+handlers would need the newer `function onLoginFailed()` syntax.
 
 ## Tweaking the decoration
 
