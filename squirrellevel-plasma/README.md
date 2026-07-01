@@ -18,13 +18,15 @@ text, and square title-bar buttons.
 | Global Theme | `plasma/look-and-feel/org.squirrellevel.desktop/` | Look-and-Feel that applies the whole set + boot splash + logout screen |
 | Kvantum theme | `kvantum/SquirrelLevel/` | NeXT app-widget style (SVG) for the Kvantum QStyle engine |
 | Qt style sheet | `qt-style/SquirrelLevel.qss` | Lightweight NeXT-beveled widget QSS for any Qt app |
+| Qt QStyle plugin | `qstyle/` | Native C++ widget style — the full NeXT look (twin-arrow scrollbars, metallic bars) |
 | Plymouth splash | `plymouth/squirrellevel/` | OPENSTEP boot splash — chiselled cube + steel-blue progress |
 
-Application (Qt) widgets are covered by the included **Kvantum theme** and a
-**Qt style sheet** (see below); the Plasma Style covers panel/plasmoid widgets.
-The only thing not shipped is a native compiled QStyle plugin (Kvantum is the
-drop-in substitute). A Helvetica-like font (Nimbus Sans / Liberation Sans)
-completes the look.
+Application (Qt) widgets have three options, in increasing fidelity: the
+**Qt style sheet** (drop-in, no build), the **Kvantum theme** (SVG engine), and
+the native **QStyle plugin** (`qstyle/`, compiled C++ — the only one that can do
+NeXT's twin-arrows-at-the-bottom scrollbar with a dimpled knob and true metallic
+progress bars). The Plasma Style covers panel/plasmoid widgets. A Helvetica-like
+font (Nimbus Sans / Liberation Sans) completes the look.
 
 ### About the icon theme
 
@@ -195,12 +197,25 @@ themed without that risk. The splash and logout QML are likewise best-effort
 against the documented KSplash / ksmserver APIs — verify after applying, and
 revert with the `breeze` command above if anything misbehaves.
 
-## Application widgets (Kvantum + QSS)
+## Application widgets (QStyle plugin / Kvantum / QSS)
 
-Two ways to give **Qt application** widgets (buttons, scrollbars, sliders,
-menus) the NeXT chiselled look — the one layer the Plasma Style can't reach:
+Three ways to give **Qt application** widgets (buttons, scrollbars, sliders,
+menus) the NeXT chiselled look — the one layer the Plasma Style can't reach,
+in increasing fidelity:
 
-**Kvantum** (an SVG-themable QStyle — the fuller option):
+**Native QStyle plugin** (`qstyle/`, compiled C++ — the fullest option). Only
+this one can draw NeXT's twin-arrows-at-the-bottom scrollbar with a dimpled
+knob and true metallic progress bars, because it paints the widgets in code:
+
+```bash
+qstyle/build-and-install.sh                 # cmake build + install (Qt 5 or 6)
+export QT_STYLE_OVERRIDE=SquirrelLevel       # or System Settings -> Application Style
+```
+
+See `qstyle/README.md`. Written to the QStyle API for Qt 5/6 but authored
+without a build environment here — treat the first `cmake --build` as the check.
+
+**Kvantum** (an SVG-themable QStyle — no compiler needed):
 
 ```bash
 kvantum/install-kvantum.sh          # copies to ~/.config/Kvantum/SquirrelLevel
@@ -215,10 +230,9 @@ kvantummanager --set SquirrelLevel
 alternative that works in any Qt app: point qt5ct/qt6ct → *Appearance →
 Style Sheets* at it, or launch an app with `-stylesheet SquirrelLevel.qss`.
 
-A native Qt **QStyle plugin** would need C++/compilation and isn't shipped;
-Kvantum is the drop-in substitute. Both the Kvantum SVG and the QSS were
-authored without Kvantum/Qt on hand to run them, so verify in Kvantum Manager
-and tune the frame sizes if a widget looks off.
+The Kvantum SVG and the QSS were authored without Kvantum/Qt on hand to run
+them, so verify in Kvantum Manager and tune the frame sizes if a widget looks
+off. For the exact NeXT scrollbar and metallic bars, prefer the QStyle plugin.
 
 ## Plymouth boot splash
 
