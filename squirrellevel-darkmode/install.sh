@@ -26,7 +26,14 @@ install -d "$DATA/konsole"
 install -m 644 "$SRC/konsole/SquirrelLevel-darkmode.colorscheme" "$DATA/konsole/SquirrelLevel-darkmode.colorscheme"
 echo "  - konsole       -> $DATA/konsole/SquirrelLevel-darkmode.colorscheme"
 
-# (Icons are shared: install the light SquirrelLevel bundle for the icon theme.)
+# 4. Icon theme (dark set; cp -R preserves the alias symlinks)
+install -d "$DATA/icons"
+rm -rf "$DATA/icons/SquirrelLevel-darkmode"
+cp -R "$SRC/icons/SquirrelLevel-darkmode" "$DATA/icons/SquirrelLevel-darkmode"
+echo "  - icon theme    -> $DATA/icons/SquirrelLevel-darkmode/"
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+  gtk-update-icon-cache -q -f -t "$DATA/icons/SquirrelLevel-darkmode" 2>/dev/null || true
+fi
 
 # 5. Plasma Style (desktop/widget theme)
 install -d "$DATA/plasma/desktoptheme"
@@ -54,8 +61,9 @@ Done. Now apply it:
   Konsole:
     Konsole -> Settings -> Edit Profile -> Appearance -> "SquirrelLevel-darkmode"
 
-  Icons (shared with the light theme):
-    install the SquirrelLevel bundle too, then System Settings -> Icons -> "SquirrelLevel"
+  Icon theme:
+    System Settings -> Icons -> "SquirrelLevel-darkmode"
+    (or:  plasma-changeicons SquirrelLevel-darkmode)
 
   Plasma style (widgets):
     System Settings -> Plasma Style -> "SquirrelLevel-darkmode"

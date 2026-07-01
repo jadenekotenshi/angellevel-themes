@@ -181,7 +181,7 @@ Rectangle {
         id: sessionPopup
         parent: root
         visible: false
-        raised: true; base: "#ffffff"
+        raised: true; base: "#202226"
         width: 200
         height: sessCol.height + 6
         z: 10
@@ -193,7 +193,7 @@ Rectangle {
                 model: (typeof sessionModel !== "undefined") ? sessionModel : 0
                 delegate: Rectangle {
                     width: sessCol.width; height: 24
-                    color: sma.containsMouse ? "#6a5fd6" : "#ffffff"
+                    color: sma.containsMouse ? "#6a5fd6" : "#202226"
                     Text {
                         anchors.verticalCenter: parent.verticalCenter; x: 7
                         text: model.name
