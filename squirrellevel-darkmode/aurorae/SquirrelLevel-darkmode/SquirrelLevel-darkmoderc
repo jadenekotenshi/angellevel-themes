@@ -1,0 +1,36 @@
+[General]
+TitleAlignment=Center
+TitleVerticalAlignment=Center
+ActiveTextColor=0,0,0,255
+InactiveTextColor=85,85,85,255
+UseTextShadow=false
+Animation=0
+
+[Layout]
+; Outer window borders (thin, dark chiselled frame)
+BorderLeft=2
+BorderRight=2
+BorderBottom=2
+BorderTop=0
+
+; Padding is used by the SVG to draw shadows; NeXT has no soft shadow
+PaddingLeft=0
+PaddingRight=0
+PaddingTop=0
+PaddingBottom=0
+
+; Title bar geometry
+TitleEdgeTop=2
+TitleEdgeBottom=2
+TitleEdgeLeft=2
+TitleEdgeRight=2
+TitleBorderLeft=6
+TitleBorderRight=6
+TitleHeight=20
+
+; Square NeXT-style buttons
+ButtonWidth=18
+ButtonHeight=16
+ButtonSpacing=2
+ButtonMarginTop=2
+ExplicitButtonSpacer=4

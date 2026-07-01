@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="400" height="400">
+  <!--
+    NeXTSTEP Aurorae decoration.
+    FrameSvg 9-slice. Bevel convention: white highlight top/left,
+    dark shadow bottom/right, flat NeXT gray fill, thin dark outer frame.
+    Active slices on the left, inactive slices offset +200px on the right.
+  -->
+
+  <!-- ===================== ACTIVE ===================== -->
+
+  <!-- title bar: top-left corner (8 x 24) -->
+  <g id="decoration-topleft" transform="translate(10,10)">
+    <rect x="0" y="0" width="8" height="24" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0"  width="8" height="24" fill="#3b4048"/>
+    <rect x="0" y="0"  width="8" height="1"  fill="#1a1a1a"/>
+    <rect x="0" y="1"  width="8" height="1"  fill="#565d67"/>
+    <rect x="0" y="22" width="8" height="1"  fill="#14161a"/>
+    <rect x="0" y="23" width="8" height="1"  fill="#333333"/>
+    <rect x="0" y="0"  width="1" height="24" fill="#1a1a1a"/>
+    <rect x="1" y="2"  width="1" height="20" fill="#dcdcdc"/>
+  </g>
+
+  <!-- title bar: top edge (repeating fill) -->
+  <g id="decoration-top" transform="translate(30,10)">
+    <rect x="0" y="0" width="40" height="24" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0"  width="40" height="24" fill="#3b4048"/>
+    <rect x="0" y="0"  width="40" height="1"  fill="#1a1a1a"/>
+    <rect x="0" y="1"  width="40" height="1"  fill="#565d67"/>
+    <rect x="0" y="22" width="40" height="1"  fill="#14161a"/>
+    <rect x="0" y="23" width="40" height="1"  fill="#333333"/>
+  </g>
+
+  <!-- title bar: top-right corner (8 x 24) -->
+  <g id="decoration-topright" transform="translate(90,10)">
+    <rect x="0" y="0" width="8" height="24" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0"  width="8" height="24" fill="#3b4048"/>
+    <rect x="0" y="0"  width="8" height="1"  fill="#1a1a1a"/>
+    <rect x="0" y="1"  width="8" height="1"  fill="#565d67"/>
+    <rect x="0" y="22" width="8" height="1"  fill="#14161a"/>
+    <rect x="0" y="23" width="8" height="1"  fill="#333333"/>
+    <rect x="6" y="0"  width="1" height="24" fill="#14161a"/>
+    <rect x="7" y="0"  width="1" height="24" fill="#1a1a1a"/>
+  </g>
+
+  <!-- left border (2 x 20) -->
+  <g id="decoration-left" transform="translate(10,50)">
+    <rect x="0" y="0" width="2" height="20" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="1" height="20" fill="#1a1a1a"/>
+    <rect x="1" y="0" width="1" height="20" fill="#dcdcdc"/>
+  </g>
+
+  <!-- center (transparent client area) -->
+  <g id="decoration-center" transform="translate(30,50)">
+    <rect x="0" y="0" width="40" height="20" fill="#000000" fill-opacity="0"/>
+  </g>
+
+  <!-- right border (2 x 20) -->
+  <g id="decoration-right" transform="translate(90,50)">
+    <rect x="0" y="0" width="2" height="20" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="1" height="20" fill="#14161a"/>
+    <rect x="1" y="0" width="1" height="20" fill="#1a1a1a"/>
+  </g>
+
+  <!-- bottom-left corner (8 x 2) -->
+  <g id="decoration-bottomleft" transform="translate(10,90)">
+    <rect x="0" y="0" width="8" height="2" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="8" height="1" fill="#14161a"/>
+    <rect x="0" y="1" width="8" height="1" fill="#1a1a1a"/>
+    <rect x="0" y="0" width="1" height="2" fill="#1a1a1a"/>
+  </g>
+
+  <!-- bottom edge (40 x 2) -->
+  <g id="decoration-bottom" transform="translate(30,90)">
+    <rect x="0" y="0" width="40" height="2" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="40" height="1" fill="#14161a"/>
+    <rect x="0" y="1" width="40" height="1" fill="#1a1a1a"/>
+  </g>
+
+  <!-- bottom-right corner (8 x 2) -->
+  <g id="decoration-bottomright" transform="translate(90,90)">
+    <rect x="0" y="0" width="8" height="2" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="8" height="1" fill="#14161a"/>
+    <rect x="0" y="1" width="8" height="1" fill="#1a1a1a"/>
+    <rect x="7" y="0" width="1" height="2" fill="#1a1a1a"/>
+  </g>
+
+  <!-- ===================== INACTIVE ===================== -->
+
+  <g id="decoration-inactive-topleft" transform="translate(210,10)">
+    <rect x="0" y="0" width="8" height="24" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0"  width="8" height="24" fill="#a8a8a8"/>
+    <rect x="0" y="0"  width="8" height="1"  fill="#2a2a2a"/>
+    <rect x="0" y="1"  width="8" height="1"  fill="#eaeaea"/>
+    <rect x="0" y="22" width="8" height="1"  fill="#7a7a7a"/>
+    <rect x="0" y="23" width="8" height="1"  fill="#444444"/>
+    <rect x="0" y="0"  width="1" height="24" fill="#2a2a2a"/>
+    <rect x="1" y="2"  width="1" height="20" fill="#d2d2d2"/>
+  </g>
+
+  <g id="decoration-inactive-top" transform="translate(230,10)">
+    <rect x="0" y="0" width="40" height="24" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0"  width="40" height="24" fill="#a8a8a8"/>
+    <rect x="0" y="0"  width="40" height="1"  fill="#2a2a2a"/>
+    <rect x="0" y="1"  width="40" height="1"  fill="#eaeaea"/>
+    <rect x="0" y="22" width="40" height="1"  fill="#7a7a7a"/>
+    <rect x="0" y="23" width="40" height="1"  fill="#444444"/>
+  </g>
+
+  <g id="decoration-inactive-topright" transform="translate(290,10)">
+    <rect x="0" y="0" width="8" height="24" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0"  width="8" height="24" fill="#a8a8a8"/>
+    <rect x="0" y="0"  width="8" height="1"  fill="#2a2a2a"/>
+    <rect x="0" y="1"  width="8" height="1"  fill="#eaeaea"/>
+    <rect x="0" y="22" width="8" height="1"  fill="#7a7a7a"/>
+    <rect x="0" y="23" width="8" height="1"  fill="#444444"/>
+    <rect x="6" y="0"  width="1" height="24" fill="#7a7a7a"/>
+    <rect x="7" y="0"  width="1" height="24" fill="#2a2a2a"/>
+  </g>
+
+  <g id="decoration-inactive-left" transform="translate(210,50)">
+    <rect x="0" y="0" width="2" height="20" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="1" height="20" fill="#2a2a2a"/>
+    <rect x="1" y="0" width="1" height="20" fill="#d2d2d2"/>
+  </g>
+
+  <g id="decoration-inactive-center" transform="translate(230,50)">
+    <rect x="0" y="0" width="40" height="20" fill="#000000" fill-opacity="0"/>
+  </g>
+
+  <g id="decoration-inactive-right" transform="translate(290,50)">
+    <rect x="0" y="0" width="2" height="20" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="1" height="20" fill="#7a7a7a"/>
+    <rect x="1" y="0" width="1" height="20" fill="#2a2a2a"/>
+  </g>
+
+  <g id="decoration-inactive-bottomleft" transform="translate(210,90)">
+    <rect x="0" y="0" width="8" height="2" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="8" height="1" fill="#7a7a7a"/>
+    <rect x="0" y="1" width="8" height="1" fill="#2a2a2a"/>
+    <rect x="0" y="0" width="1" height="2" fill="#2a2a2a"/>
+  </g>
+
+  <g id="decoration-inactive-bottom" transform="translate(230,90)">
+    <rect x="0" y="0" width="40" height="2" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="40" height="1" fill="#7a7a7a"/>
+    <rect x="0" y="1" width="40" height="1" fill="#2a2a2a"/>
+  </g>
+
+  <g id="decoration-inactive-bottomright" transform="translate(290,90)">
+    <rect x="0" y="0" width="8" height="2" fill="#000000" fill-opacity="0"/>
+    <rect x="0" y="0" width="8" height="1" fill="#7a7a7a"/>
+    <rect x="0" y="1" width="8" height="1" fill="#2a2a2a"/>
+    <rect x="7" y="0" width="1" height="2" fill="#2a2a2a"/>
+  </g>
+</svg>
