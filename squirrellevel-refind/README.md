@@ -26,7 +26,7 @@ Each contains:
     `os_linuxmint`, `os_manjaro`, `os_opensuse`, `os_freebsd`, `os_netbsd`,
     `os_openbsd`, `os_haiku`, `os_pop`, `os_tenshix` (the TenshiNET angel
     emblem — for a TenshiX/TenshiNET boot entry), plus `os_unknown` (and
-    aliases `os_mint`, `os_suse`, `os_popos`).
+    aliases `os_mint`, `os_suse`, `os_popos`, `os_tenshi`, `os_tenshinet`).
   - **Volume icons**: `vol_internal`, `vol_external`, `vol_optical`.
   - **Tool icons**: `func_shutdown`, `func_reset` (reboot), `func_about`,
     `func_firmware`, `func_exit`.
