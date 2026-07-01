@@ -60,8 +60,9 @@ sudo cp -r SquirrelLevel "$REFIND/themes/"
 
 ## EFI boot splash (seamless fade)
 
-`efi-splash/SquirrelLevel.png` and `efi-splash/SquirrelLevel-dark.png` are
-1920×1080 renders of the rEFInd banner **without** any OS or tool icons — the
+`efi-splash/SquirrelLevel.png` and `efi-splash/SquirrelLevel-dark.png` (1920×1080
+defaults) — plus `-1280x720`, `-2560x1440`, and `-3840x2160` HiDPI variants — are
+resolution-matched renders of the rEFInd banner **without** any OS or tool icons — the
 same gradient + TenshiNET angel that rEFInd paints *underneath* its menu (they
 are literally the same source image as `<variant>/background.png`). Set one as
 your firmware's custom boot logo — many UEFI setups have an OEM/boot-logo slot,

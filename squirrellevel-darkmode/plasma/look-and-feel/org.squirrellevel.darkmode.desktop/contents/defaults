@@ -11,7 +11,7 @@ Theme=SquirrelLevel-darkmode
 name=SquirrelLevel-darkmode
 
 [Wallpaper]
-Image=
+Image=wallpaper.png
 
 [kwinrc][org.kde.kdecoration2]
 library=org.kde.kwin.aurorae
