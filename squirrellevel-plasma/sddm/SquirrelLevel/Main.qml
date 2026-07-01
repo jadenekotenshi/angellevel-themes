@@ -9,7 +9,6 @@ Rectangle {
     property int sessionIndex: 0
     property string sessionName: "Default"
 
-    // theme.conf value or fallback
     function cfg(k, d) {
         return (typeof config !== "undefined" && config[k] && ("" + config[k]).length) ? config[k] : d
     }
@@ -19,7 +18,6 @@ Rectangle {
         GradientStop { position: 1.0; color: root.cfg("backgroundBottom", "#5f7186") }
     }
 
-    // optional wallpaper
     Image {
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
@@ -39,22 +37,41 @@ Rectangle {
         onTriggered: clock.text = Qt.formatDateTime(new Date(), "dddd  MMMM d      h:mm AP")
     }
 
+    // --- brand: big angel + title, high on screen so it clears the login box ---
+    Image {
+        id: brand
+        source: "assets/logo.svg"
+        width: Math.round(root.height * 0.26); height: width
+        sourceSize.width: 512; sourceSize.height: 512
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: Math.round(root.height * 0.07)
+    }
+    Text {
+        id: brandTitle
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: brand.y + brand.height + Math.round(root.height * 0.015)
+        text: "TenshiNET"
+        color: "#ffffff"; font.family: "Helvetica"; font.bold: true
+        font.pixelSize: Math.round(root.height * 0.048)
+        style: Text.Raised; styleColor: "#40000000"
+    }
+
     // --- hard drop shadow behind the login panel ---
     Rectangle {
         x: panel.x + 6; y: panel.y + 6; z: -1
         width: panel.width; height: panel.height; color: "#33000000"
     }
 
-    // --- login panel ---
+    // --- login panel (dropped below the brand) ---
     Panel {
         id: panel
         width: 404
         height: 58 + body.implicitHeight
-        anchors.centerIn: parent
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: Math.round(root.height * 0.46)
         base: root.cfg("panelColor", "#a6adb8")
         raised: true
 
-        // title bar
         Rectangle {
             id: titleBar
             x: 2; y: 2; width: parent.width - 4; height: 26
@@ -63,7 +80,7 @@ Rectangle {
             Rectangle { anchors.bottom: parent.bottom; anchors.left: parent.left; anchors.right: parent.right; height: 1; color: "#1a1a1a"; opacity: 0.35 }
             Text {
                 anchors.centerIn: parent
-                text: "TenshiNET"
+                text: (typeof sddm !== "undefined" && sddm.hostName) ? sddm.hostName : "SquirrelLevel"
                 color: "#ffffff"; font.family: "Helvetica"; font.pixelSize: 13; font.bold: true
             }
         }
@@ -75,21 +92,6 @@ Rectangle {
             anchors.leftMargin: 16; anchors.rightMargin: 16
             spacing: 12
 
-            // logo + welcome
-            Row {
-                spacing: 12
-                Image { source: "assets/logo.svg"; width: 44; height: 44; sourceSize.width: 44; sourceSize.height: 44 }
-                Column {
-                    anchors.verticalCenter: parent.verticalCenter
-                    Text { text: "Welcome to"; color: "#3a3a3a"; font.family: "Helvetica"; font.pixelSize: 12 }
-                    Text {
-                        text: (typeof sddm !== "undefined" && sddm.hostName) ? sddm.hostName : "SquirrelLevel"
-                        color: "#1a1a1a"; font.family: "Helvetica"; font.pixelSize: 19; font.bold: true
-                    }
-                }
-            }
-
-            // Name
             Column {
                 spacing: 3; width: parent.width
                 Text { text: "Name:"; color: "#1a1a1a"; font.family: "Helvetica"; font.pixelSize: 12; font.bold: true }
@@ -102,7 +104,6 @@ Rectangle {
                 }
             }
 
-            // Password
             Column {
                 spacing: 3; width: parent.width
                 Text { text: "Password:"; color: "#1a1a1a"; font.family: "Helvetica"; font.pixelSize: 12; font.bold: true }
@@ -115,7 +116,6 @@ Rectangle {
                 }
             }
 
-            // error message
             Text {
                 id: err
                 width: parent.width
@@ -123,7 +123,6 @@ Rectangle {
                 color: "#a8241c"; font.family: "Helvetica"; font.pixelSize: 12; wrapMode: Text.WordWrap
             }
 
-            // session selector + login button
             Item {
                 width: parent.width; height: 30
                 NeXTButton {
@@ -146,19 +145,17 @@ Rectangle {
                 }
             }
 
-            // chiselled divider
             Item {
                 width: parent.width; height: 3
                 Rectangle { width: parent.width; height: 1; color: "#5c626b" }
                 Rectangle { y: 1; width: parent.width; height: 1; color: "#ffffff" }
             }
 
-            // power buttons (footer of the login panel)
             Row {
                 width: parent.width
                 spacing: 9
                 NeXTButton {
-                    width: 118; height: 28; text: "Sleep"; textColor: "#241d58"
+                    width: 118; height: 28; text: "Sleep"; textColor: "#4a3fa0"
                     visible: (typeof sddm !== "undefined") ? sddm.canSuspend : true
                     onClicked: if (typeof sddm !== "undefined") sddm.suspend()
                 }
@@ -176,7 +173,6 @@ Rectangle {
         }
     }
 
-    // --- session popup (child of root so it floats above the panel) ---
     Panel {
         id: sessionPopup
         parent: root
@@ -210,7 +206,6 @@ Rectangle {
         }
     }
 
-    // --- logic ---
     function doLogin() {
         err.text = ""
         if (typeof sddm !== "undefined")
