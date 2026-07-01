@@ -20,11 +20,16 @@ Each contains:
 - `background.png` — the banner: gradient + the beveled TenshiNET cube + title.
 - `selection_big.png` / `selection_small.png` — the chiselled NeXT selection
   highlight (beveled tile with an indigo frame) drawn behind the selected entry.
-- `icons/` — a coherent subset rendered from the SquirrelLevel icon set:
-  `os_unknown`, `vol_internal`, `vol_external`, `vol_optical`, and the tool icons
-  `func_shutdown`, `func_reset` (reboot), `func_about`, `func_firmware`, `func_exit`.
-  Anything not provided (e.g. `os_linux`, `os_win`, `os_mac`) falls back to
-  rEFInd's built-in icons. No custom font is shipped — rEFInd's default is used.
+- `icons/` — a coherent icon set in the SquirrelLevel palette:
+  - **OS icons** (NeXT-styled, in `os-icons-src/` as SVG): `os_linux` (Tux),
+    `os_win`, `os_mac`, `os_arch`, `os_ubuntu`, `os_fedora`, `os_debian`, plus
+    `os_unknown`.
+  - **Volume icons**: `vol_internal`, `vol_external`, `vol_optical`.
+  - **Tool icons**: `func_shutdown`, `func_reset` (reboot), `func_about`,
+    `func_firmware`, `func_exit`.
+  Any OS/tool not covered still falls back to rEFInd's built-ins. No custom font
+  is shipped — rEFInd's default is used. Brand marks (Apple, Ubuntu, Fedora, …)
+  are NeXT-idiom reinterpretations, not the official logos.
 
 ## Install
 
