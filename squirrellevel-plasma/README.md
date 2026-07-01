@@ -23,7 +23,7 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈146 hand-drawn icons plus ~295 alias links) covering the most
+core set** (≈158 hand-drawn icons plus ~310 alias links) covering the most
 visible surfaces:
 
 - **Places:** folders + typed variants (documents, downloads, pictures, music,
@@ -42,6 +42,9 @@ visible surfaces:
   notifications + Do-Not-Disturb, software updates, VPN, brightness high/low,
   airplane mode, presence (online/offline/away/busy), and
   information/question/warning/error.
+- **Weather applet:** clear (day/night), few-clouds (day/night), clouds,
+  overcast, showers (scattered + rain), snow, storm, fog, windy — with the
+  widget's `-night`/`-day`, `many-clouds`, `mist`, `hail`, `rain` aliases.
 - **Emblems:** symbolic-link, locked/readonly, important, favorite, shared,
   plus VCS/file states (added, removed, modified, mounted, new, default).
 - **MimeTypes:** generic text, source code, HTML, shell script, PDF, fonts,
