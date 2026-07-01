@@ -1,0 +1,60 @@
+# SquirrelLevel for rEFInd
+
+A [rEFInd](https://www.rodsbooks.com/refind/) boot-manager theme visually
+coherent with the SquirrelLevel Plasma theme — the OPENSTEP muted-blue gradient
+(or near-black, for dark), the chiselled bevel, and the metallic-indigo accent —
+in **light** and **dark** variants.
+
+![light vs dark](previews/comparison.png)
+
+## Variants
+
+| Folder | Look |
+|--------|------|
+| `SquirrelLevel/`      | Light — OPENSTEP-blue banner, gunmetal-silver selection tile, indigo frame |
+| `SquirrelLevel-dark/` | Dark — near-black banner, dark gunmetal selection tile, bright-indigo frame |
+
+Each contains:
+
+- `theme.conf` — the rEFInd config snippet (banner, selection images, icon dir, sizes).
+- `background.png` — the banner: gradient + the beveled TenshiNET cube + title.
+- `selection_big.png` / `selection_small.png` — the chiselled NeXT selection
+  highlight (beveled tile with an indigo frame) drawn behind the selected entry.
+- `icons/` — a coherent subset rendered from the SquirrelLevel icon set:
+  `os_unknown`, `vol_internal`, `vol_external`, `vol_optical`, and the tool icons
+  `func_shutdown`, `func_reset` (reboot), `func_about`, `func_firmware`, `func_exit`.
+  Anything not provided (e.g. `os_linux`, `os_win`, `os_mac`) falls back to
+  rEFInd's built-in icons. No custom font is shipped — rEFInd's default is used.
+
+## Install
+
+rEFInd lives on the EFI System Partition, usually mounted at `/boot/efi` or
+`/boot`, under `EFI/refind/`. Copy a variant into its `themes/` folder and
+`include` it from `refind.conf`:
+
+```bash
+sudo ./install-refind.sh /boot/efi/EFI/refind          # light (default)
+sudo ./install-refind.sh /boot/efi/EFI/refind dark     # dark
+```
+
+or by hand:
+
+```bash
+REFIND=/boot/efi/EFI/refind          # adjust to your ESP
+sudo mkdir -p "$REFIND/themes"
+sudo cp -r SquirrelLevel "$REFIND/themes/"
+# add this line to the end of $REFIND/refind.conf:
+#   include themes/SquirrelLevel/theme.conf
+```
+
+(For the dark variant, copy `SquirrelLevel-dark` and include
+`themes/SquirrelLevel-dark/theme.conf` instead.) Only one theme should be
+`include`d at a time.
+
+## Status
+
+Assets are rendered from the SquirrelLevel SVGs (transparency recovered via a
+two-background compositing pass, since the only SVG rasteriser here bakes a
+background). Authored without a UEFI/rEFInd machine to boot it on, so treat the
+first boot as the check — `preview.png`-style renders show the intended result.
+Tune `big_icon_size` / `small_icon_size` in `theme.conf` to taste.
