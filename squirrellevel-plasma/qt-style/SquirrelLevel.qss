@@ -95,6 +95,12 @@ QRadioButton::indicator:checked { background-color: #33507e; }
 QCheckBox::indicator:disabled, QRadioButton::indicator:disabled { background-color: #d0d0d0; }
 
 /* --- NeXT scrollbars: beveled groove + raised handle --- */
+/* NeXTSTEP grouped both arrows together at the far end (bottom / right) of the
+   scrollbar rather than one at each end. Qt's QScrollBar only has two arrow
+   sub-controls (sub-line = up/left, add-line = down/right), so we position both
+   at that far end. A third top/left arrow and the handle's centre dimple aren't
+   expressible in a plain QScrollBar — they need a real QStyle/Kvantum engine
+   (see the theme's preview mock for the intended full look). */
 QScrollBar:vertical   { background: #a2a8b0; width: 16px; border: 1px solid #1a1a1a; }
 QScrollBar:horizontal { background: #a2a8b0; height: 16px; border: 1px solid #1a1a1a; }
 QScrollBar::handle {
@@ -103,12 +109,17 @@ QScrollBar::handle {
     border-top-color: #ffffff; border-left-color: #ffffff;
     border-right-color: #5f6b76; border-bottom-color: #5f6b76;
 }
-QScrollBar::handle:vertical   { min-height: 24px; }
-QScrollBar::handle:horizontal { min-width: 24px; }
+QScrollBar::handle:vertical   { min-height: 28px; }
+QScrollBar::handle:horizontal { min-width: 28px; }
 QScrollBar::add-line, QScrollBar::sub-line {
     background-color: #b0b0b0; border: 1px solid #1a1a1a;
     width: 16px; height: 16px; subcontrol-origin: margin;
 }
+/* group both arrows at the bottom (vertical) / right (horizontal) — NeXT style */
+QScrollBar::sub-line:vertical   { subcontrol-position: bottom; }
+QScrollBar::add-line:vertical   { subcontrol-position: bottom; }
+QScrollBar::sub-line:horizontal { subcontrol-position: right; }
+QScrollBar::add-line:horizontal { subcontrol-position: right; }
 QScrollBar::add-page, QScrollBar::sub-page { background: transparent; }
 
 /* --- progress bar --- */
