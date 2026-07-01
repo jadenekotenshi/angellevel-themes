@@ -12,7 +12,7 @@ text, and square title-bar buttons.
 | Color scheme | `color-schemes/SquirrelLevel.colors` | App colors — NeXT grays, white views, dark selection |
 | Window decoration | `aurorae/SquirrelLevel/` | Aurorae title bars & borders with beveled square buttons |
 | Konsole scheme | `konsole/SquirrelLevel.colorscheme` | Terminal palette (black on white, muted ANSI) |
-| Icon theme | `icons/SquirrelLevel/` | Grayscale, beveled icons; inherits Breeze for the rest |
+| Icon theme | `icons/SquirrelLevel/` | OPENSTEP-inspired **colour** icons with the chiselled bevel; inherits Breeze for the rest |
 
 Not included (out of scope for a from-scratch bundle): a full Plasma desktop
 ("look & feel") theme and an application *widget* style. For the most faithful
@@ -22,16 +22,26 @@ such as Nimbus Sans or Liberation Sans.
 
 ### About the icon theme
 
-KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈202 hand-drawn icons plus ~390 alias links) covering the most
-visible surfaces:
+KDE references thousands of icon names, so this ships a **curated core set**
+(≈202 hand-drawn icons plus ~390 alias links) covering the most visible
+surfaces. The icons keep the chiselled NeXT bevel (dark outlines, white
+top-left highlights) but are **colourised with a muted, slightly-desaturated
+palette inspired by the colour icons of OPENSTEP 4.2** — manila folders, a
+green recycler, silver optical media, steel-blue devices, a red PDF band,
+blue/green/orange office documents, per-language source-file bands, and
+semantic status colours (green OK, red error, amber warning, battery levels,
+a gold sun, blue rain). Colour is applied by `tools/colorize.py`, a
+re-runnable, category-driven recolour pass; the original grayscale artwork
+remains recoverable from git history.
+
+Categories:
 
 - **Places:** folders + typed variants (documents, downloads, pictures, music,
   videos), home, desktop, trash, network folder + workgroup globe.
 - **Devices:** hard disk, optical disc, USB flash, SD card, printer, scanner,
   keyboard (+ settings, on-screen), mouse, touchpad, webcam, graphics tablet,
   gamepad, headphones, phone, laptop, network server, wired network, UPS,
-  computer. Plus bonus grayscale **keyboard-layout keycaps** (`keyboard-layout-us`,
+  computer. Plus bonus **keyboard-layout keycaps** (`keyboard-layout-us`,
   `-de`, `-fr`, `-es`, `-gb`, `-ru`, `-jp`, `-it`).
 - **Actions:** new, save, copy, cut, paste, delete, find, refresh, back/forward,
   up, add/remove, OK, cancel/close, home; view/zoom (in/out/original/fit,

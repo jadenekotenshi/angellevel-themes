@@ -10,19 +10,19 @@
   <!-- knobs, raised bevel -->
   <g>
     <g transform="translate(27,10)">
-      <rect width="7" height="10" fill="#b0b0b0" stroke="#1a1a1a" stroke-width="1.4"/>
+      <rect width="7" height="10" fill="#9cafc4" stroke="#1a1a1a" stroke-width="1.4"/>
       <path d="M1 1 H6 M1 1 V9" fill="none" stroke="#ffffff" stroke-width="1"/>
-      <path d="M6 1 V9 M1 9 H6" fill="none" stroke="#6e6e6e" stroke-width="1"/>
+      <path d="M6 1 V9 M1 9 H6" fill="none" stroke="#5d6975" stroke-width="1"/>
     </g>
     <g transform="translate(13,20)">
-      <rect width="7" height="10" fill="#b0b0b0" stroke="#1a1a1a" stroke-width="1.4"/>
+      <rect width="7" height="10" fill="#9cafc4" stroke="#1a1a1a" stroke-width="1.4"/>
       <path d="M1 1 H6 M1 1 V9" fill="none" stroke="#ffffff" stroke-width="1"/>
-      <path d="M6 1 V9 M1 9 H6" fill="none" stroke="#6e6e6e" stroke-width="1"/>
+      <path d="M6 1 V9 M1 9 H6" fill="none" stroke="#5d6975" stroke-width="1"/>
     </g>
     <g transform="translate(32,30)">
-      <rect width="7" height="10" fill="#b0b0b0" stroke="#1a1a1a" stroke-width="1.4"/>
+      <rect width="7" height="10" fill="#9cafc4" stroke="#1a1a1a" stroke-width="1.4"/>
       <path d="M1 1 H6 M1 1 V9" fill="none" stroke="#ffffff" stroke-width="1"/>
-      <path d="M6 1 V9 M1 9 H6" fill="none" stroke="#6e6e6e" stroke-width="1"/>
+      <path d="M6 1 V9 M1 9 H6" fill="none" stroke="#5d6975" stroke-width="1"/>
     </g>
   </g>
 </svg>

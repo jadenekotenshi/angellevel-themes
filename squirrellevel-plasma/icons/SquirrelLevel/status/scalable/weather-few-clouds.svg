@@ -11,7 +11,7 @@
   <path d="M18.0 7.5 L18.0 4.0"/>
   <path d="M24.7 10.3 L27.2 7.8"/>
   </g>
-  <circle cx="18" cy="17" r="6.5" fill="#b0b0b0" stroke="#1a1a1a" stroke-width="1.8"/>
+  <circle cx="18" cy="17" r="6.5" fill="#ccd4da" stroke="#1a1a1a" stroke-width="1.8"/>
   <path d="M18 11.0 A5.5 5.5 0 0 0 13.5 16" fill="none" stroke="#ffffff" stroke-width="1.1"/>
-  <path d="M20 37 Q15 37 15 33 Q15 29 20 29 Q21 23.5 27.5 23.5 Q34 23.5 34.5 29 Q39 29 39 33 Q39 37 34 37 Z" fill="#b0b0b0" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M20 37 Q15 37 15 33 Q15 29 20 29 Q21 23.5 27.5 23.5 Q34 23.5 34.5 29 Q39 29 39 33 Q39 37 34 37 Z" fill="#ccd4da" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
 </svg>
