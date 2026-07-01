@@ -10,11 +10,11 @@ import os
 OUT = os.path.join(os.path.dirname(__file__), '..', 'plasma', 'desktoptheme', 'SquirrelLevel')
 
 FRAME = '#1a1a1a'
-BLUE = '#5f5cae'
+BLUE = '#4a3fa0'
 
 def region(ox, oy, w, h, rowpos, colpos, base, frame, raised):
-    hi, sh = '#ffffff', '#6e6e6e'
-    itl = hi if raised else '#868c93'
+    hi, sh = '#ffffff', '#5c626b'
+    itl = hi if raised else '#767c86'
     ibr = sh if raised else '#ffffff'
     r = [f'<rect x="{ox}" y="{oy}" width="{w}" height="{h}" fill="{base}"/>']
     if rowpos == 'top':    r.append(f'<rect x="{ox}" y="{oy}" width="{w}" height="1" fill="{frame}"/>')
@@ -53,10 +53,10 @@ def write(rel, text):
 
 # --- widgets/button.svg : normal / hover / focus / pressed ---
 b = []
-b += block(4,   4, 'normal',  '#b0b0b0', FRAME, True)
-b += block(4,  36, 'hover',   '#bcbcbc', FRAME, True)
+b += block(4,   4, 'normal',  '#a6adb8', FRAME, True)
+b += block(4,  36, 'hover',   '#b0b7c2', FRAME, True)
 b += block(4,  68, 'focus',   '#b6b6b6', BLUE,  True)
-b += block(4, 100, 'pressed', '#9a9a9a', FRAME, False)
+b += block(4, 100, 'pressed', '#8e95a0', FRAME, False)
 write('widgets/button.svg', svg(b, 60, 132))
 
 # --- widgets/lineedit.svg : base / focus (recessed white) ---

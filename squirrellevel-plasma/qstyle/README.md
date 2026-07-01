@@ -9,7 +9,7 @@ it does the things the SVG/stylesheet engines can't:
   indentation on the scroller knob**.
 - **3D metallic progress bars** (vertical gradient groove + glossy fill).
 - Chiselled NeXT bevels on buttons (raised → recessed when pressed), recessed
-  line edits with a steel-blue focus frame, white inset check boxes (green
+  line edits with an indigo focus frame, white inset check boxes (green
   check) and radio buttons, and framed group boxes / menus.
 - The full OPENSTEP-muted palette.
 

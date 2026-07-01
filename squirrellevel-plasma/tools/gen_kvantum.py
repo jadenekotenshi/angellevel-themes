@@ -9,13 +9,13 @@ Authored without Kvantum to test against — verify/tune in Kvantum Manager.
 """
 import os
 OUT = os.path.join(os.path.dirname(__file__), '..', 'kvantum', 'SquirrelLevel')
-FRAME = '#1a1a1a'; BLUE = '#5f5cae'
+FRAME = '#1a1a1a'; BLUE = '#4a3fa0'
 els = []
 _y = [0]
 
 def region(ox, oy, w, h, rp, cp, base, frame, raised):
-    hi, sh = '#ffffff', '#6e6e6e'
-    itl = hi if raised else '#868c93'
+    hi, sh = '#ffffff', '#5c626b'
+    itl = hi if raised else '#767c86'
     ibr = sh if raised else '#ffffff'
     r = [f'<rect x="{ox}" y="{oy}" width="{w}" height="{h}" fill="{base}"/>']
     if rp == 'top':    r.append(f'<rect x="{ox}" y="{oy}" width="{w}" height="1" fill="{frame}"/>')
@@ -53,25 +53,25 @@ def indicator(base, status, draw, size=16):
 
 # framed widgets: (base, [(status, fill, frame, raised)])
 FR = {
-    'button': [('normal', '#b0b0b0', FRAME, True), ('focused', '#b6b6b6', BLUE, True),
-               ('pressed', '#9a9a9a', FRAME, False), ('toggled', '#9fb0c4', FRAME, False),
-               ('disabled', '#c4c4c4', '#9a9a9a', True)],
+    'button': [('normal', '#a6adb8', FRAME, True), ('focused', '#b6b6b6', BLUE, True),
+               ('pressed', '#8e95a0', FRAME, False), ('toggled', '#9fb0c4', FRAME, False),
+               ('disabled', '#bcc2cc', '#8e95a0', True)],
     'lineedit': [('normal', '#ffffff', FRAME, False), ('focused', '#ffffff', BLUE, False),
                  ('pressed', '#ffffff', FRAME, False), ('toggled', '#ffffff', FRAME, False),
-                 ('disabled', '#ededed', '#9a9a9a', False)],
-    'menu':    [('normal', '#b0b0b0', FRAME, True)],
+                 ('disabled', '#ededed', '#8e95a0', False)],
+    'menu':    [('normal', '#a6adb8', FRAME, True)],
     'tooltip': [('normal', '#e9e7db', FRAME, True)],
-    'frame':   [('normal', '#b0b0b0', FRAME, False)],
-    'toolbar': [('normal', '#aeb6bf', FRAME, True)],
-    'group':   [('normal', '#b0b0b0', FRAME, False)],
+    'frame':   [('normal', '#a6adb8', FRAME, False)],
+    'toolbar': [('normal', '#9ba2ad', FRAME, True)],
+    'group':   [('normal', '#a6adb8', FRAME, False)],
     'progressbar':  [('normal', 'url(#mgroove)', FRAME, False)],
     'progress':     [('normal', 'url(#prog)', FRAME, True)],
-    'slidergroove': [('normal', '#9aa2ac', FRAME, False)],
-    'slidercursor': [('normal', '#b0b0b0', FRAME, True), ('focused', '#b6b6b6', BLUE, True),
-                     ('pressed', '#9a9a9a', FRAME, False), ('disabled', '#c4c4c4', '#9a9a9a', True)],
-    'scrollbargroove': [('normal', '#a2a8b0', FRAME, False)],
-    'scrollbarcursor': [('normal', '#b0b0b0', FRAME, True), ('focused', '#b6b6b6', BLUE, True),
-                        ('pressed', '#9a9a9a', FRAME, False), ('disabled', '#c4c4c4', '#9a9a9a', True)],
+    'slidergroove': [('normal', '#888f9a', FRAME, False)],
+    'slidercursor': [('normal', '#a6adb8', FRAME, True), ('focused', '#b6b6b6', BLUE, True),
+                     ('pressed', '#8e95a0', FRAME, False), ('disabled', '#bcc2cc', '#8e95a0', True)],
+    'scrollbargroove': [('normal', '#8f96a1', FRAME, False)],
+    'scrollbarcursor': [('normal', '#a6adb8', FRAME, True), ('focused', '#b6b6b6', BLUE, True),
+                        ('pressed', '#8e95a0', FRAME, False), ('disabled', '#bcc2cc', '#8e95a0', True)],
     'focus':   [('normal', '#00000000', BLUE, True)],
 }
 for base, sts in FR.items():
@@ -86,8 +86,8 @@ for base, sts in FR.items():
 def cb(checked):
     def d(ox, oy, s):
         r = [f'<rect x="{ox+1}" y="{oy+1}" width="{s-2}" height="{s-2}" fill="#ffffff" stroke="#1a1a1a" stroke-width="1"/>',
-             f'<rect x="{ox+2}" y="{oy+2}" width="{s-4}" height="1" fill="#868c93"/>',
-             f'<rect x="{ox+2}" y="{oy+2}" width="1" height="{s-4}" fill="#868c93"/>']
+             f'<rect x="{ox+2}" y="{oy+2}" width="{s-4}" height="1" fill="#767c86"/>',
+             f'<rect x="{ox+2}" y="{oy+2}" width="1" height="{s-4}" fill="#767c86"/>']
         if checked:
             r.append(f'<path d="M{ox+3.5} {oy+s/2} L{ox+s*0.45} {oy+s-4} L{ox+s-3} {oy+3.5}" fill="none" stroke="#4a7a3a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>')
         return ''.join(r)
@@ -96,9 +96,9 @@ def rb(checked):
     def d(ox, oy, s):
         cx, cy, rr = ox + s / 2, oy + s / 2, s / 2 - 1
         r = [f'<circle cx="{cx}" cy="{cy}" r="{rr}" fill="#ffffff" stroke="#1a1a1a" stroke-width="1"/>',
-             f'<path d="M{cx-rr*0.7} {cy-rr*0.7} A {rr} {rr} 0 0 1 {cx+rr*0.7} {cy-rr*0.7}" fill="none" stroke="#868c93" stroke-width="1"/>']
+             f'<path d="M{cx-rr*0.7} {cy-rr*0.7} A {rr} {rr} 0 0 1 {cx+rr*0.7} {cy-rr*0.7}" fill="none" stroke="#767c86" stroke-width="1"/>']
         if checked:
-            r.append(f'<circle cx="{cx}" cy="{cy}" r="{rr*0.5}" fill="#2c2a60"/>')
+            r.append(f'<circle cx="{cx}" cy="{cy}" r="{rr*0.5}" fill="#241d58"/>')
         return ''.join(r)
     return d
 for st in ('normal', 'focused', 'pressed', 'disabled', 'normal-inactive'):
@@ -128,9 +128,9 @@ for d in ('up', 'down', 'left', 'right'):
 
 DEFS = ('<defs>'
         '<linearGradient id="prog" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0" stop-color="#b9b6ec"/><stop offset="0.12" stop-color="#dad7f7"/>'
-        '<stop offset="0.5" stop-color="#5f5cae"/><stop offset="0.54" stop-color="#5350a2"/>'
-        '<stop offset="0.9" stop-color="#3e3b82"/><stop offset="1" stop-color="#2c2a60"/></linearGradient>'
+        '<stop offset="0" stop-color="#a79cec"/><stop offset="0.12" stop-color="#d2caf7"/>'
+        '<stop offset="0.5" stop-color="#4a3fa0"/><stop offset="0.54" stop-color="#453a97"/>'
+        '<stop offset="0.9" stop-color="#312a7a"/><stop offset="1" stop-color="#241d58"/></linearGradient>'
         '<linearGradient id="mgroove" x1="0" y1="0" x2="0" y2="1">'
         '<stop offset="0" stop-color="#8a95a1"/><stop offset="0.18" stop-color="#c4ced8"/>'
         '<stop offset="0.55" stop-color="#a6b0ba"/><stop offset="1" stop-color="#b8c2cc"/></linearGradient>'

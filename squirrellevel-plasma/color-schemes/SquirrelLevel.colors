@@ -7,8 +7,8 @@ ColorScheme=SquirrelLevel
 shadeSortColumn=true
 
 [Colors:Window]
-BackgroundNormal=170,170,170
-BackgroundAlternate=153,153,153
+BackgroundNormal=160,167,178
+BackgroundAlternate=144,151,162
 ForegroundNormal=0,0,0
 ForegroundInactive=85,85,85
 ForegroundActive=0,0,0
@@ -35,8 +35,8 @@ DecorationFocus=48,48,48
 DecorationHover=112,112,112
 
 [Colors:Button]
-BackgroundNormal=170,170,170
-BackgroundAlternate=153,153,153
+BackgroundNormal=160,167,178
+BackgroundAlternate=144,151,162
 ForegroundNormal=0,0,0
 ForegroundInactive=85,85,85
 ForegroundActive=0,0,0
@@ -77,8 +77,8 @@ DecorationFocus=48,48,48
 DecorationHover=112,112,112
 
 [Colors:Complementary]
-BackgroundNormal=170,170,170
-BackgroundAlternate=153,153,153
+BackgroundNormal=160,167,178
+BackgroundAlternate=144,151,162
 ForegroundNormal=0,0,0
 ForegroundInactive=85,85,85
 ForegroundActive=0,0,0
@@ -91,8 +91,8 @@ DecorationFocus=48,48,48
 DecorationHover=112,112,112
 
 [Colors:Header]
-BackgroundNormal=176,176,176
-BackgroundAlternate=160,160,160
+BackgroundNormal=166,173,184
+BackgroundAlternate=150,157,168
 ForegroundNormal=0,0,0
 ForegroundInactive=85,85,85
 ForegroundActive=0,0,0
@@ -105,10 +105,10 @@ DecorationFocus=48,48,48
 DecorationHover=112,112,112
 
 [WM]
-activeBackground=176,176,176
+activeBackground=166,173,184
 activeForeground=0,0,0
 activeBlend=0,0,0
-inactiveBackground=170,170,170
+inactiveBackground=160,167,178
 inactiveForeground=85,85,85
 inactiveBlend=85,85,85
 
@@ -127,7 +127,7 @@ IntensityAmount=0
 IntensityEffect=0
 
 [ColorEffects:Disabled]
-Color=153,153,153
+Color=144,151,162
 ColorAmount=0
 ColorEffect=0
 ContrastAmount=0.65

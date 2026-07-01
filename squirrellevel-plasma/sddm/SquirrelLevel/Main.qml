@@ -51,14 +51,14 @@ Rectangle {
         width: 404
         height: 58 + body.implicitHeight
         anchors.centerIn: parent
-        base: root.cfg("panelColor", "#b0b0b0")
+        base: root.cfg("panelColor", "#a6adb8")
         raised: true
 
         // title bar
         Rectangle {
             id: titleBar
             x: 2; y: 2; width: parent.width - 4; height: 26
-            color: root.cfg("titleColor", "#5f5cae")
+            color: root.cfg("titleColor", "#4a3fa0")
             Rectangle { anchors.top: parent.top; anchors.left: parent.left; anchors.right: parent.right; height: 1; color: "#ffffff"; opacity: 0.45 }
             Rectangle { anchors.bottom: parent.bottom; anchors.left: parent.left; anchors.right: parent.right; height: 1; color: "#1a1a1a"; opacity: 0.35 }
             Text {
@@ -149,7 +149,7 @@ Rectangle {
             // chiselled divider
             Item {
                 width: parent.width; height: 3
-                Rectangle { width: parent.width; height: 1; color: "#6e6e6e" }
+                Rectangle { width: parent.width; height: 1; color: "#5c626b" }
                 Rectangle { y: 1; width: parent.width; height: 1; color: "#ffffff" }
             }
 
@@ -158,7 +158,7 @@ Rectangle {
                 width: parent.width
                 spacing: 9
                 NeXTButton {
-                    width: 118; height: 28; text: "Sleep"; textColor: "#2c2a60"
+                    width: 118; height: 28; text: "Sleep"; textColor: "#241d58"
                     visible: (typeof sddm !== "undefined") ? sddm.canSuspend : true
                     onClicked: if (typeof sddm !== "undefined") sddm.suspend()
                 }
@@ -193,7 +193,7 @@ Rectangle {
                 model: (typeof sessionModel !== "undefined") ? sessionModel : 0
                 delegate: Rectangle {
                     width: sessCol.width; height: 24
-                    color: sma.containsMouse ? "#5f5cae" : "#ffffff"
+                    color: sma.containsMouse ? "#4a3fa0" : "#ffffff"
                     Text {
                         anchors.verticalCenter: parent.verticalCenter; x: 7
                         text: model.name

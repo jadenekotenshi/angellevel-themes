@@ -11,7 +11,7 @@ Panel {
 
     base: "#ffffff"
     raised: false
-    frame: input.activeFocus ? "#5f5cae" : "#1a1a1a"
+    frame: input.activeFocus ? "#4a3fa0" : "#1a1a1a"
     height: 28
 
     TextInput {
@@ -21,7 +21,7 @@ Panel {
         verticalAlignment: TextInput.AlignVCenter
         font.family: "Helvetica"; font.pixelSize: 14
         color: "#1a1a1a"
-        selectionColor: "#5f5cae"
+        selectionColor: "#4a3fa0"
         clip: true
         selectByMouse: true
         onAccepted: f.accepted()

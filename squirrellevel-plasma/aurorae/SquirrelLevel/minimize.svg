@@ -7,11 +7,11 @@
   <g id="minimize" transform="translate(0,0)">
     <rect x="0" y="0" width="18" height="16" fill="#000000" fill-opacity="0"/>
     <rect x="0" y="0" width="18" height="16" fill="#1a1a1a"/>
-    <rect x="1" y="1" width="16" height="14" fill="#b0b0b0"/>
+    <rect x="1" y="1" width="16" height="14" fill="#a6adb8"/>
     <rect x="1" y="1" width="16" height="1"  fill="#ffffff"/>
     <rect x="1" y="1" width="1"  height="14" fill="#ffffff"/>
-    <rect x="1" y="14" width="16" height="1" fill="#6e6e6e"/>
-    <rect x="16" y="1" width="1" height="14" fill="#6e6e6e"/>
+    <rect x="1" y="14" width="16" height="1" fill="#5c626b"/>
+    <rect x="16" y="1" width="1" height="14" fill="#5c626b"/>
     <rect x="4" y="4" width="10" height="9" fill="#1a1a1a"/>
     <rect x="5" y="7" width="8"  height="5" fill="#e6e6e6"/>
   </g>
@@ -19,11 +19,11 @@
   <g id="minimize-active" transform="translate(22,0)">
     <rect x="0" y="0" width="18" height="16" fill="#000000" fill-opacity="0"/>
     <rect x="0" y="0" width="18" height="16" fill="#1a1a1a"/>
-    <rect x="1" y="1" width="16" height="14" fill="#b0b0b0"/>
+    <rect x="1" y="1" width="16" height="14" fill="#a6adb8"/>
     <rect x="1" y="1" width="16" height="1"  fill="#ffffff"/>
     <rect x="1" y="1" width="1"  height="14" fill="#ffffff"/>
-    <rect x="1" y="14" width="16" height="1" fill="#6e6e6e"/>
-    <rect x="16" y="1" width="1" height="14" fill="#6e6e6e"/>
+    <rect x="1" y="14" width="16" height="1" fill="#5c626b"/>
+    <rect x="16" y="1" width="1" height="14" fill="#5c626b"/>
     <rect x="4" y="4" width="10" height="9" fill="#1a1a1a"/>
     <rect x="5" y="7" width="8"  height="5" fill="#e6e6e6"/>
   </g>
@@ -31,11 +31,11 @@
   <g id="minimize-hover" transform="translate(44,0)">
     <rect x="0" y="0" width="18" height="16" fill="#000000" fill-opacity="0"/>
     <rect x="0" y="0" width="18" height="16" fill="#1a1a1a"/>
-    <rect x="1" y="1" width="16" height="14" fill="#c2c2c2"/>
+    <rect x="1" y="1" width="16" height="14" fill="#b6bdc8"/>
     <rect x="1" y="1" width="16" height="1"  fill="#ffffff"/>
     <rect x="1" y="1" width="1"  height="14" fill="#ffffff"/>
-    <rect x="1" y="14" width="16" height="1" fill="#6e6e6e"/>
-    <rect x="16" y="1" width="1" height="14" fill="#6e6e6e"/>
+    <rect x="1" y="14" width="16" height="1" fill="#5c626b"/>
+    <rect x="16" y="1" width="1" height="14" fill="#5c626b"/>
     <rect x="4" y="4" width="10" height="9" fill="#1a1a1a"/>
     <rect x="5" y="7" width="8"  height="5" fill="#f0f0f0"/>
   </g>
@@ -43,9 +43,9 @@
   <g id="minimize-pressed" transform="translate(66,0)">
     <rect x="0" y="0" width="18" height="16" fill="#000000" fill-opacity="0"/>
     <rect x="0" y="0" width="18" height="16" fill="#1a1a1a"/>
-    <rect x="1" y="1" width="16" height="14" fill="#9a9a9a"/>
-    <rect x="1" y="1" width="16" height="1"  fill="#6e6e6e"/>
-    <rect x="1" y="1" width="1"  height="14" fill="#6e6e6e"/>
+    <rect x="1" y="1" width="16" height="14" fill="#8e95a0"/>
+    <rect x="1" y="1" width="16" height="1"  fill="#5c626b"/>
+    <rect x="1" y="1" width="1"  height="14" fill="#5c626b"/>
     <rect x="1" y="14" width="16" height="1" fill="#ffffff"/>
     <rect x="16" y="1" width="1" height="14" fill="#ffffff"/>
     <rect x="5" y="5" width="10" height="9" fill="#1a1a1a"/>

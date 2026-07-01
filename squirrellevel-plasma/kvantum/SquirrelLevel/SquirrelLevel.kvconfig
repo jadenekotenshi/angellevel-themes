@@ -55,19 +55,19 @@ tooltip_delay=-1
 button_contents_shift=true
 
 [GeneralColors]
-window.color=#b0b0b0
-inactive.window.color=#b0b0b0
+window.color=#a6adb8
+inactive.window.color=#a6adb8
 base.color=#ffffff
 inactive.base.color=#ffffff
 alt.base.color=#eeeeee
 inactive.alt.base.color=#eeeeee
-button.color=#b0b0b0
+button.color=#a6adb8
 light.color=#ffffff
-mid.light.color=#c4c4c4
+mid.light.color=#bcc2cc
 dark.color=#1a1a1a
-mid.color=#6e6e6e
-highlight.color=#5f5cae
-inactive.highlight.color=#9a97cf
+mid.color=#5c626b
+highlight.color=#4a3fa0
+inactive.highlight.color=#8b82ca
 text.color=#1a1a1a
 window.text.color=#1a1a1a
 button.text.color=#1a1a1a

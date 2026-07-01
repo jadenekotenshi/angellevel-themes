@@ -12,13 +12,13 @@
 // --- OPENSTEP-muted palette constants ---------------------------------------
 static const QColor kDark  (0x1a, 0x1a, 0x1a);
 static const QColor kHi    (0xff, 0xff, 0xff);
-static const QColor kSh    (0x6e, 0x6e, 0x6e);
-static const QColor kBlue  (0x5f, 0x5c, 0xae);
-static const QColor kButton(0xb0, 0xb0, 0xb0);
-static const QColor kWindow(0xaa, 0xaa, 0xaa);
-static const QColor kGroove(0xa2, 0xa8, 0xb0);
+static const QColor kSh    (0x5c, 0x62, 0x6b);
+static const QColor kBlue  (0x4a, 0x3f, 0xa0);
+static const QColor kButton(0xa6, 0xad, 0xb8);
+static const QColor kWindow(0xa0, 0xa7, 0xb2);
+static const QColor kGroove(0x8f, 0x96, 0xa1);
 static const QColor kGreen (0x4a, 0x7a, 0x3a);
-static const QColor kRadio (0x2c, 0x2a, 0x60);
+static const QColor kRadio (0x24, 0x1d, 0x58);
 
 // --- helpers ----------------------------------------------------------------
 
@@ -69,12 +69,12 @@ static void drawArrow(QPainter *p, const QRect &r, Qt::ArrowType dir,
 static QLinearGradient metalFill(const QRect &r)
 {
     QLinearGradient g(r.topLeft(), r.bottomLeft());
-    g.setColorAt(0.00, QColor(0xb9, 0xb6, 0xec));
-    g.setColorAt(0.12, QColor(0xda, 0xd7, 0xf7));   // specular sheen
-    g.setColorAt(0.50, QColor(0x5f, 0x5c, 0xae));
-    g.setColorAt(0.54, QColor(0x53, 0x50, 0xa2));
-    g.setColorAt(0.90, QColor(0x3e, 0x3b, 0x82));
-    g.setColorAt(1.00, QColor(0x2c, 0x2a, 0x60));
+    g.setColorAt(0.00, QColor(0xa7, 0x9c, 0xec));
+    g.setColorAt(0.12, QColor(0xd2, 0xca, 0xf7));   // specular sheen
+    g.setColorAt(0.50, QColor(0x4a, 0x3f, 0xa0));
+    g.setColorAt(0.54, QColor(0x45, 0x3a, 0x97));
+    g.setColorAt(0.90, QColor(0x31, 0x2a, 0x7a));
+    g.setColorAt(1.00, QColor(0x24, 0x1d, 0x58));
     return g;
 }
 
@@ -95,7 +95,7 @@ static void applyPalette(QPalette &pal)
     pal.setColor(QPalette::AlternateBase,   QColor(0xee, 0xee, 0xee));
     pal.setColor(QPalette::Button,          kButton);
     pal.setColor(QPalette::Light,           kHi);
-    pal.setColor(QPalette::Midlight,        QColor(0xc4, 0xc4, 0xc4));
+    pal.setColor(QPalette::Midlight,        QColor(0xbc, 0xc2, 0xcc));
     pal.setColor(QPalette::Mid,             kSh);
     pal.setColor(QPalette::Dark,            kDark);
     pal.setColor(QPalette::Shadow,          kDark);
@@ -231,9 +231,9 @@ void SquirrelLevelStyle::drawControl(ControlElement ce, const QStyleOption *opt,
         if (fill.width() < 1) return;
         p->save();
         p->fillRect(fill, metalFill(fill));
-        p->setPen(QColor(0xea, 0xe8, 0xfd));            // top sheen
+        p->setPen(QColor(0xe4, 0xde, 0xfc));            // top sheen
         p->drawLine(fill.left(), fill.top() + 1, fill.right(), fill.top() + 1);
-        p->setPen(QColor(0x21, 0x1f, 0x48));            // dark bottom edge
+        p->setPen(QColor(0x19, 0x13, 0x41));            // dark bottom edge
         p->drawLine(fill.left(), fill.bottom(), fill.right(), fill.bottom());
         p->restore();
         return;

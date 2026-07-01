@@ -31,13 +31,13 @@ miniaturize (iconify) button — the OPENSTEP "miniwindow" glyph in each state:
 | Window decoration | `aurorae/SquirrelLevel/` | Aurorae title bars & borders with beveled square buttons |
 | Konsole scheme | `konsole/SquirrelLevel.colorscheme` | Terminal palette (black on white, muted ANSI) |
 | Icon theme | `icons/SquirrelLevel/` | OPENSTEP-inspired **colour** icons with the chiselled bevel; inherits Breeze for the rest |
-| SDDM login theme | `sddm/SquirrelLevel/` (Qt5) · `sddm/qt6/SquirrelLevel/` (Qt6) | OPENSTEP-style QML greeter — chiselled panel, steel-blue title bar, colour power buttons |
+| SDDM login theme | `sddm/SquirrelLevel/` (Qt5) · `sddm/qt6/SquirrelLevel/` (Qt6) | OPENSTEP-style QML greeter — chiselled panel, indigo title bar, colour power buttons |
 | Plasma Style | `plasma/desktoptheme/SquirrelLevel/` | NeXT chiselled FrameSvg widgets (panels, plasmoids, buttons, fields, tooltips) |
 | Global Theme | `plasma/look-and-feel/org.squirrellevel.desktop/` | Look-and-Feel that applies the whole set + boot splash + logout screen |
 | Kvantum theme | `kvantum/SquirrelLevel/` | NeXT app-widget style (SVG) for the Kvantum QStyle engine |
 | Qt style sheet | `qt-style/SquirrelLevel.qss` | Lightweight NeXT-beveled widget QSS for any Qt app |
 | Qt QStyle plugin | `qstyle/` | Native C++ widget style — the full NeXT look (twin-arrow scrollbars, metallic bars) |
-| Plymouth splash | `plymouth/squirrellevel/` | OPENSTEP boot splash — chiselled cube + steel-blue progress |
+| Plymouth splash | `plymouth/squirrellevel/` | OPENSTEP boot splash — chiselled cube + metallic-indigo progress |
 
 Application (Qt) widgets have three options, in increasing fidelity: the
 **Qt style sheet** (drop-in, no build), the **Kvantum theme** (SVG engine), and
@@ -154,7 +154,7 @@ and **Close on the right**.
 
 The login greeter lives under `sddm/SquirrelLevel/` (a self-contained Qt Quick
 theme, Qt 5). It recreates the OPENSTEP login panel: a chiselled grey panel
-with a steel-blue title bar, the beveled cube emblem, recessed *Name:* /
+with an indigo title bar, the beveled cube emblem, recessed *Name:* /
 *Password:* fields, a session selector, a raised *Log In* button, and colour
 power buttons (blue Sleep, amber Restart, red Shut Down) over the muted
 OPENSTEP-blue gradient. See `sddm/SquirrelLevel/preview.png`.
@@ -203,7 +203,7 @@ lookandfeeltool -a org.kde.breeze.desktop        # revert
 ```
 
 It also ships a **boot splash** (`contents/splash/Splash.qml` — the cube logo
-and a filling steel-blue progress bar on the OPENSTEP gradient) and a **logout
+and a filling metallic-indigo progress bar on the OPENSTEP gradient) and a **logout
 screen** (`contents/logout/Logout.qml` — NeXT panel with colour Sleep / Restart
 / Shut Down / Log Out / Lock / Cancel buttons).
 
@@ -255,7 +255,7 @@ off. For the exact NeXT scrollbar and metallic bars, prefer the QStyle plugin.
 ## Plymouth boot splash
 
 `plymouth/squirrellevel/` is a script-module Plymouth theme: the muted-blue
-gradient, the chiselled cube logo, "SquirrelLevel", and a filling steel-blue
+gradient, the chiselled cube logo, "TenshiNET", and a filling metallic-indigo
 progress bar (see `preview.png`). It supports boot messages and the encrypted
 disk password prompt.
 
@@ -278,7 +278,7 @@ The window decoration is an [Aurorae](https://develop.kde.org/) SVG theme:
 - `SquirrelLevelrc` — geometry: border thickness, title height, button size.
 
 Bevel convention used throughout: `#ffffff` highlight on top/left edges,
-`#6e6e6e` shadow on bottom/right, `#b0b0b0` gray fill, `#1a1a1a` outer frame.
+`#5c626b` shadow on bottom/right, `#a6adb8` gray fill, `#1a1a1a` outer frame.
 Edit the hex values to taste, then re-run `install.sh` and reselect the
 decoration (or toggle to another and back) to reload.
 
