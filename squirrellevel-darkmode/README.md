@@ -12,6 +12,10 @@ text, and square title-bar buttons.
 Rendered mocks of the OPENSTEP colour look each piece produces (same palette,
 bevels and geometry as the actual theme files; not live screenshots).
 
+The light and dark variants side by side (login + widgets):
+
+![light vs dark](previews/comparison-light-dark.png)
+
 | | |
 |---|---|
 | **Login greeter** (SDDM) | **Boot splash** (Plymouth) |
