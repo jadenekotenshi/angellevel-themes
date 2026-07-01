@@ -58,6 +58,18 @@ sudo cp -r SquirrelLevel "$REFIND/themes/"
 `themes/SquirrelLevel-dark/theme.conf` instead.) Only one theme should be
 `include`d at a time.
 
+## EFI boot splash (seamless fade)
+
+`efi-splash/SquirrelLevel.png` and `efi-splash/SquirrelLevel-dark.png` are
+1920×1080 renders of the rEFInd banner **without** any OS or tool icons — the
+same gradient + TenshiNET angel that rEFInd paints *underneath* its menu (they
+are literally the same source image as `<variant>/background.png`). Set one as
+your firmware's custom boot logo — many UEFI setups have an OEM/boot-logo slot,
+or use a tool such as [HackBGRT](https://github.com/Metabolix/HackBGRT) on the
+ESP — so the machine fades straight from the firmware splash into rEFInd with no
+visual jump: the angel and title stay in the exact same place and rEFInd just
+adds the entry icons on top. See `previews/seamless.png` for the pair.
+
 ## Status
 
 Assets are rendered from the SquirrelLevel SVGs (transparency recovered via a

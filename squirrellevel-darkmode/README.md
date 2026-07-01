@@ -7,6 +7,9 @@ text, and square title-bar buttons.
 
 > **Dark-mode variant.** This is the dark counterpart of the light `SquirrelLevel` theme: gunmetal chrome, near-black backgrounds, light text, and brighter metallic-indigo accents. It **reuses the light theme's icon set** (`Icons=SquirrelLevel`), so install the light `SquirrelLevel` bundle too if you want the icons. Everything else (colour scheme, Plasma style, Kvantum, QSS, QStyle, Aurorae, SDDM, Global Theme, Plymouth) has its own dark build.
 
+
+**Emblem.** `emblem.svg` / `emblem.png` in the bundle root is the standalone TenshiNET angel tile; the Global Theme uses it as its icon (`KPlugin.Icon = squirrellevel`, resolved from the bundled icon set).
+
 ## Previews
 
 Rendered mocks of the OPENSTEP colour look each piece produces (same palette,

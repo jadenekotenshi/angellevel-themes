@@ -5,6 +5,9 @@ for the classic NeXT look: flat grayscale palette, chiseled bevels (white
 highlight on the top/left, dark shadow on the bottom/right), black title
 text, and square title-bar buttons.
 
+
+**Emblem.** `emblem.svg` / `emblem.png` in the bundle root is the standalone TenshiNET angel tile; the Global Theme uses it as its icon (`KPlugin.Icon = squirrellevel`, resolved from the bundled icon set).
+
 ## Previews
 
 Rendered mocks of the OPENSTEP colour look each piece produces (same palette,
