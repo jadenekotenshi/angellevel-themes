@@ -63,7 +63,7 @@ Rectangle {
             Rectangle { anchors.bottom: parent.bottom; anchors.left: parent.left; anchors.right: parent.right; height: 1; color: "#1a1a1a"; opacity: 0.35 }
             Text {
                 anchors.centerIn: parent
-                text: (typeof sddm !== "undefined" && sddm.hostName) ? sddm.hostName : "Log In"
+                text: "TenshiNET"
                 color: "#ffffff"; font.family: "Helvetica"; font.pixelSize: 13; font.bold: true
             }
         }
@@ -145,6 +145,34 @@ Rectangle {
                     onClicked: root.doLogin()
                 }
             }
+
+            // chiselled divider
+            Item {
+                width: parent.width; height: 3
+                Rectangle { width: parent.width; height: 1; color: "#6e6e6e" }
+                Rectangle { y: 1; width: parent.width; height: 1; color: "#ffffff" }
+            }
+
+            // power buttons (footer of the login panel)
+            Row {
+                width: parent.width
+                spacing: 9
+                NeXTButton {
+                    width: 118; height: 28; text: "Sleep"; textColor: "#33507e"
+                    visible: (typeof sddm !== "undefined") ? sddm.canSuspend : true
+                    onClicked: if (typeof sddm !== "undefined") sddm.suspend()
+                }
+                NeXTButton {
+                    width: 118; height: 28; text: "Restart"; textColor: "#8a5a15"
+                    visible: (typeof sddm !== "undefined") ? sddm.canReboot : true
+                    onClicked: if (typeof sddm !== "undefined") sddm.reboot()
+                }
+                NeXTButton {
+                    width: 118; height: 28; text: "Shut Down"; textColor: "#8f2218"
+                    visible: (typeof sddm !== "undefined") ? sddm.canPowerOff : true
+                    onClicked: if (typeof sddm !== "undefined") sddm.powerOff()
+                }
+            }
         }
     }
 
@@ -179,27 +207,6 @@ Rectangle {
                     Component.onCompleted: if (index === root.sessionIndex) root.sessionName = model.name
                 }
             }
-        }
-    }
-
-    // --- power buttons (bottom-right) ---
-    Row {
-        anchors.right: parent.right; anchors.bottom: parent.bottom; anchors.margins: 26
-        spacing: 10
-        NeXTButton {
-            width: 92; height: 28; text: "Sleep"; textColor: "#33507e"
-            visible: (typeof sddm !== "undefined") ? sddm.canSuspend : true
-            onClicked: if (typeof sddm !== "undefined") sddm.suspend()
-        }
-        NeXTButton {
-            width: 100; height: 28; text: "Restart"; textColor: "#8a5a15"
-            visible: (typeof sddm !== "undefined") ? sddm.canReboot : true
-            onClicked: if (typeof sddm !== "undefined") sddm.reboot()
-        }
-        NeXTButton {
-            width: 116; height: 28; text: "Shut Down"; textColor: "#8f2218"
-            visible: (typeof sddm !== "undefined") ? sddm.canPowerOff : true
-            onClicked: if (typeof sddm !== "undefined") sddm.powerOff()
         }
     }
 
