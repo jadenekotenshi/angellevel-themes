@@ -28,7 +28,7 @@ def region(ox, oy, w, h, rp, cp, base, frame, raised):
     if cp == 'right':  r.append(f'<rect x="{ox+w-2}" y="{oy}" width="1" height="{h}" fill="{ibr}"/>')
     return ''.join(r)
 
-def framed(base, status, fill, frame, raised, Wb=40, Hb=22, c=4):
+def framed(base, status, fill, frame, raised, Wb=40, Hb=22, c=4, grip=False):
     oy = _y[0]; ox = 4; _y[0] += Hb + 6
     xs = [(ox, c, 'left'), (ox + c, Wb - 2 * c, 'mid'), (ox + Wb - c, c, 'right')]
     ys = [(oy, c, 'top'), (oy + c, Hb - 2 * c, 'mid'), (oy + Hb - c, c, 'bottom')]
@@ -39,7 +39,13 @@ def framed(base, status, fill, frame, raised, Wb=40, Hb=22, c=4):
         for (xx, ww, cp) in xs:
             edge = grid[(rp, cp)]
             eid = f'{base}-{status}' if edge is None else f'{base}-{status}-{edge}'
-            els.append(f'<g id="{eid}">{region(xx, yy, ww, hh, rp, cp, fill, frame, raised)}</g>')
+            extra = ''
+            if edge is None and grip:
+                # NeXT scroller knob: a small recessed indentation across the centre
+                gy = yy + hh / 2
+                extra = (f'<rect x="{xx+2}" y="{gy-1:.1f}" width="{ww-4}" height="1" fill="#5f6b76"/>'
+                         f'<rect x="{xx+2}" y="{gy:.1f}" width="{ww-4}" height="1" fill="#ffffff"/>')
+            els.append(f'<g id="{eid}">{region(xx, yy, ww, hh, rp, cp, fill, frame, raised)}{extra}</g>')
 
 def indicator(base, status, draw, size=16):
     oy = _y[0]; ox = 4; _y[0] += size + 6
@@ -58,8 +64,8 @@ FR = {
     'frame':   [('normal', '#b0b0b0', FRAME, False)],
     'toolbar': [('normal', '#aeb6bf', FRAME, True)],
     'group':   [('normal', '#b0b0b0', FRAME, False)],
-    'progressbar':  [('normal', '#a8b0ba', FRAME, False)],
-    'progress':     [('normal', '#6f8dbd', FRAME, True)],
+    'progressbar':  [('normal', 'url(#mgroove)', FRAME, False)],
+    'progress':     [('normal', 'url(#prog)', FRAME, True)],
     'slidergroove': [('normal', '#9aa2ac', FRAME, False)],
     'slidercursor': [('normal', '#b0b0b0', FRAME, True), ('focused', '#b6b6b6', BLUE, True),
                      ('pressed', '#9a9a9a', FRAME, False), ('disabled', '#c4c4c4', '#9a9a9a', True)],
@@ -70,10 +76,11 @@ FR = {
 }
 for base, sts in FR.items():
     for (status, fill, frame, raised) in sts:
-        framed(base, status, fill, frame, raised)
+        g = (base == 'scrollbarcursor')          # centre indentation on the scroller knob
+        framed(base, status, fill, frame, raised, grip=g)
         # inactive duplicate so widgets don't blank on unfocused windows
         if status in ('normal', 'focused', 'pressed', 'toggled'):
-            framed(base, status + '-inactive', fill, frame, raised)
+            framed(base, status + '-inactive', fill, frame, raised, grip=g)
 
 # checkbox: recessed white box, check when checked
 def cb(checked):
@@ -100,9 +107,38 @@ for st in ('normal', 'focused', 'pressed', 'disabled', 'normal-inactive'):
     indicator('radio', 'checked-' + st, rb(True), 16)
     indicator('radio', 'unchecked-' + st, rb(False), 16)
 
+# arrow indicators (scrollbars, spin boxes, combos, menus) — solid NeXT triangles
+def arrow(direction, col):
+    def d(ox, oy, s):
+        m = 4
+        pts = {
+            'up':    [(ox+s/2, oy+m), (ox+m, oy+s-m), (ox+s-m, oy+s-m)],
+            'down':  [(ox+m, oy+m), (ox+s-m, oy+m), (ox+s/2, oy+s-m)],
+            'left':  [(ox+s-m, oy+m), (ox+s-m, oy+s-m), (ox+m, oy+s/2)],
+            'right': [(ox+m, oy+m), (ox+m, oy+s-m), (ox+s-m, oy+s/2)],
+        }[direction]
+        p = ' '.join(f'{x:.1f},{y:.1f}' for x, y in pts)
+        return f'<polygon points="{p}" fill="{col}"/>'
+    return d
+ARROW_COL = {'normal': '#1a1a1a', 'focused': '#1a1a1a', 'pressed': '#1a1a1a',
+             'disabled': '#8a8a8a', 'normal-inactive': '#4a4a4a'}
+for d in ('up', 'down', 'left', 'right'):
+    for st, col in ARROW_COL.items():
+        indicator('arrow-' + d, st, arrow(d, col), 16)
+
+DEFS = ('<defs>'
+        '<linearGradient id="prog" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0" stop-color="#a9c4ea"/><stop offset="0.12" stop-color="#d0e1f6"/>'
+        '<stop offset="0.5" stop-color="#6f8dbd"/><stop offset="0.54" stop-color="#6486b6"/>'
+        '<stop offset="0.9" stop-color="#456a9c"/><stop offset="1" stop-color="#33537f"/></linearGradient>'
+        '<linearGradient id="mgroove" x1="0" y1="0" x2="0" y2="1">'
+        '<stop offset="0" stop-color="#8a95a1"/><stop offset="0.18" stop-color="#c4ced8"/>'
+        '<stop offset="0.55" stop-color="#a6b0ba"/><stop offset="1" stop-color="#b8c2cc"/></linearGradient>'
+        '</defs>')
+
 svg = ('<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n'
        f'<svg xmlns="http://www.w3.org/2000/svg" width="80" height="{_y[0]+8}" viewBox="0 0 80 {_y[0]+8}">\n  '
-       + '\n  '.join(els) + '\n</svg>\n')
+       + DEFS + '\n  ' + '\n  '.join(els) + '\n</svg>\n')
 os.makedirs(OUT, exist_ok=True)
 open(os.path.join(OUT, 'SquirrelLevel.svg'), 'w').write(svg)
 print(f"generated Kvantum SVG with {len(els)} elements")

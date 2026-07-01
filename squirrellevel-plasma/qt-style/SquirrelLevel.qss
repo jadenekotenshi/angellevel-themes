@@ -122,14 +122,22 @@ QScrollBar::sub-line:horizontal { subcontrol-position: right; }
 QScrollBar::add-line:horizontal { subcontrol-position: right; }
 QScrollBar::add-page, QScrollBar::sub-page { background: transparent; }
 
-/* --- progress bar --- */
+/* --- progress bar: 3D metallic groove + fill --- */
 QProgressBar {
-    background-color: #a8b0ba; color: #1a1a1a;
+    color: #10233f;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #8a95a1, stop:0.18 #c4ced8, stop:0.55 #a6b0ba, stop:1 #b8c2cc);
     border: 2px solid; border-top-color: #6e6e6e; border-left-color: #6e6e6e;
     border-right-color: #ffffff; border-bottom-color: #ffffff;
     text-align: center;
 }
-QProgressBar::chunk { background-color: #6f8dbd; }
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #a9c4ea, stop:0.12 #d0e1f6, stop:0.5 #6f8dbd,
+        stop:0.54 #6486b6, stop:0.9 #456a9c, stop:1 #33537f);
+    border-top: 1px solid #e2effb;
+    border-bottom: 1px solid #274268;
+}
 
 /* --- sliders --- */
 QSlider::groove:horizontal { height: 6px; background: #9aa2ac; border: 1px solid #1a1a1a; }
