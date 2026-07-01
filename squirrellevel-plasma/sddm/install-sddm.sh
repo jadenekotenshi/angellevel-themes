@@ -5,10 +5,17 @@
 #
 set -euo pipefail
 
-SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/SquirrelLevel"
+# Usage: install-sddm.sh [qt5|qt6]   (default: qt5)
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VARIANT="${1:-qt5}"
+case "$VARIANT" in
+  qt5) SRC="$HERE/SquirrelLevel" ;;
+  qt6) SRC="$HERE/qt6/SquirrelLevel" ;;
+  *) echo "unknown variant '$VARIANT' (use qt5 or qt6)"; exit 1 ;;
+esac
 DEST=/usr/share/sddm/themes/SquirrelLevel
 
-echo "Installing SDDM theme:"
+echo "Installing SDDM theme ($VARIANT):"
 echo "  from: $SRC"
 echo "  to:   $DEST   (requires sudo)"
 sudo mkdir -p "$DEST"

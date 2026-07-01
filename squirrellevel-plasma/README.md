@@ -13,13 +13,15 @@ text, and square title-bar buttons.
 | Window decoration | `aurorae/SquirrelLevel/` | Aurorae title bars & borders with beveled square buttons |
 | Konsole scheme | `konsole/SquirrelLevel.colorscheme` | Terminal palette (black on white, muted ANSI) |
 | Icon theme | `icons/SquirrelLevel/` | OPENSTEP-inspired **colour** icons with the chiselled bevel; inherits Breeze for the rest |
-| SDDM login theme | `sddm/SquirrelLevel/` | OPENSTEP-style QML greeter — chiselled panel, steel-blue title bar, colour power buttons |
+| SDDM login theme | `sddm/SquirrelLevel/` (Qt5) · `sddm/qt6/SquirrelLevel/` (Qt6) | OPENSTEP-style QML greeter — chiselled panel, steel-blue title bar, colour power buttons |
+| Plasma Style | `plasma/desktoptheme/SquirrelLevel/` | NeXT chiselled FrameSvg widgets (panels, plasmoids, buttons, fields, tooltips) |
+| Global Theme | `plasma/look-and-feel/org.squirrellevel.desktop/` | Look-and-Feel that applies the whole set + boot splash + logout screen |
 
-Not included (out of scope for a from-scratch bundle): a full Plasma desktop
-("look & feel") theme and an application *widget* style. For the most faithful
-result, pair this with a flat application style — Kvantum with a grayscale
-config, or Breeze tuned to the color scheme above — and a Helvetica-like font
-such as Nimbus Sans or Liberation Sans.
+The one piece still out of scope is a native Qt **application (widget) style** —
+that needs a compiled QStyle plugin. For NeXT-styled *app* widgets pair this
+with Kvantum (an SVG-themable style); the included Plasma Style already covers
+panel/plasmoid widgets. A Helvetica-like font (Nimbus Sans / Liberation Sans)
+completes the look.
 
 ### About the icon theme
 
@@ -137,7 +139,8 @@ OPENSTEP-blue gradient. See `sddm/SquirrelLevel/preview.png`.
 SDDM themes are system-wide, so installing needs root:
 
 ```bash
-sddm/install-sddm.sh            # copies to /usr/share/sddm/themes (uses sudo)
+sddm/install-sddm.sh            # Qt5 greeter (default), copies to /usr/share/sddm/themes
+sddm/install-sddm.sh qt6        # Qt6 greeter (Plasma 6 / SDDM built against Qt 6)
 ```
 
 Then activate it in `/etc/sddm.conf.d/squirrellevel.conf`:
@@ -159,9 +162,35 @@ leave it empty for the built-in gradient).
 
 The QML is written to the SDDM greeter API but was authored without a running
 SDDM/Qt to execute it — `preview.png` is a faithful SVG mock of the layout, so
-treat the first `--test-mode` run as the real check. It targets **Qt 5** SDDM
-(the common case); on a Qt 6 greeter the `Connections { onLoginFailed: … }`
-handlers would need the newer `function onLoginFailed()` syntax.
+treat the first `--test-mode` run as the real check. Two variants ship: the
+Qt5 one (`sddm/SquirrelLevel/`) and a Qt6 one (`sddm/qt6/SquirrelLevel/`, with
+version-less imports and `function onLoginFailed()` handlers). Both install to
+the same theme id; pick the one matching your SDDM's Qt build.
+
+## Global Theme (Look-and-Feel) + splash + logout
+
+`plasma/look-and-feel/org.squirrellevel.desktop/` is a **Global Theme**. Its
+`contents/defaults` wires the whole set together — SquirrelLevel colour scheme,
+icon theme, Plasma Style, and Aurorae decoration — so one click applies
+everything:
+
+```bash
+lookandfeeltool -a org.squirrellevel.desktop     # apply
+lookandfeeltool -a org.kde.breeze.desktop        # revert
+```
+
+It also ships a **boot splash** (`contents/splash/Splash.qml` — the cube logo
+and a filling steel-blue progress bar on the OPENSTEP gradient) and a **logout
+screen** (`contents/logout/Logout.qml` — NeXT panel with colour Sleep / Restart
+/ Shut Down / Log Out / Lock / Cancel buttons).
+
+**Lock screen — deliberate choice:** the package does *not* replace the lock
+greeter. A custom lock screen with a mis-bound password/PAM path can lock you
+out of the machine, and this QML couldn't be tested here. Instead the stock
+lock screen automatically picks up the SquirrelLevel **colour scheme**, so it's
+themed without that risk. The splash and logout QML are likewise best-effort
+against the documented KSplash / ksmserver APIs — verify after applying, and
+revert with the `breeze` command above if anything misbehaves.
 
 ## Tweaking the decoration
 

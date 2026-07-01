@@ -1,0 +1,14 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            { "Name": "themes" }
+        ],
+        "Category": "",
+        "Description": "OPENSTEP-inspired colour Global Theme — chiselled NeXT bevel, gold folders, steel-blue accents",
+        "Id": "org.squirrellevel.desktop",
+        "License": "MIT",
+        "Name": "SquirrelLevel",
+        "Version": "1.0"
+    }
+}

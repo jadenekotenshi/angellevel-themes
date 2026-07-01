@@ -36,6 +36,18 @@ if command -v gtk-update-icon-cache >/dev/null 2>&1; then
   gtk-update-icon-cache -q -f -t "$DATA/icons/SquirrelLevel" 2>/dev/null || true
 fi
 
+# 5. Plasma Style (desktop/widget theme)
+install -d "$DATA/plasma/desktoptheme"
+rm -rf "$DATA/plasma/desktoptheme/SquirrelLevel"
+cp -R "$SRC/plasma/desktoptheme/SquirrelLevel" "$DATA/plasma/desktoptheme/SquirrelLevel"
+echo "  - plasma style  -> $DATA/plasma/desktoptheme/SquirrelLevel/"
+
+# 6. Look-and-Feel (Global Theme: ties colours/icons/decoration/splash together)
+install -d "$DATA/plasma/look-and-feel"
+rm -rf "$DATA/plasma/look-and-feel/org.squirrellevel.desktop"
+cp -R "$SRC/plasma/look-and-feel/org.squirrellevel.desktop" "$DATA/plasma/look-and-feel/org.squirrellevel.desktop"
+echo "  - global theme  -> $DATA/plasma/look-and-feel/org.squirrellevel.desktop/"
+
 cat <<'EOF'
 
 Done. Now apply it:
@@ -53,6 +65,15 @@ Done. Now apply it:
   Icon theme:
     System Settings -> Icons -> "SquirrelLevel"
     (or:  plasma-changeicons SquirrelLevel)
+
+  Plasma style (widgets):
+    System Settings -> Plasma Style -> "SquirrelLevel"
+    (or:  plasma-apply-desktoptheme SquirrelLevel)
+
+  Everything at once (Global Theme):
+    System Settings -> Global Theme -> "SquirrelLevel"
+    (or:  lookandfeeltool -a org.squirrellevel.desktop)
+    To revert:  lookandfeeltool -a org.kde.breeze.desktop
 
   Recommended for the full NeXT feel:
     - Set the application style (Kvantum/Breeze) and fonts separately;
