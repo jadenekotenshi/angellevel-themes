@@ -23,7 +23,7 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈89 hand-drawn icons plus ~130 alias links) covering the most
+core set** (≈101 hand-drawn icons plus ~155 alias links) covering the most
 visible surfaces:
 
 - **Places:** folders + typed variants (documents, downloads, pictures, music,
@@ -35,13 +35,15 @@ visible surfaces:
 - **Status (panel/tray):** battery (5 levels + charging, with `battery-100`…
   `battery-000` aliases), Wi-Fi signal strength (none→excellent + disconnected),
   Bluetooth (active/disabled), microphone (active/muted), volume high/muted,
-  and information/question/warning/error.
+  notifications + Do-Not-Disturb, software updates, VPN, brightness high/low,
+  airplane mode, presence (online/offline/away/busy), and
+  information/question/warning/error.
 - **Emblems:** symbolic-link, locked/readonly, important, favorite, shared.
 - **MimeTypes:** generic text, source code, HTML, shell script, PDF, fonts,
   images, audio, video, and archives — with family aliases (`image/png`,
   `audio/mpeg`, `video/mp4`, `application/zip`, `text-x-python`, …).
 - **Apps:** Konsole, Dolphin, Kate, NEdit, Vim, VS Code, Okular, Gwenview,
-  Spectacle, System Settings, Chromium, and Firefox — each with the
+  Spectacle, System Settings, Klipper, Chromium, and Firefox — each with the
   alternate names KDE looks up (`org.kde.*`, `chromium-browser`, `code`, …).
 
 The theme **inherits from Breeze**, so any name not provided falls back to
