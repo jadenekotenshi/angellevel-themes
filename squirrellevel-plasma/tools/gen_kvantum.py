@@ -9,7 +9,7 @@ Authored without Kvantum to test against — verify/tune in Kvantum Manager.
 """
 import os
 OUT = os.path.join(os.path.dirname(__file__), '..', 'kvantum', 'SquirrelLevel')
-FRAME = '#1a1a1a'; BLUE = '#6f8dbd'
+FRAME = '#1a1a1a'; BLUE = '#5f5cae'
 els = []
 _y = [0]
 
@@ -98,7 +98,7 @@ def rb(checked):
         r = [f'<circle cx="{cx}" cy="{cy}" r="{rr}" fill="#ffffff" stroke="#1a1a1a" stroke-width="1"/>',
              f'<path d="M{cx-rr*0.7} {cy-rr*0.7} A {rr} {rr} 0 0 1 {cx+rr*0.7} {cy-rr*0.7}" fill="none" stroke="#868c93" stroke-width="1"/>']
         if checked:
-            r.append(f'<circle cx="{cx}" cy="{cy}" r="{rr*0.5}" fill="#33507e"/>')
+            r.append(f'<circle cx="{cx}" cy="{cy}" r="{rr*0.5}" fill="#2c2a60"/>')
         return ''.join(r)
     return d
 for st in ('normal', 'focused', 'pressed', 'disabled', 'normal-inactive'):
@@ -128,9 +128,9 @@ for d in ('up', 'down', 'left', 'right'):
 
 DEFS = ('<defs>'
         '<linearGradient id="prog" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0" stop-color="#a9c4ea"/><stop offset="0.12" stop-color="#d0e1f6"/>'
-        '<stop offset="0.5" stop-color="#6f8dbd"/><stop offset="0.54" stop-color="#6486b6"/>'
-        '<stop offset="0.9" stop-color="#456a9c"/><stop offset="1" stop-color="#33537f"/></linearGradient>'
+        '<stop offset="0" stop-color="#b9b6ec"/><stop offset="0.12" stop-color="#dad7f7"/>'
+        '<stop offset="0.5" stop-color="#5f5cae"/><stop offset="0.54" stop-color="#5350a2"/>'
+        '<stop offset="0.9" stop-color="#3e3b82"/><stop offset="1" stop-color="#2c2a60"/></linearGradient>'
         '<linearGradient id="mgroove" x1="0" y1="0" x2="0" y2="1">'
         '<stop offset="0" stop-color="#8a95a1"/><stop offset="0.18" stop-color="#c4ced8"/>'
         '<stop offset="0.55" stop-color="#a6b0ba"/><stop offset="1" stop-color="#b8c2cc"/></linearGradient>'

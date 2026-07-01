@@ -44,7 +44,7 @@ Item {
 
         Rectangle {
             id: title
-            x: 2; y: 2; width: parent.width - 4; height: 26; color: "#6f8dbd"
+            x: 2; y: 2; width: parent.width - 4; height: 26; color: "#5f5cae"
             Rectangle { anchors.top: parent.top; anchors.left: parent.left; anchors.right: parent.right; height: 1; color: "#ffffff"; opacity: 0.45 }
             Text { anchors.centerIn: parent; text: "Leave squirrel"; color: "#ffffff"; font.family: "Helvetica"; font.pixelSize: 13; font.bold: true }
         }
@@ -64,7 +64,7 @@ Item {
             Grid {
                 width: parent.width
                 columns: 3; spacing: 10
-                NeXTButton { width: 118; height: 30; text: "Sleep"; textColor: "#33507e"; visible: root.canSuspend; onClicked: root.suspendRequested(2) }
+                NeXTButton { width: 118; height: 30; text: "Sleep"; textColor: "#2c2a60"; visible: root.canSuspend; onClicked: root.suspendRequested(2) }
                 NeXTButton { width: 118; height: 30; text: "Restart"; textColor: "#8a5a15"; visible: root.canReboot; onClicked: root.rebootRequested() }
                 NeXTButton { width: 118; height: 30; text: "Shut Down"; textColor: "#8f2218"; visible: root.canShutdown; onClicked: root.haltRequested() }
                 NeXTButton { width: 118; height: 30; text: "Log Out"; textColor: "#1a1a1a"; visible: root.canLogout; onClicked: root.logoutRequested() }

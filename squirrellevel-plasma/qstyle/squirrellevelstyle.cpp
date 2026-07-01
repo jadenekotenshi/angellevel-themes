@@ -13,12 +13,12 @@
 static const QColor kDark  (0x1a, 0x1a, 0x1a);
 static const QColor kHi    (0xff, 0xff, 0xff);
 static const QColor kSh    (0x6e, 0x6e, 0x6e);
-static const QColor kBlue  (0x6f, 0x8d, 0xbd);
+static const QColor kBlue  (0x5f, 0x5c, 0xae);
 static const QColor kButton(0xb0, 0xb0, 0xb0);
 static const QColor kWindow(0xaa, 0xaa, 0xaa);
 static const QColor kGroove(0xa2, 0xa8, 0xb0);
 static const QColor kGreen (0x4a, 0x7a, 0x3a);
-static const QColor kRadio (0x33, 0x50, 0x7e);
+static const QColor kRadio (0x2c, 0x2a, 0x60);
 
 // --- helpers ----------------------------------------------------------------
 
@@ -69,12 +69,12 @@ static void drawArrow(QPainter *p, const QRect &r, Qt::ArrowType dir,
 static QLinearGradient metalFill(const QRect &r)
 {
     QLinearGradient g(r.topLeft(), r.bottomLeft());
-    g.setColorAt(0.00, QColor(0xa9, 0xc4, 0xea));
-    g.setColorAt(0.12, QColor(0xd0, 0xe1, 0xf6));   // specular sheen
-    g.setColorAt(0.50, QColor(0x6f, 0x8d, 0xbd));
-    g.setColorAt(0.54, QColor(0x64, 0x86, 0xb6));
-    g.setColorAt(0.90, QColor(0x45, 0x6a, 0x9c));
-    g.setColorAt(1.00, QColor(0x33, 0x53, 0x7f));
+    g.setColorAt(0.00, QColor(0xb9, 0xb6, 0xec));
+    g.setColorAt(0.12, QColor(0xda, 0xd7, 0xf7));   // specular sheen
+    g.setColorAt(0.50, QColor(0x5f, 0x5c, 0xae));
+    g.setColorAt(0.54, QColor(0x53, 0x50, 0xa2));
+    g.setColorAt(0.90, QColor(0x3e, 0x3b, 0x82));
+    g.setColorAt(1.00, QColor(0x2c, 0x2a, 0x60));
     return g;
 }
 
@@ -231,9 +231,9 @@ void SquirrelLevelStyle::drawControl(ControlElement ce, const QStyleOption *opt,
         if (fill.width() < 1) return;
         p->save();
         p->fillRect(fill, metalFill(fill));
-        p->setPen(QColor(0xe2, 0xef, 0xfb));            // top sheen
+        p->setPen(QColor(0xea, 0xe8, 0xfd));            // top sheen
         p->drawLine(fill.left(), fill.top() + 1, fill.right(), fill.top() + 1);
-        p->setPen(QColor(0x27, 0x42, 0x68));            // dark bottom edge
+        p->setPen(QColor(0x21, 0x1f, 0x48));            // dark bottom edge
         p->drawLine(fill.left(), fill.bottom(), fill.right(), fill.bottom());
         p->restore();
         return;

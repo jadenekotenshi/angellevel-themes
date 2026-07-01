@@ -20,11 +20,11 @@ import os, re, sys
 ICONS = os.path.join(os.path.dirname(__file__), '..', 'icons', 'SquirrelLevel')
 
 # --- OPENSTEP-muted palette -------------------------------------------------
-GOLD, STEEL, BLUE  = '#d3b64f', '#9cafc4', '#6f8dbd'
+GOLD, STEEL, BLUE  = '#d3b64f', '#9cafc4', '#5f5cae'
 GREEN, RED, AMBER  = '#6ba85d', '#c25a4d', '#d59a3c'
 SILVER, TAN, TERRA = '#b6bdc8', '#d7c286', '#c1724a'
 CLOUD, MOON        = '#ccd4da', '#c3ccd6'
-TEAL, PLUM, SLATE  = '#4f9a95', '#8a6fa6', '#3c516e'
+TEAL, PLUM, SLATE  = '#4f9a95', '#8a6fa6', '#35336a'
 
 def _hx(c): return tuple(int(c[i:i+2], 16) for i in (1, 3, 5))
 def _hs(t): return '#%02x%02x%02x' % t
@@ -108,7 +108,7 @@ ACCENT_RULES = [
     (r'^battery-(caution|empty)(-charging)?\.svg$',[('#3a3a3a', RED)]),
     (r'^weather-showers',                 [('#41505c', BLUE)]),
     (r'^weather-storm\.svg$',             [('#3a3a3a', GOLD)]),
-    (r'^weather-snow\.svg$',              [('#5a5a5a', '#8fb0d6')]),
+    (r'^weather-snow\.svg$',              [('#5a5a5a', '#a5a2dd')]),
     (r'^utilities-terminal\.svg$',        [('#d0d0d0', '#8ada8a')]),
     (r'^system-file-manager\.svg$',       [('#d0d0d0', '#8ada8a')]),
 ]

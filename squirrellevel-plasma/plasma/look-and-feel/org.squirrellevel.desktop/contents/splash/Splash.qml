@@ -43,7 +43,7 @@ Rectangle {
             Rectangle {
                 x: 2; y: 2; height: parent.height - 4
                 width: Math.max(0, (parent.width - 4) * Math.min(1, root.stage / 6.0))
-                color: "#6f8dbd"
+                color: "#5f5cae"
                 Behavior on width { NumberAnimation { duration: 220; easing.type: Easing.OutQuad } }
                 Rectangle { anchors.top: parent.top; anchors.left: parent.left; anchors.right: parent.right; height: 1; color: "#ffffff"; opacity: 0.5 }
             }

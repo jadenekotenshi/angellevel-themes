@@ -3,6 +3,6 @@
   <!-- SquirrelLevel office word-processor document -->
   <path d="M11 5 H30 L38 13 V43 H11 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
   <path d="M30 5 V13 H38 Z" fill="#b0b0b0" stroke="#1a1a1a" stroke-width="1.2" stroke-linejoin="round"/>
-  <rect x="16" y="18" width="17" height="3" fill="#6f8dbd"/>
+  <rect x="16" y="18" width="17" height="3" fill="#5f5cae"/>
   <path d="M16 26 H33 M16 30 H33 M16 34 H33 M16 38 H27" fill="none" stroke="#6e6e6e" stroke-width="1.6"/>
 </svg>

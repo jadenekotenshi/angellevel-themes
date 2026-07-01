@@ -10,7 +10,7 @@ import os
 OUT = os.path.join(os.path.dirname(__file__), '..', 'plasma', 'desktoptheme', 'SquirrelLevel')
 
 FRAME = '#1a1a1a'
-BLUE = '#6f8dbd'
+BLUE = '#5f5cae'
 
 def region(ox, oy, w, h, rowpos, colpos, base, frame, raised):
     hi, sh = '#ffffff', '#6e6e6e'
