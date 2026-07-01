@@ -23,7 +23,7 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈123 hand-drawn icons plus ~260 alias links) covering the most
+core set** (≈146 hand-drawn icons plus ~295 alias links) covering the most
 visible surfaces:
 
 - **Places:** folders + typed variants (documents, downloads, pictures, music,
@@ -31,7 +31,9 @@ visible surfaces:
 - **Devices:** hard disk, optical disc, USB flash, SD card, printer, keyboard,
   mouse, headphones, phone, laptop, network server, wired network, computer.
 - **Actions:** new, save, copy, cut, paste, delete, find, refresh, back/forward,
-  up, add/remove, OK, cancel/close, home, and media play/pause/stop.
+  up, add/remove, OK, cancel/close, home; view/zoom (in/out/original/fit,
+  fullscreen/restore, list, sort asc/desc); and full media transport
+  (play/pause/stop, skip, seek, record, eject, repeat, shuffle).
 - **Power/session:** shutdown, reboot, log out, lock screen, suspend,
   hibernate, and switch user (the Kickoff/logout menu).
 - **Status (panel/tray):** battery (5 levels + charging, with `battery-100`…
@@ -40,7 +42,8 @@ visible surfaces:
   notifications + Do-Not-Disturb, software updates, VPN, brightness high/low,
   airplane mode, presence (online/offline/away/busy), and
   information/question/warning/error.
-- **Emblems:** symbolic-link, locked/readonly, important, favorite, shared.
+- **Emblems:** symbolic-link, locked/readonly, important, favorite, shared,
+  plus VCS/file states (added, removed, modified, mounted, new, default).
 - **MimeTypes:** generic text, source code, HTML, shell script, PDF, fonts,
   images, audio, video, and archives — with family aliases (`image/png`,
   `audio/mpeg`, `video/mp4`, `application/zip`, `text-x-python`, …).
