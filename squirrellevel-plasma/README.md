@@ -23,13 +23,13 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈101 hand-drawn icons plus ~155 alias links) covering the most
+core set** (≈116 hand-drawn icons plus ~230 alias links) covering the most
 visible surfaces:
 
 - **Places:** folders + typed variants (documents, downloads, pictures, music,
-  videos), home, desktop, trash.
-- **Devices:** hard disk, optical disc, USB flash, printer, keyboard, mouse,
-  wired network, computer.
+  videos), home, desktop, trash, network folder + workgroup globe.
+- **Devices:** hard disk, optical disc, USB flash, SD card, printer, keyboard,
+  mouse, headphones, phone, laptop, network server, wired network, computer.
 - **Actions:** new, save, copy, cut, paste, delete, find, refresh, back/forward,
   up, add/remove, OK, cancel/close, home, and media play/pause/stop.
 - **Status (panel/tray):** battery (5 levels + charging, with `battery-100`…
@@ -42,9 +42,13 @@ visible surfaces:
 - **MimeTypes:** generic text, source code, HTML, shell script, PDF, fonts,
   images, audio, video, and archives — with family aliases (`image/png`,
   `audio/mpeg`, `video/mp4`, `application/zip`, `text-x-python`, …).
-- **Apps:** Konsole, Dolphin, Kate, NEdit, Vim, VS Code, Okular, Gwenview,
-  Spectacle, System Settings, Klipper, Chromium, and Firefox — each with the
-  alternate names KDE looks up (`org.kde.*`, `chromium-browser`, `code`, …).
+- **Launcher/menu:** application launcher (`start-here-kde`/`plasma`/`kickoff`),
+  global menu (hamburger), and application grid (`view-app-grid`).
+- **Apps:** Konsole, Dolphin, Kate, KWrite, NEdit, Vim, VS Code, Okular,
+  Gwenview, Spectacle, System Settings, Klipper, Ark, a mail client
+  (Thunderbird/KMail), a media player (Elisa/VLC), graphics (Krita/GIMP),
+  calculator (KCalc), help, Chromium, and Firefox — each with the alternate
+  names KDE looks up (`org.kde.*`, `chromium-browser`, `code`, …).
 
 The theme **inherits from Breeze**, so any name not provided falls back to
 Breeze automatically. Trade-off: until you extend the set, unprovided icons
