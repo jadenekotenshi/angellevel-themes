@@ -23,7 +23,7 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈116 hand-drawn icons plus ~230 alias links) covering the most
+core set** (≈123 hand-drawn icons plus ~260 alias links) covering the most
 visible surfaces:
 
 - **Places:** folders + typed variants (documents, downloads, pictures, music,
@@ -32,6 +32,8 @@ visible surfaces:
   mouse, headphones, phone, laptop, network server, wired network, computer.
 - **Actions:** new, save, copy, cut, paste, delete, find, refresh, back/forward,
   up, add/remove, OK, cancel/close, home, and media play/pause/stop.
+- **Power/session:** shutdown, reboot, log out, lock screen, suspend,
+  hibernate, and switch user (the Kickoff/logout menu).
 - **Status (panel/tray):** battery (5 levels + charging, with `battery-100`…
   `battery-000` aliases), Wi-Fi signal strength (none→excellent + disconnected),
   Bluetooth (active/disabled), microphone (active/muted), volume high/muted,
