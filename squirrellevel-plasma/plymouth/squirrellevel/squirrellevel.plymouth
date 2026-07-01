@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=SquirrelLevel
+Description=OPENSTEP-inspired boot splash — chiselled cube on a muted blue gradient
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/squirrellevel
+ScriptFile=/usr/share/plymouth/themes/squirrellevel/squirrellevel.script
