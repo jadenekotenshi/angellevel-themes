@@ -23,13 +23,16 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈182 hand-drawn icons plus ~350 alias links) covering the most
+core set** (≈202 hand-drawn icons plus ~390 alias links) covering the most
 visible surfaces:
 
 - **Places:** folders + typed variants (documents, downloads, pictures, music,
   videos), home, desktop, trash, network folder + workgroup globe.
-- **Devices:** hard disk, optical disc, USB flash, SD card, printer, keyboard,
-  mouse, headphones, phone, laptop, network server, wired network, computer.
+- **Devices:** hard disk, optical disc, USB flash, SD card, printer, scanner,
+  keyboard (+ settings, on-screen), mouse, touchpad, webcam, graphics tablet,
+  gamepad, headphones, phone, laptop, network server, wired network, UPS,
+  computer. Plus bonus grayscale **keyboard-layout keycaps** (`keyboard-layout-us`,
+  `-de`, `-fr`, `-es`, `-gb`, `-ru`, `-jp`, `-it`).
 - **Actions:** new, save, copy, cut, paste, delete, find, refresh, back/forward,
   up, add/remove, OK, cancel/close, home; view/zoom (in/out/original/fit,
   fullscreen/restore, list, sort asc/desc); and full media transport
@@ -65,6 +68,8 @@ visible surfaces:
   (Thunderbird/KMail), a media player (Elisa/VLC), graphics (Krita/GIMP),
   calculator (KCalc), help, Chromium, and Firefox — each with the alternate
   names KDE looks up (`org.kde.*`, `chromium-browser`, `code`, …).
+- **Games:** Steam, Final Fantasy XIV, Guild Wars 2, and Doom (with launcher
+  aliases like `com.valvesoftware.Steam`, `xivlauncher`, `gw2`, `gzdoom`).
 
 The theme **inherits from Breeze**, so any name not provided falls back to
 Breeze automatically. Trade-off: until you extend the set, unprovided icons
@@ -72,8 +77,9 @@ keep their Breeze (colorful, flat) look alongside the grayscale ones. Add more
 SVGs under the matching `icons/SquirrelLevel/<context>/scalable/` folder to grow
 coverage.
 
-Note: brand marks (Chromium, Firefox, VS Code, Vim) are **grayscale
-reinterpretations** in the NeXT idiom, not the official colored logos.
+Note: brand marks (Chromium, Firefox, VS Code, Vim, and the game logos —
+Steam, FFXIV, Guild Wars 2, Doom) are **grayscale reinterpretations** in the
+NeXT idiom, not the official colored logos.
 
 ## Install
 
