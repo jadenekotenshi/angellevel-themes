@@ -5,6 +5,24 @@ for the classic NeXT look: flat grayscale palette, chiseled bevels (white
 highlight on the top/left, dark shadow on the bottom/right), black title
 text, and square title-bar buttons.
 
+## Previews
+
+Rendered mocks of the OPENSTEP colour look each piece produces (same palette,
+bevels and geometry as the actual theme files; not live screenshots).
+
+| | |
+|---|---|
+| **Login greeter** (SDDM) | **Boot splash** (Plymouth) |
+| ![login](previews/login.png) | ![boot splash](previews/boot-splash.png) |
+| **Colour icon theme** | **Widgets** (QStyle / Kvantum / QSS) |
+| ![icons](previews/icons.png) | ![widgets](previews/widgets.png) |
+
+The widget shot shows the NeXT chiselled bevels, the twin-arrows-at-the-bottom
+scrollbar with a dimpled knob, and the 3D metallic progress bar. Detail of the
+miniaturize (iconify) button — the OPENSTEP "miniwindow" glyph in each state:
+
+![miniaturize button](previews/miniaturize-button.png)
+
 ## What's included
 
 | Piece | Path | What it themes |
