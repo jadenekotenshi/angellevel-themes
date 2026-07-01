@@ -9,7 +9,7 @@ DisplayDepth=8
 # actions); everything else inherits from the themes below.
 Inherits=breeze,hicolor
 
-Directories=places/scalable,mimetypes/scalable,devices/scalable,actions/scalable,apps/scalable,status/scalable
+Directories=places/scalable,mimetypes/scalable,devices/scalable,actions/scalable,apps/scalable,status/scalable,emblems/scalable
 
 [places/scalable]
 Size=48
@@ -51,4 +51,11 @@ Size=48
 MinSize=8
 MaxSize=512
 Context=Status
+Type=Scalable
+
+[emblems/scalable]
+Size=48
+MinSize=8
+MaxSize=512
+Context=Emblems
 Type=Scalable

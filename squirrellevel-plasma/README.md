@@ -23,11 +23,17 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈37 hand-drawn icons plus ~65 alias links) covering the most
+core set** (≈69 hand-drawn icons plus ~85 alias links) covering the most
 visible surfaces:
 
-- **Places/devices:** folders, home, desktop, trash, hard disk, computer.
-- **Actions:** save, copy, delete, up, OK, cancel/close, home.
+- **Places:** folders + typed variants (documents, downloads, pictures, music,
+  videos), home, desktop, trash.
+- **Devices:** hard disk, optical disc, USB flash, printer, keyboard, mouse,
+  wired network, computer.
+- **Actions:** new, save, copy, cut, paste, delete, find, refresh, back/forward,
+  up, add/remove, OK, cancel/close, home, and media play/pause/stop.
+- **Status:** information, question, warning, error, and volume high/muted.
+- **Emblems:** symbolic-link, locked/readonly, important, favorite, shared.
 - **MimeTypes:** generic text, source code, HTML, shell script, PDF, fonts,
   images, audio, video, and archives — with family aliases (`image/png`,
   `audio/mpeg`, `video/mp4`, `application/zip`, `text-x-python`, …).
