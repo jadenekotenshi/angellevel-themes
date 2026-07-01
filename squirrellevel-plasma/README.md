@@ -23,7 +23,7 @@ such as Nimbus Sans or Liberation Sans.
 ### About the icon theme
 
 KDE references thousands of icon names, so this ships a **curated NeXT-style
-core set** (≈158 hand-drawn icons plus ~310 alias links) covering the most
+core set** (≈182 hand-drawn icons plus ~350 alias links) covering the most
 visible surfaces:
 
 - **Places:** folders + typed variants (documents, downloads, pictures, music,
@@ -47,9 +47,17 @@ visible surfaces:
   widget's `-night`/`-day`, `many-clouds`, `mist`, `hail`, `rain` aliases.
 - **Emblems:** symbolic-link, locked/readonly, important, favorite, shared,
   plus VCS/file states (added, removed, modified, mounted, new, default).
-- **MimeTypes:** generic text, source code, HTML, shell script, PDF, fonts,
-  images, audio, video, and archives — with family aliases (`image/png`,
-  `audio/mpeg`, `video/mp4`, `application/zip`, `text-x-python`, …).
+- **MimeTypes:** generic text, HTML, shell script, PDF, fonts, images, audio,
+  video, and archives — with family aliases (`image/png`, `audio/mpeg`,
+  `video/mp4`, `application/zip`, …).
+  - **Source code:** per-language labelled documents — Python, JS, TS, C, C++,
+    Java, Go, Rust, Ruby, PHP, JSON, XML, YAML, CSS, Markdown, SQL (+ header
+    and MIME-name aliases).
+  - **Office:** word processor, spreadsheet, presentation, drawing, calendar —
+    aliased to the ODF and OOXML/MS types (`.odt`/`.docx`, `.ods`/`.xlsx`,
+    `.odp`/`.pptx`, `.odg`, `.ics`, …).
+  - **Optical:** ISO disc images (`application-x-cd-image`) plus audio-CD, DVD,
+    Blu-ray, and recordable disc device icons.
 - **Launcher/menu:** application launcher (`start-here-kde`/`plasma`/`kickoff`),
   global menu (hamburger), and application grid (`view-app-grid`).
 - **Apps:** Konsole, Dolphin, Kate, KWrite, NEdit, Vim, VS Code, Okular,
