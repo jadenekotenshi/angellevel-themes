@@ -48,6 +48,14 @@ rm -rf "$DATA/plasma/look-and-feel/org.angellevel.desktop"
 cp -R "$SRC/plasma/look-and-feel/org.angellevel.desktop" "$DATA/plasma/look-and-feel/org.angellevel.desktop"
 echo "  - global theme  -> $DATA/plasma/look-and-feel/org.angellevel.desktop/"
 
+# 6b. Updates plasmoid (panel applet)
+if [ -d "$SRC/plasma/plasmoids/org.angellevel.updates" ]; then
+  install -d "$DATA/plasma/plasmoids"
+  rm -rf "$DATA/plasma/plasmoids/org.angellevel.updates"
+  cp -R "$SRC/plasma/plasmoids/org.angellevel.updates" "$DATA/plasma/plasmoids/org.angellevel.updates"
+  echo "  - plasmoid      -> $DATA/plasma/plasmoids/org.angellevel.updates/ (add to a panel)"
+fi
+
 # 7. Application launchers (.desktop entries for the branded apps)
 if compgen -G "$SRC/applications/*.desktop" >/dev/null; then
   install -d "$DATA/applications"
@@ -143,6 +151,10 @@ Done. Now apply it:
     Open KRunner (Alt+Space) and type "updates" to check for / open software
     updates. Needs python3-dbus + python3-gi; if it doesn't appear, enable it in
     System Settings -> Search -> Plasma Search -> "AngelLevel Software Updates".
+
+  Updates plasmoid:
+    Right-click a panel -> Add Widgets -> "AngelLevel Updates" to show the update
+    status + count in the panel (click opens Discover).
 
   Recommended for the full NeXT feel:
     - Set the application style (Kvantum/Breeze) and fonts separately;

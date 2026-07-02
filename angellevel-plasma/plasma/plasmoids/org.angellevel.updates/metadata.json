@@ -1,0 +1,14 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Id": "org.angellevel.updates",
+        "Name": "AngelLevel Updates",
+        "Description": "Shows available software updates with the AngelLevel status icons",
+        "Icon": "system-software-update",
+        "Category": "System Information",
+        "Authors": [ { "Name": "AngelLevel" } ],
+        "Version": "1.0",
+        "License": "MIT",
+        "EnabledByDefault": true
+    }
+}
