@@ -10,7 +10,7 @@
     <rect x="1" y="1" width="1"  height="14" fill="#565d67"/>
     <rect x="1" y="14" width="16" height="1" fill="#14161a"/>
     <rect x="16" y="1" width="1" height="14" fill="#14161a"/>
-    <path d="M5 4 L13 12 M13 4 L5 12" stroke="#000000" stroke-width="2" fill="none"/>
+    <path d="M4 3 L14 13 M14 3 L4 13" stroke="#000000" stroke-width="2.2" stroke-linecap="round" fill="none"/>
   </g>
 
   <g id="close-active" transform="translate(22,0)">
@@ -21,7 +21,7 @@
     <rect x="1" y="1" width="1"  height="14" fill="#565d67"/>
     <rect x="1" y="14" width="16" height="1" fill="#14161a"/>
     <rect x="16" y="1" width="1" height="14" fill="#14161a"/>
-    <path d="M5 4 L13 12 M13 4 L5 12" stroke="#000000" stroke-width="2" fill="none"/>
+    <path d="M4 3 L14 13 M14 3 L4 13" stroke="#000000" stroke-width="2.2" stroke-linecap="round" fill="none"/>
   </g>
 
   <g id="close-hover" transform="translate(44,0)">
@@ -32,7 +32,7 @@
     <rect x="1" y="1" width="1"  height="14" fill="#565d67"/>
     <rect x="1" y="14" width="16" height="1" fill="#14161a"/>
     <rect x="16" y="1" width="1" height="14" fill="#14161a"/>
-    <path d="M5 4 L13 12 M13 4 L5 12" stroke="#000000" stroke-width="2" fill="none"/>
+    <path d="M4 3 L14 13 M14 3 L4 13" stroke="#000000" stroke-width="2.2" stroke-linecap="round" fill="none"/>
   </g>
 
   <g id="close-pressed" transform="translate(66,0)">
@@ -43,7 +43,7 @@
     <rect x="1" y="1" width="1"  height="14" fill="#14161a"/>
     <rect x="1" y="14" width="16" height="1" fill="#565d67"/>
     <rect x="16" y="1" width="1" height="14" fill="#565d67"/>
-    <path d="M6 5 L14 13 M14 5 L6 13" stroke="#000000" stroke-width="2" fill="none"/>
+    <path d="M5 4 L15 14 M15 4 L5 14" stroke="#000000" stroke-width="2.2" stroke-linecap="round" fill="none"/>
   </g>
 
   <g id="close-inactive" transform="translate(88,0)">
@@ -54,7 +54,7 @@
     <rect x="1" y="1" width="1"  height="14" fill="#e6e6e6"/>
     <rect x="1" y="14" width="16" height="1" fill="#8a8a8a"/>
     <rect x="16" y="1" width="1" height="14" fill="#8a8a8a"/>
-    <path d="M5 4 L13 12 M13 4 L5 12" stroke="#555555" stroke-width="2" fill="none"/>
+    <path d="M4 3 L14 13 M14 3 L4 13" stroke="#555555" stroke-width="2.2" stroke-linecap="round" fill="none"/>
   </g>
 
   <g id="close-deactivated" transform="translate(110,0)">
@@ -65,6 +65,6 @@
     <rect x="1" y="1" width="1"  height="14" fill="#e6e6e6"/>
     <rect x="1" y="14" width="16" height="1" fill="#8a8a8a"/>
     <rect x="16" y="1" width="1" height="14" fill="#8a8a8a"/>
-    <path d="M5 4 L13 12 M13 4 L5 12" stroke="#777777" stroke-width="2" fill="none"/>
+    <path d="M4 3 L14 13 M14 3 L4 13" stroke="#777777" stroke-width="2.2" stroke-linecap="round" fill="none"/>
   </g>
 </svg>

@@ -10,7 +10,7 @@ Animation=0
 ; Outer window borders (thin, dark chiselled frame)
 BorderLeft=2
 BorderRight=2
-BorderBottom=2
+BorderBottom=8
 BorderTop=0
 
 ; Padding is used by the SVG to draw shadows; NeXT has no soft shadow
