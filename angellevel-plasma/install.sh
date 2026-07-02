@@ -84,6 +84,21 @@ if [ -f "$SRC/tools/angellevel-update-notifier" ]; then
   fi
 fi
 
+# 10. KRunner "check for updates" plugin (D-Bus runner; needs python3-dbus + python3-gi)
+if [ -f "$SRC/tools/krunner/angellevel-updates-runner" ]; then
+  install -d "$HOME/.local/bin"
+  install -m 755 "$SRC/tools/krunner/angellevel-updates-runner" "$HOME/.local/bin/angellevel-updates-runner"
+  install -d "$DATA/krunner/dbusplugins"
+  install -m 644 "$SRC/tools/krunner/plasma-runner-angellevel-updates.desktop" "$DATA/krunner/dbusplugins/"
+  install -d "$DATA/dbus-1/services"
+  sed "s|__BIN__|$HOME/.local/bin/angellevel-updates-runner|" \
+    "$SRC/tools/krunner/org.angellevel.updatesrunner.service.in" \
+    > "$DATA/dbus-1/services/org.angellevel.updatesrunner.service"
+  echo "  - krunner       -> $DATA/krunner/dbusplugins/ (type 'updates' in KRunner)"
+  if command -v kquitapp6 >/dev/null 2>&1; then kquitapp6 krunner 2>/dev/null || true
+  elif command -v kquitapp5 >/dev/null 2>&1; then kquitapp5 krunner 2>/dev/null || true; fi
+fi
+
 cat <<'EOF'
 
 Done. Now apply it:
@@ -123,6 +138,11 @@ Done. Now apply it:
     Check the timer:  systemctl --user status angellevel-update-notifier.timer
     For instant post-transaction alerts, install a package-manager hook — see
     tools/hooks/README.md (Arch/Debian/Fedora).
+
+  KRunner "check for updates":
+    Open KRunner (Alt+Space) and type "updates" to check for / open software
+    updates. Needs python3-dbus + python3-gi; if it doesn't appear, enable it in
+    System Settings -> Search -> Plasma Search -> "AngelLevel Software Updates".
 
   Recommended for the full NeXT feel:
     - Set the application style (Kvantum/Breeze) and fonts separately;

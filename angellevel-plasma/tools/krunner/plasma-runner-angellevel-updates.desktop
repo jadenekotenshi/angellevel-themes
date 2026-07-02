@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+Name=AngelLevel Software Updates
+Comment=Check for and open software updates from KRunner
+Icon=system-software-update
+X-KDE-ServiceTypes=Plasma/Runner
+X-Plasma-API=DBus
+X-Plasma-DBusRunner-Service=org.angellevel.updatesrunner
+X-Plasma-DBusRunner-Path=/runner
+X-KDE-PluginInfo-Name=angellevelupdates
+X-KDE-PluginInfo-Author=AngelLevel
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-EnabledByDefault=true
