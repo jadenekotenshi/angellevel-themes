@@ -122,6 +122,8 @@ indicator.size=20
 
 [IndicatorSpinBox]
 inherits=PanelButtonCommand
+indicator.element=combo
+indicator.size=14
 
 [ToolbarButton]
 inherits=PanelButtonCommand

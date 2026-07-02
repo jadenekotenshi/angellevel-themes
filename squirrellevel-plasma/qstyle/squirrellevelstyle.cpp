@@ -9,6 +9,7 @@
 #include <QStyleOptionButton>
 #include <QStyleOptionProgressBar>
 #include <QStyleOptionComboBox>
+#include <QStyleOptionSpinBox>
 
 // --- OPENSTEP-muted palette constants ---------------------------------------
 static const QColor kDark  (0x1a, 0x1a, 0x1a);
@@ -359,6 +360,45 @@ void SquirrelLevelStyle::drawComplexControl(ComplexControl cc, const QStyleOptio
             paintBevel(p, well, kGroove, true);
             drawArrow(p, well.translated(0, sunken ? 1 : 0), Qt::DownArrow);
         }
+        return;
+    }
+
+    if (cc == CC_Slider) {
+        const auto *sl = qstyleoption_cast<const QStyleOptionSlider *>(opt);
+        const bool horiz = !sl || sl->orientation == Qt::Horizontal;
+        const QRect groove = subControlRect(cc, opt, SC_SliderGroove, w);
+        const QRect handle = subControlRect(cc, opt, SC_SliderHandle, w);
+        // recessed groove
+        const QRect g = horiz ? QRect(groove.left(), groove.center().y() - 2, groove.width(), 4)
+                              : QRect(groove.center().x() - 2, groove.top(), 4, groove.height());
+        paintBevel(p, g, kGroove, true);
+        // raised handle with a centre inset bar (matches the scroller knob)
+        paintBevel(p, handle, kButton, false);
+        p->save();
+        if (horiz) {
+            const int cy = handle.center().y();
+            const int x1 = handle.left() + 4, x2 = handle.right() - 4;
+            p->setPen(kSh); p->drawLine(x1, cy - 1, x2, cy - 1);
+            p->setPen(kHi); p->drawLine(x1, cy, x2, cy);
+        } else {
+            const int cx = handle.center().x();
+            const int y1 = handle.top() + 4, y2 = handle.bottom() - 4;
+            p->setPen(kSh); p->drawLine(cx - 1, y1, cx - 1, y2);
+            p->setPen(kHi); p->drawLine(cx, y1, cx, y2);
+        }
+        p->restore();
+        return;
+    }
+
+    if (cc == CC_SpinBox) {
+        // recessed field + a recessed inset well per arrow (matches the combobox)
+        paintBevel(p, opt->rect, opt->palette.base(), true);
+        const QRect up   = subControlRect(cc, opt, SC_SpinBoxUp,   w);
+        const QRect down = subControlRect(cc, opt, SC_SpinBoxDown, w);
+        const QRect uw = up.adjusted(1, 2, -3, -1);
+        const QRect dw = down.adjusted(1, 1, -3, -2);
+        if (uw.width() > 3 && uw.height() > 3) { paintBevel(p, uw, kGroove, true); drawArrow(p, uw, Qt::UpArrow); }
+        if (dw.width() > 3 && dw.height() > 3) { paintBevel(p, dw, kGroove, true); drawArrow(p, dw, Qt::DownArrow); }
         return;
     }
     QProxyStyle::drawComplexControl(cc, opt, p, w);

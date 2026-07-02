@@ -76,7 +76,7 @@ FR = {
 }
 for base, sts in FR.items():
     for (status, fill, frame, raised) in sts:
-        g = (base == 'scrollbarcursor')          # centre indentation on the scroller knob
+        g = base in ('scrollbarcursor', 'slidercursor')  # centre indentation on scroller/slider knobs
         framed(base, status, fill, frame, raised, grip=g)
         # inactive duplicate so widgets don't blank on unfocused windows
         if status in ('normal', 'focused', 'pressed', 'toggled'):
