@@ -24,13 +24,13 @@ TitleEdgeTop=2
 TitleEdgeBottom=2
 TitleEdgeLeft=2
 TitleEdgeRight=2
-TitleBorderLeft=6
-TitleBorderRight=6
+TitleBorderLeft=4
+TitleBorderRight=4
 TitleHeight=20
 
 ; Square NeXT-style buttons
 ButtonWidth=18
 ButtonHeight=16
-ButtonSpacing=2
+ButtonSpacing=1
 ButtonMarginTop=2
 ExplicitButtonSpacer=4
