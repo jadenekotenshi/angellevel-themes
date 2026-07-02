@@ -3,8 +3,8 @@
   <!-- SquirrelLevel Kate: code document with a nib pen -->
   <path d="M9 6 H27 L33 12 V42 H9 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.5" stroke-linejoin="round"/>
   <path d="M27 6 V12 H33 Z" fill="#9cafc4" stroke="#1a1a1a" stroke-width="1.1" stroke-linejoin="round"/>
-  <!-- indented code-like lines -->
-  <path d="M13 17 H25 M16 21 H28 M16 25 H24 M13 29 H22" fill="none" stroke="#5d6975" stroke-width="1.4"/>
+  <!-- Kate "K" -->
+  <path d="M14 15 V33 M14 24 L22 15 M14 24 L23 33" fill="none" stroke="#4a3fa0" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
   <!-- nib pen across the lower-right -->
   <g transform="rotate(45 31 31)">
     <rect x="28" y="16" width="6" height="18" fill="#8494a6" stroke="#1a1a1a" stroke-width="1.2"/>
