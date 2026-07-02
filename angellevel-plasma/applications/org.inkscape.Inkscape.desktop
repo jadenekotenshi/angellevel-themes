@@ -7,3 +7,4 @@ Exec=inkscape %U
 Icon=inkscape
 Terminal=false
 Categories=Graphics;VectorGraphics;
+StartupWMClass=org.inkscape.Inkscape

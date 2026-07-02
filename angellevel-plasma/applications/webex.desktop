@@ -7,3 +7,4 @@ Exec=webex
 Icon=webex
 Terminal=false
 Categories=Network;
+StartupWMClass=Webex

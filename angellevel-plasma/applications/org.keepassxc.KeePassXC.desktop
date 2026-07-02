@@ -7,3 +7,4 @@ Exec=keepassxc
 Icon=keepassxc
 Terminal=false
 Categories=Utility;Security;
+StartupWMClass=keepassxc

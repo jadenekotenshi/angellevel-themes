@@ -7,3 +7,4 @@ Exec=systemsettings
 Icon=systemsettings
 Terminal=false
 Categories=Settings;
+StartupWMClass=systemsettings

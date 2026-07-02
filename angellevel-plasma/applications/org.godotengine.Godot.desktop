@@ -7,3 +7,4 @@ Exec=godot
 Icon=godot
 Terminal=false
 Categories=Development;Game;
+StartupWMClass=Godot

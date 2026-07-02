@@ -7,3 +7,4 @@ Exec=kdenlive %U
 Icon=kdenlive
 Terminal=false
 Categories=AudioVideo;AudioVideoEditing;
+StartupWMClass=org.kde.kdenlive

@@ -7,3 +7,4 @@ Exec=sh -c 'openapp Terminal 2>/dev/null || Terminal'
 Icon=gnustep-terminal
 Terminal=false
 Categories=System;TerminalEmulator;
+StartupWMClass=Terminal

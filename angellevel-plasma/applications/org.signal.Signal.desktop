@@ -7,3 +7,4 @@ Exec=signal-desktop
 Icon=signal
 Terminal=false
 Categories=Network;InstantMessaging;
+StartupWMClass=signal

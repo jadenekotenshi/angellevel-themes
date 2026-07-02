@@ -7,3 +7,4 @@ Exec=kitty
 Icon=kitty
 Terminal=false
 Categories=System;TerminalEmulator;
+StartupWMClass=kitty

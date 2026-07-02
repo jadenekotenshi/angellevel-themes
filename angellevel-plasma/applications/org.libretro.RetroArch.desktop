@@ -7,3 +7,4 @@ Exec=retroarch
 Icon=retroarch
 Terminal=false
 Categories=Game;Emulator;
+StartupWMClass=retroarch

@@ -7,3 +7,4 @@ Exec=cool-retro-term
 Icon=cool-retro-term
 Terminal=false
 Categories=System;TerminalEmulator;
+StartupWMClass=cool-retro-term

@@ -7,3 +7,4 @@ Exec=thunderbird
 Icon=thunderbird
 Terminal=false
 Categories=Network;Email;
+StartupWMClass=thunderbird

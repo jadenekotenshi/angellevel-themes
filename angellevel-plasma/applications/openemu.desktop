@@ -7,3 +7,4 @@ Exec=openemu
 Icon=openemu
 Terminal=false
 Categories=Game;Emulator;
+StartupWMClass=openemu

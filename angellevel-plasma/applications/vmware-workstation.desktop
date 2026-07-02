@@ -7,3 +7,4 @@ Exec=vmware
 Icon=vmware
 Terminal=false
 Categories=System;Emulator;
+StartupWMClass=vmware

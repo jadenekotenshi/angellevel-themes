@@ -7,3 +7,4 @@ Exec=dolphin-emu
 Icon=dolphin-emu
 Terminal=false
 Categories=Game;Emulator;
+StartupWMClass=dolphin-emu

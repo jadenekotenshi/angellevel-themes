@@ -7,3 +7,4 @@ Exec=foot
 Icon=foot
 Terminal=false
 Categories=System;TerminalEmulator;
+StartupWMClass=foot

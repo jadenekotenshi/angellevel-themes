@@ -7,3 +7,4 @@ Exec=obs
 Icon=obs-studio
 Terminal=false
 Categories=AudioVideo;Recorder;
+StartupWMClass=com.obsproject.Studio

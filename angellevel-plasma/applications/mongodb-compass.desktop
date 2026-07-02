@@ -7,3 +7,4 @@ Exec=mongodb-compass
 Icon=mongodb-compass
 Terminal=false
 Categories=Development;Database;
+StartupWMClass=MongoDB Compass

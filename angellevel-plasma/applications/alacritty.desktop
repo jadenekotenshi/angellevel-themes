@@ -7,3 +7,4 @@ Exec=alacritty
 Icon=alacritty
 Terminal=false
 Categories=System;TerminalEmulator;
+StartupWMClass=Alacritty

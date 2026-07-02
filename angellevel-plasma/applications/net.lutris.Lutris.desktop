@@ -7,3 +7,4 @@ Exec=lutris
 Icon=lutris
 Terminal=false
 Categories=Game;
+StartupWMClass=lutris

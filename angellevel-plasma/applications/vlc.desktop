@@ -7,3 +7,4 @@ Exec=vlc %U
 Icon=vlc
 Terminal=false
 Categories=AudioVideo;Player;
+StartupWMClass=vlc

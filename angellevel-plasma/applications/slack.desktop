@@ -7,3 +7,4 @@ Exec=slack
 Icon=slack
 Terminal=false
 Categories=Network;InstantMessaging;
+StartupWMClass=Slack

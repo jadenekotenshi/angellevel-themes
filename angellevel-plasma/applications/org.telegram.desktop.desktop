@@ -7,3 +7,4 @@ Exec=telegram-desktop
 Icon=telegram
 Terminal=false
 Categories=Network;InstantMessaging;
+StartupWMClass=TelegramDesktop

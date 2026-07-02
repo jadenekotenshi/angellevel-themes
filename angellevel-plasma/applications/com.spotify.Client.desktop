@@ -7,3 +7,4 @@ Exec=spotify
 Icon=spotify
 Terminal=false
 Categories=AudioVideo;Player;
+StartupWMClass=spotify

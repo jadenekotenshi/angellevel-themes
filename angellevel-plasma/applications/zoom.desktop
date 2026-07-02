@@ -7,3 +7,4 @@ Exec=zoom
 Icon=zoom
 Terminal=false
 Categories=Network;
+StartupWMClass=zoom

@@ -7,3 +7,4 @@ Exec=iceweasel %u
 Icon=iceweasel
 Terminal=false
 Categories=Network;WebBrowser;
+StartupWMClass=Iceweasel

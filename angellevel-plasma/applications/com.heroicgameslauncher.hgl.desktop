@@ -7,3 +7,4 @@ Exec=heroic
 Icon=heroic
 Terminal=false
 Categories=Game;
+StartupWMClass=heroic

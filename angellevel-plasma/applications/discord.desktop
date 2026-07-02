@@ -7,3 +7,4 @@ Exec=discord
 Icon=discord
 Terminal=false
 Categories=Network;InstantMessaging;
+StartupWMClass=discord

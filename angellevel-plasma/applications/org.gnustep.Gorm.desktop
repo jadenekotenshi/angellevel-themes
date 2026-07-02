@@ -7,3 +7,4 @@ Exec=sh -c 'openapp Gorm 2>/dev/null || Gorm'
 Icon=gorm
 Terminal=false
 Categories=Development;GUIDesigner;
+StartupWMClass=Gorm

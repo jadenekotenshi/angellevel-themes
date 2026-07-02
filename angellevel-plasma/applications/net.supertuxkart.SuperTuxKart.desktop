@@ -7,3 +7,4 @@ Exec=supertuxkart
 Icon=supertuxkart
 Terminal=false
 Categories=Game;ArcadeGame;
+StartupWMClass=supertuxkart

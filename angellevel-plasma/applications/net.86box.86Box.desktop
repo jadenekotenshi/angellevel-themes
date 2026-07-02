@@ -7,3 +7,4 @@ Exec=86Box
 Icon=86box
 Terminal=false
 Categories=System;Emulator;
+StartupWMClass=86Box

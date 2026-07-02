@@ -7,3 +7,4 @@ Exec=opera %u
 Icon=opera
 Terminal=false
 Categories=Network;WebBrowser;
+StartupWMClass=opera

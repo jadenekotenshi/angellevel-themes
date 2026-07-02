@@ -7,3 +7,4 @@ Exec=bluejeans
 Icon=bluejeans
 Terminal=false
 Categories=Network;
+StartupWMClass=bluejeans

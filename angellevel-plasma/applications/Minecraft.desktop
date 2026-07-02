@@ -7,3 +7,4 @@ Exec=minecraft-launcher
 Icon=minecraft
 Terminal=false
 Categories=Game;
+StartupWMClass=Minecraft

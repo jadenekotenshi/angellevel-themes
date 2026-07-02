@@ -7,3 +7,4 @@ Exec=claws-mail
 Icon=claws-mail
 Terminal=false
 Categories=Network;Email;
+StartupWMClass=Claws-mail

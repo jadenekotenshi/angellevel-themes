@@ -7,3 +7,4 @@ Exec=krita
 Icon=krita
 Terminal=false
 Categories=Graphics;RasterGraphics;
+StartupWMClass=krita

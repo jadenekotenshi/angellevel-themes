@@ -7,3 +7,4 @@ Exec=VirtualBox
 Icon=virtualbox
 Terminal=false
 Categories=System;Emulator;
+StartupWMClass=VirtualBox
