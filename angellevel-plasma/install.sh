@@ -48,6 +48,18 @@ rm -rf "$DATA/plasma/look-and-feel/org.angellevel.desktop"
 cp -R "$SRC/plasma/look-and-feel/org.angellevel.desktop" "$DATA/plasma/look-and-feel/org.angellevel.desktop"
 echo "  - global theme  -> $DATA/plasma/look-and-feel/org.angellevel.desktop/"
 
+# 7. Application launchers (.desktop entries for the branded apps)
+if compgen -G "$SRC/applications/*.desktop" >/dev/null; then
+  install -d "$DATA/applications"
+  install -m 644 "$SRC/applications/"*.desktop "$DATA/applications/"
+  n=$(ls "$SRC/applications/"*.desktop | wc -l | tr -d ' ')
+  echo "  - launchers     -> $DATA/applications/ ($n entries)"
+  # Refresh the desktop database so the launchers appear in the app menu.
+  if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database "$DATA/applications" 2>/dev/null || true
+  fi
+fi
+
 cat <<'EOF'
 
 Done. Now apply it:
@@ -74,6 +86,11 @@ Done. Now apply it:
     System Settings -> Global Theme -> "AngelLevel"
     (or:  lookandfeeltool -a org.angellevel.desktop)
     To revert:  lookandfeeltool -a org.kde.breeze.desktop
+
+  Application launchers:
+    The branded .desktop entries are in the application menu now (adjust each
+    Exec= to match how the app is installed on your system, e.g. Flatpak/Snap).
+    To remove them:  rm ~/.local/share/applications/{discord,vlc,gimp,...}.desktop
 
   Recommended for the full NeXT feel:
     - Set the application style (Kvantum/Breeze) and fonts separately;
