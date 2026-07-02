@@ -1,0 +1,7 @@
+[Unit]
+Description=AngelLevel software-update notifier
+Documentation=man:angellevel-update-notifier
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/angellevel-update-notifier --quiet

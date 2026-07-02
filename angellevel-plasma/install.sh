@@ -70,6 +70,20 @@ if [ -f "$SRC/mime/packages/angellevel-packages.xml" ]; then
   fi
 fi
 
+# 9. Software-update notifier (systemd user timer using the themed status icons)
+if [ -f "$SRC/tools/angellevel-update-notifier" ]; then
+  install -d "$HOME/.local/bin"
+  install -m 755 "$SRC/tools/angellevel-update-notifier" "$HOME/.local/bin/angellevel-update-notifier"
+  install -d "${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user"
+  install -m 644 "$SRC/tools/systemd/"*.service "$SRC/tools/systemd/"*.timer \
+    "${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/"
+  echo "  - update notify -> $HOME/.local/bin/angellevel-update-notifier (+ systemd user timer)"
+  if command -v systemctl >/dev/null 2>&1 && [ -n "${XDG_RUNTIME_DIR:-}" ]; then
+    systemctl --user daemon-reload 2>/dev/null || true
+    systemctl --user enable --now angellevel-update-notifier.timer 2>/dev/null || true
+  fi
+fi
+
 cat <<'EOF'
 
 Done. Now apply it:
@@ -101,6 +115,14 @@ Done. Now apply it:
     The branded .desktop entries are in the application menu now (adjust each
     Exec= to match how the app is installed on your system, e.g. Flatpak/Snap).
     To remove them:  rm ~/.local/share/applications/{discord,vlc,gimp,...}.desktop
+
+  Software-update notifications:
+    A systemd user timer runs angellevel-update-notifier every 6 hours and shows
+    a themed "updates available" notification. Run it now:
+      angellevel-update-notifier
+    Check the timer:  systemctl --user status angellevel-update-notifier.timer
+    For instant post-transaction alerts, install a package-manager hook — see
+    tools/hooks/README.md (Arch/Debian/Fedora).
 
   Recommended for the full NeXT feel:
     - Set the application style (Kvantum/Breeze) and fonts separately;

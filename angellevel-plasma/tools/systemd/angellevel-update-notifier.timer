@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically check for software updates (AngelLevel)
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=6h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
