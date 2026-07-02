@@ -375,12 +375,8 @@ void SquirrelLevelStyle::drawComplexControl(ComplexControl cc, const QStyleOptio
         // raised handle with a centre inset bar (matches the scroller knob)
         paintBevel(p, handle, kButton, false);
         p->save();
-        if (horiz) {
-            const int cy = handle.center().y();
-            const int x1 = handle.left() + 4, x2 = handle.right() - 4;
-            p->setPen(kSh); p->drawLine(x1, cy - 1, x2, cy - 1);
-            p->setPen(kHi); p->drawLine(x1, cy, x2, cy);
-        } else {
+        // vertical centre inset bar
+        {
             const int cx = handle.center().x();
             const int y1 = handle.top() + 4, y2 = handle.bottom() - 4;
             p->setPen(kSh); p->drawLine(cx - 1, y1, cx - 1, y2);

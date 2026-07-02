@@ -41,10 +41,15 @@ def framed(base, status, fill, frame, raised, Wb=40, Hb=22, c=4, grip=False):
             eid = f'{base}-{status}' if edge is None else f'{base}-{status}-{edge}'
             extra = ''
             if edge is None and grip:
-                # NeXT scroller knob: a small recessed indentation across the centre
-                gy = yy + hh / 2
-                extra = (f'<rect x="{xx+2}" y="{gy-1:.1f}" width="{ww-4}" height="1" fill="#5f6b76"/>'
-                         f'<rect x="{xx+2}" y="{gy:.1f}" width="{ww-4}" height="1" fill="#ffffff"/>')
+                # NeXT knob: a small recessed indentation across the centre
+                if grip == 'v':                 # vertical bar (slider handle)
+                    gx = xx + ww / 2
+                    extra = (f'<rect x="{gx-1:.1f}" y="{yy+2}" width="1" height="{hh-4}" fill="#5f6b76"/>'
+                             f'<rect x="{gx:.1f}" y="{yy+2}" width="1" height="{hh-4}" fill="#ffffff"/>')
+                else:                           # horizontal bar (scrollbar knob)
+                    gy = yy + hh / 2
+                    extra = (f'<rect x="{xx+2}" y="{gy-1:.1f}" width="{ww-4}" height="1" fill="#5f6b76"/>'
+                             f'<rect x="{xx+2}" y="{gy:.1f}" width="{ww-4}" height="1" fill="#ffffff"/>')
             els.append(f'<g id="{eid}">{region(xx, yy, ww, hh, rp, cp, fill, frame, raised)}{extra}</g>')
 
 def indicator(base, status, draw, size=16):
@@ -76,7 +81,7 @@ FR = {
 }
 for base, sts in FR.items():
     for (status, fill, frame, raised) in sts:
-        g = base in ('scrollbarcursor', 'slidercursor')  # centre indentation on scroller/slider knobs
+        g = 'h' if base == 'scrollbarcursor' else ('v' if base == 'slidercursor' else False)  # h dimple scroller, v slider
         framed(base, status, fill, frame, raised, grip=g)
         # inactive duplicate so widgets don't blank on unfocused windows
         if status in ('normal', 'focused', 'pressed', 'toggled'):

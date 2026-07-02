@@ -159,7 +159,7 @@ QSlider::groove:horizontal { height: 6px; background: #22252b; border: 1px solid
 QSlider::groove:vertical   { width: 6px; background: #22252b; border: 1px solid #0d0e11; }
 /* slider handle: raised bevel + a centre inset bar, like the scrollbar thumb */
 QSlider::handle:horizontal {
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
         stop:0 #3b4048, stop:0.44 #3b4048, stop:0.44 #14161a, stop:0.50 #14161a,
         stop:0.50 #565d67, stop:0.56 #565d67, stop:0.56 #3b4048, stop:1 #3b4048);
     border: 2px solid; border-top-color: #565d67; border-left-color: #565d67;
