@@ -18,7 +18,7 @@
   <mime-type type="application/x-dylib"><comment>Mach-O dynamic library</comment><glob pattern="*.dylib"/></mime-type>
   <mime-type type="application/x-ms-dll"><comment>Windows dynamic-link library</comment><glob pattern="*.dll"/></mime-type>
   <!-- disk / VM images -->
-  <mime-type type="application/x-floppy-image"><comment>Floppy disk image</comment><glob pattern="*.flp"/><glob pattern="*.ima"/><glob pattern="*.adf"/></mime-type>
+  <mime-type type="application/x-floppy-image"><comment>Floppy disk image</comment><glob pattern="*.ima"/><glob pattern="*.adf"/><glob pattern="*.flp" weight="20"/></mime-type>
   <mime-type type="application/x-raw-disk-image"><comment>Raw disk image</comment><glob pattern="*.img" weight="20"/></mime-type>
   <mime-type type="application/x-vdi"><comment>VirtualBox disk image</comment><glob pattern="*.vdi"/></mime-type>
   <mime-type type="application/x-vmdk"><comment>VMware disk image</comment><glob pattern="*.vmdk"/></mime-type>
