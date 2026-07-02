@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=GWorkspace
+Comment=GNUstep workspace & file manager
+Exec=GWorkspace
+Icon=gworkspace
+Terminal=false
+Categories=System;FileManager;

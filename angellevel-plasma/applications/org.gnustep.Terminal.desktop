@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Terminal (GNUstep)
+Comment=GNUstep terminal
+Exec=Terminal
+Icon=gnustep-terminal
+Terminal=false
+Categories=System;TerminalEmulator;

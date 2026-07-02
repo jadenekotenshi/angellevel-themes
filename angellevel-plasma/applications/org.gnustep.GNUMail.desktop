@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=GNUMail
+Comment=GNUstep mail client
+Exec=GNUMail
+Icon=gnumail
+Terminal=false
+Categories=Network;Email;

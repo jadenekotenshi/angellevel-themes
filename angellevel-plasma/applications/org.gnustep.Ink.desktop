@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Ink
+Comment=GNUstep rich-text editor
+Exec=Ink
+Icon=ink
+Terminal=false
+Categories=Office;WordProcessor;
