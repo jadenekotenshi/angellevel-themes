@@ -9,7 +9,7 @@ text, and square title-bar buttons.
 **Emblem.** `emblem.svg` / `emblem.png` in the bundle root is the standalone TenshiNET angel tile; the Global Theme uses it as its icon (`KPlugin.Icon = squirrellevel`, resolved from the bundled icon set).
 
 
-**Wallpaper / Plymouth handoff.** `wallpaper/TenshiNET-<WxH>.png` (1280×720,1920×1080, 2560×1440, 3840×2160) is the desktop background that *matches the Plymouth boot splash* — same gradient and the TenshiNET angel in the exact position Plymouth places it — so the machine fades seamlessly from boot into the desktop. The Global Theme ships the 1080p one (`contents/wallpaper.png`, wired via `defaults`); the angel is also available as the launcher/menu icon name `tenshix` (and `squirrellevel`) in the icon set. For a pixel-exact handoff pick the file matching your native resolution and set it (desktop **and** SDDM background) with fill mode *Centered* so it is not rescaled.
+**Wallpaper / Plymouth handoff.** `wallpaper/TenshiNET-<WxH>.png` (1280×720,1920×1080, 2560×1440, 3840×2160) is the desktop background that *matches the Plymouth boot splash* — same gradient and the TenshiNET angel in the exact position Plymouth places it — so the machine fades seamlessly from boot into the desktop. The Global Theme ships the 1080p one (`contents/wallpaper.png`, wired via `defaults`); the angel is also available as the launcher/menu icon name `tenshix` (and `squirrellevel`) in the icon set. The Plasma desktop style ships a `widgets/combobox.svg` giving dropdowns the same NeXT recessed inset well (where the running Plasma ComboBox honours it). For a pixel-exact handoff pick the file matching your native resolution and set it (desktop **and** SDDM background) with fill mode *Centered* so it is not rescaled.
 
 ## Previews
 

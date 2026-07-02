@@ -41,6 +41,52 @@ def block(ox, oy, prefix, base, frame, raised, Wb=48, Hb=24, c=6):
             out.append(f'<g id="{pre}{nm}">' + ''.join(region(xx, yy, ww, hh, rp, cp, base, frame, raised)) + '</g>')
     return out
 
+def combo_block(ox, oy, prefix, base, frame, raised, wellfill, itl, ibr, arrowcol):
+    """A combobox FrameSvg: raised (or sunken) body with a recessed inset well
+    baked into the right band, holding a down arrow — a NeXT pop-up button that
+    reads clearly differently from a plain push button."""
+    pre = (prefix + '-') if prefix else ''
+    Wb, Hb, cl, cr, ct = 72, 28, 6, 26, 6
+    cw = Wb - cl - cr            # centre width
+    ch = Hb - 2 * ct            # centre height
+    x0, x1, x2 = ox, ox + cl, ox + cl + cw
+    y0, y1, y2 = oy, oy + ct, oy + ct + ch
+    body = ''.join  # alias
+    out = []
+    cells = [('topleft', x0, y0, cl, ct, 'top', 'left'), ('top', x1, y0, cw, ct, 'top', 'mid'),
+             ('left', x0, y1, cl, ch, 'mid', 'left'), ('center', x1, y1, cw, ch, 'mid', 'mid'),
+             ('bottomleft', x0, y2, cl, ct, 'bottom', 'left'), ('bottom', x1, y2, cw, ct, 'bottom', 'mid')]
+    for nm, xx, yy, ww, hh, rp, cp in cells:
+        out.append(f'<g id="{pre}{nm}">' + body(region(xx, yy, ww, hh, rp, cp, base, frame, raised)) + '</g>')
+    # inset well geometry within the right band
+    wx = x2 + 3; ww = cr - 7; wtop = oy + 4; wbot = oy + Hb - 4
+    # top-right cell
+    tr = body(region(x2, y0, cr, ct, 'top', 'right', base, frame, raised))
+    tr += (f'<rect x="{wx}" y="{wtop}" width="{ww}" height="{y0+ct-wtop}" fill="{wellfill}"/>'
+           f'<rect x="{wx}" y="{wtop}" width="{ww}" height="1" fill="{frame}"/>'
+           f'<rect x="{wx+1}" y="{wtop+1}" width="{ww-2}" height="1" fill="{itl}"/>'
+           f'<rect x="{wx}" y="{wtop}" width="1" height="{y0+ct-wtop}" fill="{frame}"/>'
+           f'<rect x="{wx+ww-1}" y="{wtop}" width="1" height="{y0+ct-wtop}" fill="{frame}"/>')
+    out.append(f'<g id="{pre}topright">{tr}</g>')
+    # right (stretchy) cell — vertical well sides + centred arrow
+    acx = wx + ww / 2; acy = y1 + ch / 2; a = 4
+    rc = body(region(x2, y1, cr, ch, 'mid', 'right', base, frame, raised))
+    rc += (f'<rect x="{wx}" y="{y1}" width="{ww}" height="{ch}" fill="{wellfill}"/>'
+           f'<rect x="{wx}" y="{y1}" width="1" height="{ch}" fill="{frame}"/>'
+           f'<rect x="{wx+1}" y="{y1}" width="1" height="{ch}" fill="{itl}"/>'
+           f'<rect x="{wx+ww-1}" y="{y1}" width="1" height="{ch}" fill="{frame}"/>'
+           f'<rect x="{wx+ww-2}" y="{y1}" width="1" height="{ch}" fill="{ibr}"/>'
+           f'<polygon points="{acx-a:.1f},{acy-2:.1f} {acx+a:.1f},{acy-2:.1f} {acx:.1f},{acy+3:.1f}" fill="{arrowcol}"/>')
+    out.append(f'<g id="{pre}right">{rc}</g>')
+    # bottom-right cell
+    brc = body(region(x2, y2, cr, ct, 'bottom', 'right', base, frame, raised))
+    brc += (f'<rect x="{wx}" y="{y2}" width="{ww}" height="{wbot-y2}" fill="{wellfill}"/>'
+            f'<rect x="{wx}" y="{wbot-1}" width="{ww}" height="1" fill="{ibr}"/>'
+            f'<rect x="{wx}" y="{y2}" width="1" height="{wbot-y2}" fill="{frame}"/>'
+            f'<rect x="{wx+ww-1}" y="{y2}" width="1" height="{wbot-y2}" fill="{frame}"/>')
+    out.append(f'<g id="{pre}bottomright">{brc}</g>')
+    return out
+
 def svg(elems, w, h):
     return (f'<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n'
             f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">\n  '
@@ -58,6 +104,14 @@ b += block(4,  36, 'hover',   '#b0b7c2', FRAME, True)
 b += block(4,  68, 'focus',   '#b6b6b6', BLUE,  True)
 b += block(4, 100, 'pressed', '#8e95a0', FRAME, False)
 write('widgets/button.svg', svg(b, 60, 132))
+
+# --- widgets/combobox.svg : NeXT pop-up (raised body + recessed inset well) ---
+cb = []
+cb += combo_block(4,   4, 'normal',  '#a6adb8', FRAME, True,  '#9aa1ac', '#5c626b', '#ffffff', '#1a1a1a')
+cb += combo_block(4,  36, 'hover',   '#b0b7c2', FRAME, True,  '#9aa1ac', '#5c626b', '#ffffff', '#1a1a1a')
+cb += combo_block(4,  68, 'focus',   '#b6b6b6', BLUE,  True,  '#9aa1ac', '#5c626b', '#ffffff', '#1a1a1a')
+cb += combo_block(4, 100, 'pressed', '#8e95a0', FRAME, False, '#9aa1ac', '#5c626b', '#ffffff', '#1a1a1a')
+write('widgets/combobox.svg', svg(cb, 84, 132))
 
 # --- widgets/lineedit.svg : base / focus (recessed white) ---
 le = []
