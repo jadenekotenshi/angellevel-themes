@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-  <!-- SquirrelLevel archive: cardboard box -->
-  <path d="M9 16 L16 9 H32 L39 16 V39 H9 Z" fill="#d7c286" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round"/>
-  <path d="M9 16 H39" fill="none" stroke="#1a1a1a" stroke-width="1.3"/>
-  <path d="M16 9 L18 16 M32 9 L30 16" fill="none" stroke="#1a1a1a" stroke-width="1.1"/>
-  <rect x="21.5" y="9" width="5" height="30" fill="#b6a471" stroke="#1a1a1a" stroke-width="1"/>
-  <path d="M10 17.3 H38 M16.5 10.2 H31.5" fill="none" stroke="#ffffff" stroke-width="0.9"/>
-</svg>

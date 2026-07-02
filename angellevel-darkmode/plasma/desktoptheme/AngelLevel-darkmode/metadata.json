@@ -1,0 +1,11 @@
+{
+    "KPackageStructure": "Plasma/Theme",
+    "KPlugin": {
+        "Authors": [ { "Name": "themes" } ],
+        "Description": "OPENSTEP-inspired NeXT chiselled widget style",
+        "Id": "AngelLevel-darkmode",
+        "License": "MIT",
+        "Name": "AngelLevel-darkmode",
+        "Version": "1.0"
+    }
+}

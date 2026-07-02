@@ -4,7 +4,7 @@
 
 `boot-sequence.gif` / `boot-sequence.mp4` walk the full boot chain:
 
-1. **EFI firmware** — the boot splash (`squirrellevel-refind/efi-splash/`)
+1. **EFI firmware** — the boot splash (`angellevel-refind/efi-splash/`)
 2. **rEFInd** — the boot menu (same banner, entry icons below)
 3. **Plymouth** — kernel boot, progress bar filling
 4. **SDDM** — the login greeter

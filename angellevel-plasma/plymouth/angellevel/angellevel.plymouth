@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=AngelLevel
+Description=OPENSTEP-inspired boot splash — chiselled cube on a muted blue gradient
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/angellevel
+ScriptFile=/usr/share/plymouth/themes/angellevel/angellevel.script
