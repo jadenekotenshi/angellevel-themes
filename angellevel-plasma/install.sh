@@ -60,6 +60,16 @@ if compgen -G "$SRC/applications/*.desktop" >/dev/null; then
   fi
 fi
 
+# 8. Package MIME types (so .tardist, FreeBSD/SysV .pkg and Arch packages get icons)
+if [ -f "$SRC/mime/packages/angellevel-packages.xml" ]; then
+  install -d "$DATA/mime/packages"
+  install -m 644 "$SRC/mime/packages/"*.xml "$DATA/mime/packages/"
+  echo "  - mime types    -> $DATA/mime/packages/"
+  if command -v update-mime-database >/dev/null 2>&1; then
+    update-mime-database "$DATA/mime" 2>/dev/null || true
+  fi
+fi
+
 cat <<'EOF'
 
 Done. Now apply it:
