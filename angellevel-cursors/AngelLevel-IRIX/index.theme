@@ -1,0 +1,5 @@
+[Icon Theme]
+Name=AngelLevel IRIX
+Comment=SGI IRIX-idiom pointers (TenshiNET / AngelLevel): bold black
+ shapes with a white outline, engineering crosshair, Motif wristwatch.
+Inherits=Adwaita
