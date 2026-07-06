@@ -5,7 +5,7 @@ for the classic NeXT look: flat grayscale palette, chiseled bevels (white
 highlight on the top/left, dark shadow on the bottom/right), black title
 text, and square title-bar buttons.
 
-> **Dark-mode variant.** This is the dark counterpart of the light `AngelLevel` theme: gunmetal chrome, near-black backgrounds, light text, and brighter metallic-indigo accents. It **reuses the light theme's icon set** (`Icons=AngelLevel`), so install the light `AngelLevel` bundle too if you want the icons. Everything else (colour scheme, Plasma style, Kvantum, QSS, QStyle, Aurorae, SDDM, Global Theme, Plymouth) has its own dark build.
+> **Dark-mode variant.** This is the dark counterpart of the light `AngelLevel` theme: gunmetal chrome, near-black backgrounds, light text, and brighter metallic-indigo accents. It ships its **own full dark icon set** (`Icons=AngelLevel-darkmode`) — the light icons with the chiselled outline recoloured (`#1a1a1a` → `#cdd1d7`) so they read on dark backgrounds — at full parity with the light set. Everything else (colour scheme, Plasma style, Kvantum, QSS, QStyle, Aurorae, GTK, SDDM, Global Theme, Plymouth, cursors, wallpaper) has its own dark build.
 
 
 **Emblem.** `emblem.svg` / `emblem.png` in the bundle root is the standalone TenshiNET angel tile; the Global Theme uses it as its icon (`KPlugin.Icon = angellevel`, resolved from the bundled icon set).

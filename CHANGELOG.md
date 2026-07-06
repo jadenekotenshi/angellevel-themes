@@ -4,6 +4,17 @@ All notable changes to the **AngelLevel / TenshiNET** theme suite are documented
 here. Format based on [Keep a Changelog](https://keepachangelog.com/); this
 project aims to follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+- **Dark icon parity**: propagated the full expanded icon set into
+  `AngelLevel-darkmode` (503 icons + 69 alias symlinks), so the dark theme now
+  matches the light one exactly across apps/mimetypes/actions/status/devices/
+  places/emblems (chiselled outline recoloured `#1a1a1a` → `#cdd1d7`).
+- Added a top-level **`LICENSE`** (MIT) — previously only referenced in
+  metadata.
+- Fixed a stale note in the darkmode README (it claimed the dark theme reused
+  the light icon set; it ships its own full set).
+
 ## [1.1.0] — 2026-07-06
 
 Completeness pass: wire up previously-unapplied pieces, fill non-icon component
