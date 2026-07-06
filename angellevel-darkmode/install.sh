@@ -66,6 +66,14 @@ if [ -d "$SRC/kvantum/AngelLevel-darkmode" ]; then
   echo "  - kvantum style -> $CFG/Kvantum/AngelLevel-darkmode/ (widgetStyle=kvantum)"
 fi
 
+# 5c. GTK theme (so GTK/GNOME apps match the NeXT look under Plasma)
+if [ -d "$SRC/gtk/AngelLevel-darkmode" ]; then
+  install -d "$DATA/themes/AngelLevel-darkmode"
+  cp -R "$SRC/gtk/AngelLevel-darkmode/"* "$DATA/themes/AngelLevel-darkmode/"
+  echo "  - gtk theme     -> $DATA/themes/AngelLevel-darkmode/ (apply via kde-gtk-config, or"
+  echo "                     gsettings set org.gnome.desktop.interface gtk-theme AngelLevel-darkmode)"
+fi
+
 # 6. Look-and-Feel (Global Theme: ties colours/icons/decoration/splash together)
 install -d "$DATA/plasma/look-and-feel"
 rm -rf "$DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop"

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=X-GTK-Theme-Directory
+Name=AngelLevel-darkmode
+Comment=OPENSTEP/NeXT chiselled GTK theme (dark)
+
+[X-GTK-Theme]
+Name=AngelLevel-darkmode
+GTK=3.0;4.0
+Variant=dark
