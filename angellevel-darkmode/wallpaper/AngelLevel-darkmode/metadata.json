@@ -1,0 +1,9 @@
+{
+    "KPackageStructure": "Wallpaper/Images",
+    "KPlugin": {
+        "Authors": [{ "Name": "TenshiNET" }],
+        "Id": "AngelLevel-darkmode",
+        "License": "MIT",
+        "Name": "AngelLevel-darkmode"
+    }
+}
