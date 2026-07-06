@@ -22,7 +22,7 @@ optdepends=(
   'kde-gtk-config: apply the bundled GTK theme to GTK apps'
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')  # replace with the release tarball checksum
+sha256sums=('12983bdf8742569cb74d9008cd9c99213d1c6e1f81c4d227fa108d826b0fe7e6')
 
 package() {
   cd "$srcdir/angellevel-themes-$pkgver"
