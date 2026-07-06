@@ -3,6 +3,14 @@ widgetStyle=kvantum
 
 [kdeglobals][General]
 ColorScheme=AngelLevel-darkmode
+font=Nimbus Sans,10,-1,5,50,0,0,0,0,0
+menuFont=Nimbus Sans,10,-1,5,50,0,0,0,0,0
+toolBarFont=Nimbus Sans,10,-1,5,50,0,0,0,0,0
+smallestReadableFont=Nimbus Sans,8,-1,5,50,0,0,0,0,0
+fixed=Liberation Mono,10,-1,5,50,0,0,0,0,0
+
+[kdeglobals][WM]
+activeFont=Nimbus Sans,10,-1,5,75,0,0,0,0,0
 
 [kdeglobals][Icons]
 Theme=AngelLevel-darkmode
@@ -16,6 +24,9 @@ Image=wallpaper.png
 [kwinrc][org.kde.kdecoration2]
 library=org.kde.kwin.aurorae
 theme=__aurorae__svg__AngelLevel-darkmode
+
+[kwinrc][TabBox]
+LayoutName=org.angellevel.darkmode.switcher
 
 [ksplashrc][KSplash]
 Theme=org.angellevel.darkmode.desktop
