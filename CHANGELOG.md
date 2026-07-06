@@ -45,10 +45,15 @@ gaps, and a large icon expansion. All additive; no breaking changes.
 - **AppStream MetaInfo** (`org.angellevel.desktop.metainfo.xml`) for KDE Store /
   distro metadata.
 
-### Deferred
-- A custom **lock screen** greeter: kscreenlocker's PAM-auth contract is
-  security-sensitive and version-dependent, so it is intentionally not shipped
-  unverified.
+### Experimental
+- A custom **lock screen** greeter (`LockScreenUi.qml`, light + dark), built
+  against the documented kscreenlocker contract (`authenticator.respond()` +
+  succeeded/failed/message signals), in the NeXT dialog idiom. It has **not**
+  been verified on a live Plasma session and third-party lockscreens can drift
+  across Plasma versions, so treat it as experimental: **test before relying on
+  it.** Recovery if unlock ever fails — TTY (Ctrl+Alt+F2) → `loginctl
+  unlock-sessions`, then `lookandfeeltool -a org.kde.breeze.desktop` (or delete
+  the package's `contents/lockscreen/` dir).
 
 ## [1.0.0] — 2026-07-02
 
