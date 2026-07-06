@@ -74,6 +74,14 @@ if [ -d "$SRC/gtk/AngelLevel-darkmode" ]; then
   echo "                     gsettings set org.gnome.desktop.interface gtk-theme AngelLevel-darkmode)"
 fi
 
+# 5d. Wallpaper package (selectable in Desktop -> Wallpaper)
+if [ -d "$SRC/wallpaper/AngelLevel-darkmode" ]; then
+  install -d "$DATA/wallpapers"
+  rm -rf "$DATA/wallpapers/AngelLevel-darkmode"
+  cp -R "$SRC/wallpaper/AngelLevel-darkmode" "$DATA/wallpapers/AngelLevel-darkmode"
+  echo "  - wallpaper     -> $DATA/wallpapers/AngelLevel-darkmode/ (Desktop -> Wallpaper)"
+fi
+
 # 6. Look-and-Feel (Global Theme: ties colours/icons/decoration/splash together)
 install -d "$DATA/plasma/look-and-feel"
 rm -rf "$DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop"

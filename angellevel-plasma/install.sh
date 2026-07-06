@@ -77,6 +77,14 @@ if [ -d "$SRC/gtk/AngelLevel" ]; then
   echo "                     gsettings set org.gnome.desktop.interface gtk-theme AngelLevel)"
 fi
 
+# 5d. Wallpaper package (selectable in Desktop -> Wallpaper)
+if [ -d "$SRC/wallpaper/AngelLevel" ]; then
+  install -d "$DATA/wallpapers"
+  rm -rf "$DATA/wallpapers/AngelLevel"
+  cp -R "$SRC/wallpaper/AngelLevel" "$DATA/wallpapers/AngelLevel"
+  echo "  - wallpaper     -> $DATA/wallpapers/AngelLevel/ (Desktop -> Wallpaper)"
+fi
+
 # 6. Look-and-Feel (Global Theme: ties colours/icons/decoration/splash together)
 install -d "$DATA/plasma/look-and-feel"
 rm -rf "$DATA/plasma/look-and-feel/org.angellevel.desktop"
