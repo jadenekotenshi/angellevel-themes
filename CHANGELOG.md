@@ -4,6 +4,17 @@ All notable changes to the **AngelLevel / TenshiNET** theme suite are documented
 here. Format based on [Keep a Changelog](https://keepachangelog.com/); this
 project aims to follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+- **Widget style no longer breaks on systems without Kvantum.** The Global Theme
+  previously hard-set `widgetStyle=kvantum`, so on machines with neither the
+  Kvantum engine nor the compiled AngelLevel QStyle installed, applying the theme
+  left Qt apps unstyled. Now the shipped default is **Breeze** (always present),
+  and `install.sh` detects Kvantum (or the compiled `AngelLevel` QStyle) and
+  patches the installed Global Theme's `widgetStyle` to it only when present —
+  with clear guidance on installing/building one otherwise. (Reported on live KDE.)
+
 ## [1.1.1] — 2026-07-06
 
 - **Dark icon parity**: propagated the full expanded icon set into
