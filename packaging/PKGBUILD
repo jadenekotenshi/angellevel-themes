@@ -1,0 +1,67 @@
+# Maintainer: TenshiNET <jadenekotenshi@users.noreply.github.com>
+#
+# System-wide install of the AngelLevel / TenshiNET theme suite (light + dark):
+# Global Theme, colour schemes, Aurorae decoration, Plasma style, Kvantum, GTK
+# theme, icons, IRIX cursors, wallpapers, SDDM, Plymouth and MIME definitions.
+#
+# Build a release tarball for the tag first (see CHANGELOG), or use the -git
+# variant that tracks main.
+
+pkgname=angellevel-theme
+pkgver=1.1.0
+pkgrel=1
+pkgdesc="NeXTSTEP/OPENSTEP-inspired Plasma theme suite (light + dark): Global Theme, icons, cursors, Aurorae, Kvantum, GTK, SDDM, Plymouth"
+arch=('any')
+url="https://github.com/jadenekotenshi/angellevel-themes"
+license=('MIT')
+optdepends=(
+  'kvantum: chiselled NeXT Qt widget style (widgetStyle=kvantum)'
+  'plasma-workspace: KDE Plasma Global Theme + Plasma style'
+  'sddm: login theme'
+  'plymouth: boot splash'
+  'kde-gtk-config: apply the bundled GTK theme to GTK apps'
+)
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')  # replace with the release tarball checksum
+
+package() {
+  cd "$srcdir/angellevel-themes-$pkgver"
+  local S="usr/share"
+
+  _install_tree() {  # $1 = repo subdir, $2 = dest under /usr/share
+    install -d "$pkgdir/$S/$2"
+    cp -R "$1"/. "$pkgdir/$S/$2/"
+  }
+
+  # --- light + dark shared components -------------------------------------
+  for v in "angellevel-plasma:AngelLevel:org.angellevel.desktop" \
+           "angellevel-darkmode:AngelLevel-darkmode:org.angellevel.darkmode.desktop"; do
+    IFS=: read -r dir name lnf <<<"$v"
+    install -Dm644 "$dir/color-schemes/$name.colors" "$pkgdir/$S/color-schemes/$name.colors"
+    _install_tree "$dir/aurorae/$name"                "aurorae/themes/$name"
+    install -Dm644 "$dir/konsole/$name.colorscheme"   "$pkgdir/$S/konsole/$name.colorscheme"
+    _install_tree "$dir/icons/$name"                  "icons/$name"
+    _install_tree "$dir/plasma/desktoptheme/$name"    "plasma/desktoptheme/$name"
+    _install_tree "$dir/plasma/look-and-feel/$lnf"    "plasma/look-and-feel/$lnf"
+    _install_tree "$dir/kvantum/$name"                "Kvantum/$name"
+    _install_tree "$dir/gtk/$name"                    "themes/$name"
+    _install_tree "$dir/wallpaper/$name"              "wallpapers/$name"
+  done
+
+  # --- shared IRIX cursor theme ------------------------------------------
+  _install_tree "angellevel-cursors/AngelLevel-IRIX"  "icons/AngelLevel-IRIX"
+
+  # --- boot chain (from the light bundle) --------------------------------
+  [ -d angellevel-plasma/sddm/AngelLevel ] && \
+    _install_tree "angellevel-plasma/sddm/AngelLevel" "sddm/themes/AngelLevel"
+  [ -d angellevel-plasma/plymouth/AngelLevel ] && \
+    _install_tree "angellevel-plasma/plymouth/AngelLevel" "plymouth/themes/AngelLevel"
+
+  # --- MIME definitions + AppStream metadata -----------------------------
+  install -Dm644 angellevel-plasma/mime/packages/*.xml -t "$pkgdir/$S/mime/packages/"
+  install -Dm644 packaging/org.angellevel.desktop.metainfo.xml \
+    "$pkgdir/$S/metainfo/org.angellevel.desktop.metainfo.xml"
+
+  install -Dm644 README.md   "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 CHANGELOG.md "$pkgdir/usr/share/doc/$pkgname/CHANGELOG.md"
+}
