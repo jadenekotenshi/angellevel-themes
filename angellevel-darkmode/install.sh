@@ -90,6 +90,26 @@ rm -rf "$DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop"
 cp -R "$SRC/plasma/look-and-feel/org.angellevel.darkmode.desktop" "$DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop"
 echo "  - global theme  -> $DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop/"
 
+# 6-style. Point the Global Theme's widgetStyle at the best style actually
+# present on THIS system (kvantum / compiled AngelLevel QStyle), else keep
+# Breeze so applying the theme never yields an unstyled/broken look.
+LNF_DEFAULTS="$DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop/contents/defaults"
+WSTYLE=Breeze
+if command -v kvantummanager >/dev/null 2>&1; then
+  WSTYLE=kvantum
+elif find /usr/lib /usr/lib64 /usr/lib/*-linux-gnu -maxdepth 6 -path '*plugins/styles*' \
+        -iname '*angellevel*' 2>/dev/null | grep -q .; then
+  WSTYLE=AngelLevel
+fi
+if [ -f "$LNF_DEFAULTS" ]; then
+  sed -i.bak "s/^widgetStyle=.*/widgetStyle=$WSTYLE/" "$LNF_DEFAULTS" && rm -f "$LNF_DEFAULTS.bak"
+fi
+echo "  - widget style  -> $WSTYLE (Global Theme default)"
+if [ "$WSTYLE" = Breeze ]; then
+  echo "                     for the NeXT widgets: install 'kvantum', OR build the"
+  echo "                     bundled QStyle (qstyle/build-and-install.sh), then re-run."
+fi
+
 # 6a. KWin window switcher (Alt-Tab) skin
 if [ -d "$SRC/plasma/kwin/tabbox/org.angellevel.darkmode.switcher" ]; then
   install -d "$DATA/kwin/tabbox"
@@ -126,10 +146,15 @@ Done. Now apply it:
     To revert:  lookandfeeltool -a org.kde.breeze.desktop
 
   Cursor + application style:
-    The Global Theme now applies the AngelLevel IRIX cursors and the Kvantum
-    widget style automatically. For Kvantum to render, install the engine:
-      Arch: sudo pacman -S kvantum   Debian/Ubuntu: sudo apt install qt6-style-kvantum
-    (Without it, Qt falls back to Breeze/Fusion — nothing breaks.)
+    The Global Theme applies the AngelLevel IRIX cursors automatically. The
+    chiselled NeXT WIDGET look needs one of two backends; this installer already
+    pointed the Global Theme at whichever it found ("widget style ->" above):
+      - Kvantum engine:  Arch: sudo pacman -S kvantum
+                         Debian/Ubuntu: sudo apt install qt6-style-kvantum
+      - or the bundled compiled QStyle (no engine needed):
+                         cd qstyle && ./build-and-install.sh   (needs cmake + Qt dev)
+    Install one, then re-run this script so it switches widgetStyle away from
+    Breeze. Without either, widgets stay Breeze — nothing breaks.
 
   Recommended for the full NeXT feel:
     - Fonts: a Helvetica-like face (Nimbus Sans / Liberation Sans) fits best.

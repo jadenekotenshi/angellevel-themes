@@ -1,5 +1,7 @@
 [kdeglobals][KDE]
-widgetStyle=kvantum
+# Safe default. install.sh upgrades this to kvantum or the compiled AngelLevel
+# QStyle when one of them is actually present on the system.
+widgetStyle=Breeze
 
 [kdeglobals][General]
 ColorScheme=AngelLevel-darkmode
