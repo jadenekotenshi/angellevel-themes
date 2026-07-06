@@ -126,4 +126,38 @@ write('dialogs/background.svg',       svg(block(4, 4, '', '#bcc2c9', FRAME, True
 write('widgets/tooltip.svg',          svg(block(4, 4, '', '#e9e7db', FRAME, True, 56, 36, 6), 68, 48))
 write('widgets/listitem.svg',         svg(block(4, 4, '', '#c4cad1', FRAME, True, 48, 24, 5), 60, 32))
 
+# --- widgets/tabbar.svg : active tab (raised) + inactive tab (recessed) ---
+tb = []
+tb += block(4,  4, 'active-tab',   '#a6adb8', FRAME, True)
+tb += block(4, 36, 'inactive-tab', '#9aa1ac', FRAME, False)
+write('widgets/tabbar.svg', svg(tb, 60, 68))
+
+# --- widgets/scrollbar.svg : slider handle (raised) + groove trough (recessed) ---
+sb = []
+sb += block(4,  4, 'slider', '#a6adb8', FRAME, True)
+sb += block(4, 36, 'groove', '#9aa1ac', FRAME, False)
+write('widgets/scrollbar.svg', svg(sb, 60, 68))
+
+# --- widgets/slider.svg : groove track (recessed) + handle (raised) ---
+sl = []
+sl += block(4,  4, 'groove', '#9aa1ac', FRAME, False)
+sl += block(4, 36, 'handle', '#a6adb8', FRAME, True)
+write('widgets/slider.svg', svg(sl, 60, 68))
+
+# --- widgets/tasks.svg : task button normal / hover / focus / pressed ---
+tk = []
+tk += block(4,   4, 'normal',  '#a6adb8', FRAME, True)
+tk += block(4,  36, 'hover',   '#b0b7c2', FRAME, True)
+tk += block(4,  68, 'focus',   '#b6b6b6', BLUE,  True)
+tk += block(4, 100, 'pressed', '#8e95a0', FRAME, False)
+write('widgets/tasks.svg', svg(tk, 60, 132))
+
+# --- widgets/checkmarks.svg : checkbox tick + radiobutton dot ---
+cm = [f'<g id="checkmark"><polyline points="3,8 6,11 13,4" fill="none" stroke="{BLUE}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>',
+      f'<g id="radiobutton"><circle cx="24" cy="8" r="4" fill="{BLUE}"/></g>']
+write('widgets/checkmarks.svg', svg(cm, 32, 16))
+
+# --- dialogs/shutdowndialog.svg : plain beveled panel background ---
+write('dialogs/shutdowndialog.svg', svg(block(4, 4, '', '#a6b0bb', FRAME, True, 64, 44, 8), 76, 56))
+
 print("generated Plasma Style SVGs under", os.path.relpath(OUT))

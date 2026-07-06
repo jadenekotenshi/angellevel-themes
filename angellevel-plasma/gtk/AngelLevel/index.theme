@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=X-GTK-Theme-Directory
+Name=AngelLevel
+Comment=OPENSTEP/NeXT chiselled GTK theme (light)
+
+[X-GTK-Theme]
+Name=AngelLevel
+GTK=3.0;4.0
+Variant=light
