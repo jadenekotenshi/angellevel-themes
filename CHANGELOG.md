@@ -4,7 +4,9 @@ All notable changes to the **AngelLevel / TenshiNET** theme suite are documented
 here. Format based on [Keep a Changelog](https://keepachangelog.com/); this
 project aims to follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.1.2] — 2026-07-06
+
+First round of live-KDE fixes.
 
 ### Fixed
 - **Widget style no longer breaks on systems without Kvantum.** The Global Theme
@@ -13,7 +15,20 @@ project aims to follow [Semantic Versioning](https://semver.org/).
   left Qt apps unstyled. Now the shipped default is **Breeze** (always present),
   and `install.sh` detects Kvantum (or the compiled `AngelLevel` QStyle) and
   patches the installed Global Theme's `widgetStyle` to it only when present —
-  with clear guidance on installing/building one otherwise. (Reported on live KDE.)
+  with clear guidance on installing/building one otherwise.
+- **Aurorae window buttons now render.** The button SVGs named their states
+  `close`/`close-active`/`close-hover`/… but Aurorae identifies a button by its
+  *filename* and requires the state elements to be named `active`/`hover`/
+  `pressed`/`inactive`/`deactivated`. Renamed all state elements across every
+  button (light + dark) and added `appmenu.svg`, so titlebar buttons appear
+  instead of an empty button area.
+
+### Known issue
+- **Transparent gaps in the window frame** (diagnosed, fix pending live testing):
+  `decoration.svg`'s 9-slice has inconsistent column widths (left column
+  topleft=8 / left=2 / bottomleft=24), which breaks FrameSvg tiling — the chunky
+  NeXT resize grips conflict with the thin side borders. To be reworked and
+  verified on a live KWin session.
 
 ## [1.1.1] — 2026-07-06
 
@@ -150,6 +165,7 @@ NeXT-idiom with `#1a1a1a` chiselled outlines:
   macOS (no live Plasma/KWin/SDDM/rEFInd on hand); icons are NeXT-idiom
   reinterpretations, not official logos. Verify on live KDE.
 
+[1.1.2]: #112--2026-07-06
 [1.1.1]: #111--2026-07-06
 [1.1.0]: #110--2026-07-06
 [1.0.0]: #100--2026-07-02
