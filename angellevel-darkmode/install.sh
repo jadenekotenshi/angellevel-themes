@@ -24,7 +24,9 @@ echo "  - window decor  -> $DATA/aurorae/themes/AngelLevel-darkmode/"
 # 3. Konsole color scheme
 install -d "$DATA/konsole"
 install -m 644 "$SRC/konsole/AngelLevel-darkmode.colorscheme" "$DATA/konsole/AngelLevel-darkmode.colorscheme"
-echo "  - konsole       -> $DATA/konsole/AngelLevel-darkmode.colorscheme"
+[ -f "$SRC/konsole/AngelLevel-darkmode.profile" ] && \
+  install -m 644 "$SRC/konsole/AngelLevel-darkmode.profile" "$DATA/konsole/AngelLevel-darkmode.profile"
+echo "  - konsole       -> $DATA/konsole/AngelLevel-darkmode.{colorscheme,profile}"
 
 # 4. Icon theme (dark set; cp -R preserves the alias symlinks)
 install -d "$DATA/icons"
@@ -87,6 +89,14 @@ install -d "$DATA/plasma/look-and-feel"
 rm -rf "$DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop"
 cp -R "$SRC/plasma/look-and-feel/org.angellevel.darkmode.desktop" "$DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop"
 echo "  - global theme  -> $DATA/plasma/look-and-feel/org.angellevel.darkmode.desktop/"
+
+# 6a. KWin window switcher (Alt-Tab) skin
+if [ -d "$SRC/plasma/kwin/tabbox/org.angellevel.darkmode.switcher" ]; then
+  install -d "$DATA/kwin/tabbox"
+  rm -rf "$DATA/kwin/tabbox/org.angellevel.darkmode.switcher"
+  cp -R "$SRC/plasma/kwin/tabbox/org.angellevel.darkmode.switcher" "$DATA/kwin/tabbox/org.angellevel.darkmode.switcher"
+  echo "  - alt-tab switch-> $DATA/kwin/tabbox/org.angellevel.darkmode.switcher/"
+fi
 
 cat <<'EOF'
 

@@ -24,7 +24,9 @@ echo "  - window decor  -> $DATA/aurorae/themes/AngelLevel/"
 # 3. Konsole color scheme
 install -d "$DATA/konsole"
 install -m 644 "$SRC/konsole/AngelLevel.colorscheme" "$DATA/konsole/AngelLevel.colorscheme"
-echo "  - konsole       -> $DATA/konsole/AngelLevel.colorscheme"
+[ -f "$SRC/konsole/AngelLevel.profile" ] && \
+  install -m 644 "$SRC/konsole/AngelLevel.profile" "$DATA/konsole/AngelLevel.profile"
+echo "  - konsole       -> $DATA/konsole/AngelLevel.{colorscheme,profile}"
 
 # 4. Icon theme (cp -R preserves the alias symlinks inside the tree)
 install -d "$DATA/icons"
@@ -90,6 +92,14 @@ install -d "$DATA/plasma/look-and-feel"
 rm -rf "$DATA/plasma/look-and-feel/org.angellevel.desktop"
 cp -R "$SRC/plasma/look-and-feel/org.angellevel.desktop" "$DATA/plasma/look-and-feel/org.angellevel.desktop"
 echo "  - global theme  -> $DATA/plasma/look-and-feel/org.angellevel.desktop/"
+
+# 6a. KWin window switcher (Alt-Tab) skin
+if [ -d "$SRC/plasma/kwin/tabbox/org.angellevel.switcher" ]; then
+  install -d "$DATA/kwin/tabbox"
+  rm -rf "$DATA/kwin/tabbox/org.angellevel.switcher"
+  cp -R "$SRC/plasma/kwin/tabbox/org.angellevel.switcher" "$DATA/kwin/tabbox/org.angellevel.switcher"
+  echo "  - alt-tab switch-> $DATA/kwin/tabbox/org.angellevel.switcher/"
+fi
 
 # 6b. Updates plasmoid (panel applet)
 if [ -d "$SRC/plasma/plasmoids/org.angellevel.updates" ]; then
