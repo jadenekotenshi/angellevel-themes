@@ -36,11 +36,38 @@ if command -v gtk-update-icon-cache >/dev/null 2>&1; then
   gtk-update-icon-cache -q -f -t "$DATA/icons/AngelLevel" 2>/dev/null || true
 fi
 
+# 4b. Cursor theme (AngelLevel IRIX — shared, lives one level up in the repo)
+CURSORS="$SRC/../angellevel-cursors/AngelLevel-IRIX"
+if [ -d "$CURSORS" ]; then
+  install -d "$DATA/icons"
+  rm -rf "$DATA/icons/AngelLevel-IRIX"
+  cp -R "$CURSORS" "$DATA/icons/AngelLevel-IRIX"
+  echo "  - cursor theme  -> $DATA/icons/AngelLevel-IRIX/ (wired via Global Theme)"
+else
+  echo "  ! cursor theme not found at $CURSORS (skipped)"
+fi
+
 # 5. Plasma Style (desktop/widget theme)
 install -d "$DATA/plasma/desktoptheme"
 rm -rf "$DATA/plasma/desktoptheme/AngelLevel"
 cp -R "$SRC/plasma/desktoptheme/AngelLevel" "$DATA/plasma/desktoptheme/AngelLevel"
 echo "  - plasma style  -> $DATA/plasma/desktoptheme/AngelLevel/"
+
+# 5b. Kvantum application style (the chiselled NeXT widget look; needs the
+#     Kvantum engine installed for widgetStyle=kvantum to take effect).
+CFG="${XDG_CONFIG_HOME:-$HOME/.config}"
+if [ -d "$SRC/kvantum/AngelLevel" ]; then
+  install -d "$CFG/Kvantum/AngelLevel"
+  install -m 644 "$SRC/kvantum/AngelLevel/"* "$CFG/Kvantum/AngelLevel/"
+  # Select AngelLevel as the active Kvantum theme without clobbering an existing
+  # config: prefer kvantummanager (preserves other keys), else only write fresh.
+  if command -v kvantummanager >/dev/null 2>&1; then
+    kvantummanager --set AngelLevel >/dev/null 2>&1 || true
+  elif [ ! -f "$CFG/Kvantum/kvantum.kvconfig" ]; then
+    printf '[General]\ntheme=AngelLevel\n' > "$CFG/Kvantum/kvantum.kvconfig"
+  fi
+  echo "  - kvantum style -> $CFG/Kvantum/AngelLevel/ (widgetStyle=kvantum)"
+fi
 
 # 6. Look-and-Feel (Global Theme: ties colours/icons/decoration/splash together)
 install -d "$DATA/plasma/look-and-feel"
@@ -156,9 +183,14 @@ Done. Now apply it:
     Right-click a panel -> Add Widgets -> "AngelLevel Updates" to show the update
     status + count in the panel (click opens Discover).
 
+  Cursor + application style:
+    The Global Theme now applies the AngelLevel IRIX cursors and the Kvantum
+    widget style automatically. For Kvantum to render, install the engine:
+      Arch: sudo pacman -S kvantum   Debian/Ubuntu: sudo apt install qt6-style-kvantum
+    (Without it, Qt falls back to Breeze/Fusion — nothing breaks.)
+
   Recommended for the full NeXT feel:
-    - Set the application style (Kvantum/Breeze) and fonts separately;
-      a Helvetica-like font (e.g. Nimbus Sans / Liberation Sans) fits best.
+    - Fonts: a Helvetica-like face (Nimbus Sans / Liberation Sans) fits best.
     - Window button order: put Minimize on the LEFT and Close on the RIGHT
       under Window Decorations -> Titlebar Buttons.
 

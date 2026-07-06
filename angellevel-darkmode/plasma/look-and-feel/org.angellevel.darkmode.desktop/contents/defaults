@@ -1,5 +1,5 @@
 [kdeglobals][KDE]
-widgetStyle=Breeze
+widgetStyle=kvantum
 
 [kdeglobals][General]
 ColorScheme=AngelLevel-darkmode
@@ -22,4 +22,4 @@ Theme=org.angellevel.darkmode.desktop
 Engine=KSplashQML
 
 [kcminputrc][Mouse]
-cursorTheme=Breeze
+cursorTheme=AngelLevel-IRIX
