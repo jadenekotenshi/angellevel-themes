@@ -36,6 +36,15 @@
   </provides>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="1.1.1" date="2026-07-06">
+      <description>
+        <p>
+          Brought the dark icon theme to full parity with the expanded light set,
+          added the MIT LICENSE and the dark Global Theme preview, and fixed a
+          stale darkmode README note.
+        </p>
+      </description>
+    </release>
     <release version="1.1.0" date="2026-07-06">
       <description>
         <p>

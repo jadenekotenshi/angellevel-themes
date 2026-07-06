@@ -49,7 +49,7 @@ Rendered preview sheets live under `angellevel-plasma/previews/` and
 
 ## Status
 
-See [CHANGELOG.md](CHANGELOG.md). Current release: **v1.1.0**.
+See [CHANGELOG.md](CHANGELOG.md). Current release: **v1.1.1**.
 
 Assets were authored and validated via an SVG→PNG mock pipeline; icons are
 NeXT-idiom reinterpretations rather than official logos. Verify on live KDE.

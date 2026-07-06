@@ -4,7 +4,7 @@ All notable changes to the **AngelLevel / TenshiNET** theme suite are documented
 here. Format based on [Keep a Changelog](https://keepachangelog.com/); this
 project aims to follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.1.1] — 2026-07-06
 
 - **Dark icon parity**: propagated the full expanded icon set into
   `AngelLevel-darkmode` (503 icons + 69 alias symlinks), so the dark theme now
@@ -139,5 +139,6 @@ NeXT-idiom with `#1a1a1a` chiselled outlines:
   macOS (no live Plasma/KWin/SDDM/rEFInd on hand); icons are NeXT-idiom
   reinterpretations, not official logos. Verify on live KDE.
 
+[1.1.1]: #111--2026-07-06
 [1.1.0]: #110--2026-07-06
 [1.0.0]: #100--2026-07-02
