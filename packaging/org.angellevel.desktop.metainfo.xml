@@ -36,6 +36,17 @@
   </provides>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="1.1.2" date="2026-07-06">
+      <description>
+        <p>
+          Live-KDE fixes: the Global Theme no longer forces an unavailable
+          widget style (safe Breeze default, installer auto-upgrades to Kvantum
+          or the compiled AngelLevel style when present), and Aurorae titlebar
+          buttons render again (state elements renamed to the names Aurorae
+          expects). A transparent-frame gap is diagnosed and pending live rework.
+        </p>
+      </description>
+    </release>
     <release version="1.1.1" date="2026-07-06">
       <description>
         <p>
